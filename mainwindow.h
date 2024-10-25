@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 
+#include"player.h"
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -17,7 +18,13 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void updatePlayerUI();
+    void on_playermoney_overflow();
+
+
 private:
     Ui::MainWindow *ui;
+    Player *player;
 };
 #endif // MAINWINDOW_H
