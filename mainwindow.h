@@ -23,6 +23,10 @@ private slots:
     void on_playermoney_overflow();
 
 
+    void on_pushButton_17_clicked();
+
+    void on_pushButton_18_clicked();
+
 private:
     Ui::MainWindow *ui;
     Player *player;

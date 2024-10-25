@@ -7,6 +7,11 @@ MainWindow::MainWindow(QWidget *parent)
     ,player(new Player())
 {
     ui->setupUi(this);
+    ui->playermoney->setDigitCount(13);
+    ui->playerbankmoney->setDigitCount(13);
+    ui->playergiveupmoney->setDigitCount(13);
+
+    ui->playermoney->setSegmentStyle(QLCDNumber::Flat);
 
     connect(player, &Player::moneyChanged, this, &MainWindow::updatePlayerUI);
     connect(player, &Player::bankMoneyChanged, this, &MainWindow::updatePlayerUI);
@@ -15,7 +20,6 @@ MainWindow::MainWindow(QWidget *parent)
     connect(player, &Player::fameChanged, this, &MainWindow::updatePlayerUI);
 
     updatePlayerUI();
-
 }
 
 MainWindow::~MainWindow()
@@ -36,5 +40,20 @@ void MainWindow::updatePlayerUI()
 void MainWindow::on_playermoney_overflow()
 {
     ui->playermoney->display(999999);
+}
+
+
+void MainWindow::on_pushButton_17_clicked()
+{
+    player->addMoney(1000000);
+    updatePlayerUI();
+}
+
+
+void MainWindow::on_pushButton_18_clicked()
+{
+    player->reduceMoney(100);
+    player->addGiveUpMoney(100);
+    updatePlayerUI();
 }
 

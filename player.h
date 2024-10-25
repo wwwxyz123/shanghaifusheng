@@ -51,11 +51,11 @@ signals:
     void fameChanged(int newFame);
 
 private:
-    playertemplate<int> money;
-    playertemplate<int> bankMoney;
-    playertemplate<int> giveUpMoney;
-    playertemplate<int> health;
-    playertemplate<int> fame;
+    playertemplate<long long> money;
+    playertemplate<long long> bankMoney;
+    playertemplate<long long> giveUpMoney;
+    playertemplate<long long> health;
+    playertemplate<long long> fame;
 };
 
 #endif // PLAYER_H

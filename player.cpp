@@ -2,7 +2,7 @@
 #include <iostream>
 
 Player::Player()
-    : money(114514), bankMoney(1919), giveUpMoney(810), health(100), fame(100) {}
+    : money(114514), bankMoney(0), giveUpMoney(1919), health(100), fame(100) {}
 
 int Player::getMoney() const { return money.get(); }
 void Player::addMoney(int num)
