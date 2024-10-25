@@ -12,6 +12,10 @@ MainWindow::MainWindow(QWidget *parent)
     ui->playergiveupmoney->setDigitCount(13);
 
     ui->playermoney->setSegmentStyle(QLCDNumber::Flat);
+    ui->playerbankmoney->setSegmentStyle(QLCDNumber::Flat);
+    ui->playergiveupmoney->setSegmentStyle(QLCDNumber::Flat);
+    ui->playerhealth->setSegmentStyle(QLCDNumber::Flat);
+    ui->playerfame->setSegmentStyle(QLCDNumber::Flat);
 
     connect(player, &Player::moneyChanged, this, &MainWindow::updatePlayerUI);
     connect(player, &Player::bankMoneyChanged, this, &MainWindow::updatePlayerUI);
