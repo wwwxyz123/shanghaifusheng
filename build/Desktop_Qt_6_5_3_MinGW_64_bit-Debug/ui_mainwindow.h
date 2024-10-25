@@ -71,6 +71,8 @@ public:
     QLabel *label_4;
     QLabel *label_5;
     QLabel *label_6;
+    QPushButton *pushButton_17;
+    QPushButton *pushButton_18;
     QMenuBar *menubar;
     QMenu *menu;
     QMenu *menu_2;
@@ -240,6 +242,12 @@ public:
         label_6 = new QLabel(centralwidget);
         label_6->setObjectName("label_6");
         label_6->setGeometry(QRect(310, 200, 51, 31));
+        pushButton_17 = new QPushButton(centralwidget);
+        pushButton_17->setObjectName("pushButton_17");
+        pushButton_17->setGeometry(QRect(270, 280, 75, 24));
+        pushButton_18 = new QPushButton(centralwidget);
+        pushButton_18->setObjectName("pushButton_18");
+        pushButton_18->setGeometry(QRect(270, 310, 75, 24));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -290,6 +298,8 @@ public:
         label_4->setText(QCoreApplication::translate("MainWindow", "\345\201\245\345\272\267:", nullptr));
         label_5->setText(QCoreApplication::translate("MainWindow", "\345\220\215\345\243\260:", nullptr));
         label_6->setText(QCoreApplication::translate("MainWindow", "\345\234\260\351\223\201\347\253\231\357\274\232", nullptr));
+        pushButton_17->setText(QCoreApplication::translate("MainWindow", "\346\211\223\351\222\261", nullptr));
+        pushButton_18->setText(QCoreApplication::translate("MainWindow", "\350\277\230\351\222\261", nullptr));
         menu->setTitle(QCoreApplication::translate("MainWindow", "\350\256\276\347\275\256", nullptr));
         menu_2->setTitle(QCoreApplication::translate("MainWindow", "\345\270\256\345\212\251", nullptr));
     } // retranslateUi
