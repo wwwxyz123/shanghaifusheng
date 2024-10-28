@@ -14,10 +14,12 @@ SOURCES += \
     eventwindow.cpp \
     game.cpp \
     itemmanager.cpp \
+    loading.cpp \
     loginwindow.cpp \
     main.cpp \
     mainwindow.cpp \
-    player.cpp
+    player.cpp \
+    start.cpp
 
 HEADERS += \
     backendmanager.h \
@@ -25,12 +27,16 @@ HEADERS += \
     eventwindow.h \
     game.h \
     itemmanager.h \
+    loading.h \
     loginwindow.h \
     mainwindow.h \
-    player.h
+    player.h \
+    start.h
 
 FORMS += \
-    mainwindow.ui
+    loading.ui \
+    mainwindow.ui \
+    start.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
