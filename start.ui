@@ -32,7 +32,7 @@
     <string>上海浮生记</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="startbutton">
    <property name="geometry">
     <rect>
      <x>90</x>
@@ -45,7 +45,7 @@
     <string>开始游戏</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="rankbutton">
    <property name="geometry">
     <rect>
      <x>90</x>
@@ -58,7 +58,7 @@
     <string>排行榜</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_3">
+  <widget class="QPushButton" name="connectusbutton">
    <property name="geometry">
     <rect>
      <x>90</x>
