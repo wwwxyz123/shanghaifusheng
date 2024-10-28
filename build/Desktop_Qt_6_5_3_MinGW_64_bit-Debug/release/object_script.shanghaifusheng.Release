@@ -7,5 +7,7 @@ release/loginwindow.o
 release/main.o
 release/mainwindow.o
 release/player.o
+release/start.o
 release/moc_mainwindow.o
 release/moc_player.o
+release/moc_start.o

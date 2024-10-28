@@ -17,7 +17,8 @@ SOURCES += \
     loginwindow.cpp \
     main.cpp \
     mainwindow.cpp \
-    player.cpp
+    player.cpp \
+    start.cpp
 
 HEADERS += \
     backendmanager.h \
@@ -27,10 +28,12 @@ HEADERS += \
     itemmanager.h \
     loginwindow.h \
     mainwindow.h \
-    player.h
+    player.h \
+    start.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    start.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

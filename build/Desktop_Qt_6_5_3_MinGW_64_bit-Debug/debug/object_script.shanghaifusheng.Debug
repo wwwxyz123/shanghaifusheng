@@ -7,5 +7,7 @@ debug/loginwindow.o
 debug/main.o
 debug/mainwindow.o
 debug/player.o
+debug/start.o
 debug/moc_mainwindow.o
 debug/moc_player.o
+debug/moc_start.o
