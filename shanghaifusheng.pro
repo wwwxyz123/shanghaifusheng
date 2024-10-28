@@ -14,6 +14,7 @@ SOURCES += \
     eventwindow.cpp \
     game.cpp \
     itemmanager.cpp \
+    loading.cpp \
     loginwindow.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -26,12 +27,14 @@ HEADERS += \
     eventwindow.h \
     game.h \
     itemmanager.h \
+    loading.h \
     loginwindow.h \
     mainwindow.h \
     player.h \
     start.h
 
 FORMS += \
+    loading.ui \
     mainwindow.ui \
     start.ui
 
