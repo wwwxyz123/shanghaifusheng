@@ -2,8 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-
+#include<qlistwidget.h>
+#include<qpushbutton.h>
 #include"player.h"
+#include"itemmanager.h"
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -21,14 +23,20 @@ public:
 private slots:
     void updatePlayerUI();
     void on_playermoney_overflow();
-
-
     void on_pushButton_17_clicked();
-
     void on_pushButton_18_clicked();
+    void on_buy_clicked();
+    void on_sell_clicked();
+    void on_itemWidget_itemClicked(QListWidgetItem *item);
 
 private:
     Ui::MainWindow *ui;
     Player *player;
+    QListWidget *itemWidget;
+    QListWidget *bagWidget;
+    QPushButton *buy;
+    QPushButton *sell;
+    itemmanager itemmanagerusing;
+    void loadItems();                  // 加载物品列表到界面
 };
 #endif // MAINWINDOW_H
