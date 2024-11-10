@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>289</width>
-    <height>402</height>
+    <width>411</width>
+    <height>578</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,31 +17,57 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>90</y>
-     <width>271</width>
-     <height>121</height>
+     <y>100</y>
+     <width>391</width>
+     <height>361</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>20</pointsize>
+     <pointsize>12</pointsize>
     </font>
    </property>
    <property name="text">
-    <string>故事背景介绍，待填充</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;        这是我们根据“北京浮生记”改编而来的面向对象实验课程设计项目。&lt;/p&gt;&lt;p&gt;        您将扮演一位沪漂。一开始，您有0元钱，并且欠村长5k元钱。村长是个高利贷头子，债务利息高达10%每天。如果在游戏周期内没有还清，您可能牺牲在上海的某处小巷内。您决定在上海各区黑市倒卖各种物品来发财致富，不仅要还清债务，更要出人头地。&lt;/p&gt;&lt;p&gt;        您只能在上海待40天，每次奔走黑市算一天。一开始，您租的房子只能放100件东西，您可以在租房中心租更大的房子。并且要注意随机事件对您身心健康带来的影响。&lt;/p&gt;&lt;p&gt;        那么，如果您准备好了，就进入游戏吧！&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="begin">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>310</y>
-     <width>75</width>
-     <height>24</height>
+     <x>130</x>
+     <y>500</y>
+     <width>131</width>
+     <height>51</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>出发</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>10</y>
+     <width>381</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;上海浮生记的故事&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
  </widget>
