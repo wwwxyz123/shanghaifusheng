@@ -14,37 +14,11 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QGroupBox" name="groupBox">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>20</y>
-      <width>231</width>
-      <height>171</height>
-     </rect>
-    </property>
-    <property name="title">
-     <string>市场</string>
-    </property>
-   </widget>
-   <widget class="QGroupBox" name="groupBox_2">
-    <property name="geometry">
-     <rect>
-      <x>360</x>
-      <y>20</y>
-      <width>231</width>
-      <height>171</height>
-     </rect>
-    </property>
-    <property name="title">
-     <string>背包</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_6">
+   <widget class="QPushButton" name="buy">
     <property name="geometry">
      <rect>
       <x>270</x>
-      <y>50</y>
+      <y>80</y>
       <width>81</width>
       <height>24</height>
      </rect>
@@ -53,11 +27,11 @@
      <string>买入=&gt;</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_7">
+   <widget class="QPushButton" name="sell">
     <property name="geometry">
      <rect>
       <x>270</x>
-      <y>150</y>
+      <y>130</y>
       <width>81</width>
       <height>24</height>
      </rect>
@@ -246,8 +220,8 @@
      <rect>
       <x>360</x>
       <y>170</y>
-      <width>239</width>
-      <height>221</height>
+      <width>231</width>
+      <height>211</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
@@ -418,6 +392,39 @@
     </property>
     <property name="text">
      <string>还钱</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="daylabel">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>0</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>当前是第x天</string>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="itemWidget">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>30</y>
+      <width>221</width>
+      <height>161</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="bagWidget">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>30</y>
+      <width>231</width>
+      <height>161</height>
+     </rect>
     </property>
    </widget>
   </widget>
