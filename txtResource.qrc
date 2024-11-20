@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>res/items.txt</file>
+        <file>res/qrcode.png</file>
     </qresource>
 </RCC>
