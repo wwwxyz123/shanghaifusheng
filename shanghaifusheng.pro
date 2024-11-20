@@ -10,12 +10,12 @@ CONFIG += c++17
 
 SOURCES += \
     backendmanager.cpp \
+    connectus.cpp \
     eventmanager.cpp \
     eventwindow.cpp \
     game.cpp \
     itemmanager.cpp \
     loading.cpp \
-    loginwindow.cpp \
     main.cpp \
     mainwindow.cpp \
     player.cpp \
@@ -23,17 +23,18 @@ SOURCES += \
 
 HEADERS += \
     backendmanager.h \
+    connectus.h \
     eventmanager.h \
     eventwindow.h \
     game.h \
     itemmanager.h \
     loading.h \
-    loginwindow.h \
     mainwindow.h \
     player.h \
     start.h
 
 FORMS += \
+    connectus.ui \
     loading.ui \
     mainwindow.ui \
     start.ui
