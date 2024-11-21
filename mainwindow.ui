@@ -14,19 +14,6 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="buy">
-    <property name="geometry">
-     <rect>
-      <x>270</x>
-      <y>80</y>
-      <width>81</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>买入=&gt;</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="sell">
     <property name="geometry">
      <rect>
@@ -220,7 +207,7 @@
      <rect>
       <x>360</x>
       <y>170</y>
-      <width>231</width>
+      <width>239</width>
       <height>211</height>
      </rect>
     </property>
@@ -425,6 +412,19 @@
       <width>231</width>
       <height>161</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="buy">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>80</y>
+      <width>81</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>买入=&gt;</string>
     </property>
    </widget>
   </widget>

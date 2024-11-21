@@ -27,7 +27,7 @@ private slots:
     void on_pushButton_18_clicked();
     void on_buy_clicked();
     void on_sell_clicked();
-    void on_itemWidget_itemClicked(QListWidgetItem *item);
+    // void on_itemWidget_itemClicked(QListWidgetItem *item);
 
 private:
     Ui::MainWindow *ui;

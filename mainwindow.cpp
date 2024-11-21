@@ -6,6 +6,10 @@
 
 #include <QDir>
 #include <QCoreApplication>
+#include <QDebug>
+#include <QThread>
+// #include <QStackTrace>
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -37,12 +41,13 @@ MainWindow::MainWindow(QWidget *parent)
 
     updatePlayerUI();
 
-    // 加载物品列表
     loadItems();
 
-    // 连接信号和槽
-    connect(itemWidget, &QListWidget::itemClicked, this, &MainWindow::on_itemWidget_itemClicked);
-    connect(buy, &QPushButton::clicked, this, &MainWindow::on_buy_clicked);
+    // // connect(itemWidget, &QListWidget::itemClicked, this, &MainWindow::on_itemWidget_itemClicked);
+    // bool result = connect(buy, &QPushButton::clicked, this, &MainWindow::on_buy_clicked);
+    // qDebug() << "Connection result:" << result;
+    // // connect(buy, &QPushButton::clicked, this, &MainWindow::on_buy_clicked, Qt::UniqueConnection);
+
 
 }
 
@@ -92,18 +97,18 @@ void MainWindow::loadItems() {
     }
 }
 
-void MainWindow::on_buy_clicked() {
+void MainWindow::on_buy_clicked()
+{
     QListWidgetItem *selectedItem = itemWidget->currentItem();
     if (selectedItem) {
         // 获取选中的物品
         Item *item = selectedItem->data(Qt::UserRole).value<Item*>();
 
         if (item) {
+            // 生成随机价格
+            long long price = itemmanagerusing.generateRandomPrice(*item);
             // 检查玩家是否有足够的钱
-            if (player->getMoney() >= itemmanagerusing.generateRandomPrice(*item)) { // 使用生成的随机价格
-                // 生成随机价格
-                long long price = itemmanagerusing.generateRandomPrice(*item);
-
+            if (player->getMoney() >= price) { // 使用生成的随机价格
                 // 扣除玩家的钱
                 player->reduceMoney(price);
 
@@ -120,18 +125,43 @@ void MainWindow::on_buy_clicked() {
     }
 }
 
-
 void MainWindow::on_sell_clicked()
 {
+    QListWidgetItem *selectedItem = itemWidget->currentItem();
+    if (selectedItem) {
+        // 获取选中的物品
+        Item *item = selectedItem->data(Qt::UserRole).value<Item*>();
 
-}
+        if (item) {
+            // 生成随机价格
+            long long price = itemmanagerusing.generateRandomPrice(*item);
+            // 检查玩家是否有足够的钱
+            if (player->getMoney() >= price) { // 使用生成的随机价格
+                // 扣除玩家的钱
+                player->reduceMoney(price);
 
-void MainWindow::on_itemWidget_itemClicked(QListWidgetItem *item)
-{
-    // 设置所有条目为默认颜色
-    for (int i = 0; i < itemWidget->count(); ++i) {
-        itemWidget->item(i)->setBackground(Qt::NoBrush);
+                // 将物品添加到背包列表中
+                bagWidget->addItem(QString("%1 (Price: %2)").arg(QString::fromStdString(item->getName())).arg(price));
+
+                QMessageBox::information(this, "买入成功", QString("您已买入 %1，花费 %2 金币。").arg(QString::fromStdString(item->getName())).arg(price));
+            } else {
+                QMessageBox::warning(this, "资金不足", "您没有足够的资金购买此物品。");
+            }
+        }
+    } else {
+        QMessageBox::warning(this, "未选择物品", "请先选择一个物品。");
     }
-    // 设置选中的条目为蓝色
-    item->setBackground(Qt::blue);
 }
+
+// void MainWindow::on_itemWidget_itemClicked(QListWidgetItem *item)
+// {
+//     // 设置所有条目为默认颜色
+//     for (int i = 0; i < itemWidget->count(); ++i) {
+//         itemWidget->item(i)->setBackground(Qt::NoBrush);
+//     }
+//     // 设置选中的条目为蓝色
+//     item->setBackground(Qt::blue);
+// }
+
+
+
