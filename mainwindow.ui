@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>618</width>
-    <height>450</height>
+    <width>625</width>
+    <height>461</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -156,62 +156,127 @@
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>200</y>
+      <y>215</y>
       <width>191</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(0, 255, 0);</string>
     </property>
    </widget>
    <widget class="QLCDNumber" name="playerbankmoney">
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>240</y>
+      <y>255</y>
       <width>191</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(0, 255, 0);</string>
     </property>
    </widget>
    <widget class="QLCDNumber" name="playergiveupmoney">
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>280</y>
+      <y>295</y>
       <width>191</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(255, 0, 0);</string>
     </property>
    </widget>
    <widget class="QLCDNumber" name="playerhealth">
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>320</y>
+      <y>335</y>
       <width>71</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(0, 255, 0);</string>
     </property>
    </widget>
    <widget class="QLCDNumber" name="playerfame">
     <property name="geometry">
      <rect>
       <x>190</x>
-      <y>320</y>
+      <y>335</y>
       <width>71</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(0, 255, 0);</string>
     </property>
    </widget>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>360</x>
-      <y>170</y>
-      <width>239</width>
+      <y>185</y>
+      <width>241</width>
       <height>211</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
+     <item row="2" column="0">
+      <widget class="QPushButton" name="pushButton_16">
+       <property name="text">
+        <string>松江</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QPushButton" name="pushButton_10">
+       <property name="text">
+        <string>宝山</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QPushButton" name="pushButton_12">
+       <property name="text">
+        <string>陆家嘴</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QPushButton" name="pushButton_11">
+       <property name="text">
+        <string>浦东</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QPushButton" name="pushButton_14">
+       <property name="text">
+        <string>临港</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QPushButton" name="pushButton_15">
+       <property name="text">
+        <string>金山</string>
+       </property>
+      </widget>
+     </item>
      <item row="0" column="0">
       <widget class="QPushButton" name="pushButton_8">
        <property name="text">
@@ -226,52 +291,10 @@
        </property>
       </widget>
      </item>
-     <item row="0" column="2">
-      <widget class="QPushButton" name="pushButton_10">
-       <property name="text">
-        <string>宝山</string>
-       </property>
-      </widget>
-     </item>
      <item row="1" column="0">
       <widget class="QPushButton" name="pushButton_13">
        <property name="text">
         <string>青浦</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="2">
-      <widget class="QPushButton" name="pushButton_11">
-       <property name="text">
-        <string>浦东</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="0">
-      <widget class="QPushButton" name="pushButton_16">
-       <property name="text">
-        <string>松江</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="1">
-      <widget class="QPushButton" name="pushButton_15">
-       <property name="text">
-        <string>金山</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="2">
-      <widget class="QPushButton" name="pushButton_14">
-       <property name="text">
-        <string>临港</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QPushButton" name="pushButton_12">
-       <property name="text">
-        <string>陆家嘴</string>
        </property>
       </widget>
      </item>
@@ -281,7 +304,7 @@
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>205</y>
+      <y>220</y>
       <width>31</width>
       <height>21</height>
      </rect>
@@ -294,7 +317,7 @@
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>245</y>
+      <y>260</y>
       <width>31</width>
       <height>21</height>
      </rect>
@@ -307,7 +330,7 @@
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>285</y>
+      <y>300</y>
       <width>31</width>
       <height>21</height>
      </rect>
@@ -320,7 +343,7 @@
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>325</y>
+      <y>340</y>
       <width>31</width>
       <height>21</height>
      </rect>
@@ -333,7 +356,7 @@
     <property name="geometry">
      <rect>
       <x>160</x>
-      <y>325</y>
+      <y>340</y>
       <width>31</width>
       <height>21</height>
      </rect>
@@ -342,51 +365,12 @@
      <string>名声:</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_6">
-    <property name="geometry">
-     <rect>
-      <x>310</x>
-      <y>200</y>
-      <width>51</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>地铁站：</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_17">
-    <property name="geometry">
-     <rect>
-      <x>270</x>
-      <y>280</y>
-      <width>75</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>打钱</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_18">
-    <property name="geometry">
-     <rect>
-      <x>270</x>
-      <y>310</y>
-      <width>75</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>还钱</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="daylabel">
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>0</y>
-      <width>81</width>
+      <x>280</x>
+      <y>5</y>
+      <width>71</width>
       <height>31</height>
      </rect>
     </property>
@@ -403,6 +387,10 @@
       <height>161</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 0);
+font: 650 9pt &quot;等线&quot;;</string>
+    </property>
    </widget>
    <widget class="QListWidget" name="bagWidget">
     <property name="geometry">
@@ -412,6 +400,10 @@
       <width>231</width>
       <height>161</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 0);
+font: 650 9pt &quot;等线&quot;;</string>
     </property>
    </widget>
    <widget class="QPushButton" name="buy">
@@ -427,13 +419,51 @@
      <string>买入=&gt;</string>
     </property>
    </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>25</x>
+      <y>195</y>
+      <width>246</width>
+      <height>176</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>玩家状态</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>195</y>
+      <width>261</width>
+      <height>176</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-color: rgb(0, 0, 0);</string>
+    </property>
+    <property name="title">
+     <string>上海地铁</string>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>618</width>
+     <width>625</width>
      <height>22</height>
     </rect>
    </property>
