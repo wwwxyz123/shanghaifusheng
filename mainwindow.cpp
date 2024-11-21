@@ -127,7 +127,7 @@ void MainWindow::on_buy_clicked()
 
 void MainWindow::on_sell_clicked()
 {
-    QListWidgetItem *selectedItem = itemWidget->currentItem();
+    QListWidgetItem *selectedItem = bagWidget->currentItem();
     if (selectedItem) {
         // 获取选中的物品
         Item *item = selectedItem->data(Qt::UserRole).value<Item*>();
