@@ -32,7 +32,6 @@ class Ui_MainWindow
 public:
     QAction *action;
     QWidget *centralwidget;
-    QPushButton *buy;
     QPushButton *sell;
     QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
@@ -74,6 +73,7 @@ public:
     QLabel *daylabel;
     QListWidget *itemWidget;
     QListWidget *bagWidget;
+    QPushButton *buy;
     QMenuBar *menubar;
     QMenu *menu;
     QMenu *menu_2;
@@ -88,9 +88,6 @@ public:
         action->setObjectName("action");
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        buy = new QPushButton(centralwidget);
-        buy->setObjectName("buy");
-        buy->setGeometry(QRect(270, 80, 81, 24));
         sell = new QPushButton(centralwidget);
         sell->setObjectName("sell");
         sell->setGeometry(QRect(270, 130, 81, 24));
@@ -170,7 +167,7 @@ public:
         playerfame->setGeometry(QRect(190, 320, 71, 31));
         layoutWidget1 = new QWidget(centralwidget);
         layoutWidget1->setObjectName("layoutWidget1");
-        layoutWidget1->setGeometry(QRect(360, 170, 231, 211));
+        layoutWidget1->setGeometry(QRect(360, 170, 239, 211));
         gridLayout = new QGridLayout(layoutWidget1);
         gridLayout->setObjectName("gridLayout");
         gridLayout->setContentsMargins(0, 0, 0, 0);
@@ -252,6 +249,9 @@ public:
         bagWidget = new QListWidget(centralwidget);
         bagWidget->setObjectName("bagWidget");
         bagWidget->setGeometry(QRect(360, 30, 231, 161));
+        buy = new QPushButton(centralwidget);
+        buy->setObjectName("buy");
+        buy->setGeometry(QRect(270, 80, 81, 24));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -278,7 +278,6 @@ public:
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         action->setText(QCoreApplication::translate("MainWindow", "\346\216\222\350\241\214\346\246\234", nullptr));
-        buy->setText(QCoreApplication::translate("MainWindow", "\344\271\260\345\205\245=>", nullptr));
         sell->setText(QCoreApplication::translate("MainWindow", "<=\345\215\226\345\207\272", nullptr));
         pushButton->setText(QCoreApplication::translate("MainWindow", "\351\223\266\350\241\214", nullptr));
         pushButton_2->setText(QCoreApplication::translate("MainWindow", "\345\214\273\351\231\242", nullptr));
@@ -303,6 +302,7 @@ public:
         pushButton_17->setText(QCoreApplication::translate("MainWindow", "\346\211\223\351\222\261", nullptr));
         pushButton_18->setText(QCoreApplication::translate("MainWindow", "\350\277\230\351\222\261", nullptr));
         daylabel->setText(QCoreApplication::translate("MainWindow", "\345\275\223\345\211\215\346\230\257\347\254\254x\345\244\251", nullptr));
+        buy->setText(QCoreApplication::translate("MainWindow", "\344\271\260\345\205\245=>", nullptr));
         menu->setTitle(QCoreApplication::translate("MainWindow", "\350\256\276\347\275\256", nullptr));
         menu_2->setTitle(QCoreApplication::translate("MainWindow", "\345\270\256\345\212\251", nullptr));
     } // retranslateUi
