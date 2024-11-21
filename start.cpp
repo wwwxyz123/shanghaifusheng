@@ -26,7 +26,6 @@ void start::on_startbutton_clicked()
     this->close();
 }
 
-
 void start::on_connectusbutton_clicked()
 {
     if(!connectUsWindow)
@@ -34,6 +33,5 @@ void start::on_connectusbutton_clicked()
         connectUsWindow=new connectUs();
         connectUsWindow->show();
     }
-    this->close();
 }
 
