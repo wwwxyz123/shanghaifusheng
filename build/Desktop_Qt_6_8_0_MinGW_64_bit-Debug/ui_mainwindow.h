@@ -91,7 +91,7 @@ public:
         centralwidget->setObjectName("centralwidget");
         sell = new QPushButton(centralwidget);
         sell->setObjectName("sell");
-        sell->setGeometry(QRect(270, 130, 81, 24));
+        sell->setGeometry(QRect(270, 120, 81, 24));
         layoutWidget = new QWidget(centralwidget);
         layoutWidget->setObjectName("layoutWidget");
         layoutWidget->setGeometry(QRect(10, 380, 601, 26));
@@ -248,7 +248,7 @@ public:
         daylabel->setGeometry(QRect(280, 5, 71, 31));
         buy = new QPushButton(centralwidget);
         buy->setObjectName("buy");
-        buy->setGeometry(QRect(270, 80, 81, 24));
+        buy->setGeometry(QRect(270, 70, 81, 24));
         groupBox = new QGroupBox(centralwidget);
         groupBox->setObjectName("groupBox");
         groupBox->setGeometry(QRect(25, 195, 246, 176));

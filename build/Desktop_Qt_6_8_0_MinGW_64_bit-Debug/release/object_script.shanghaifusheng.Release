@@ -1,4 +1,6 @@
 release/backendmanager.o
+release/buyconfirm.o
+release/buylose.o
 release/connectus.o
 release/eventmanager.o
 release/eventwindow.o
@@ -11,6 +13,8 @@ release/player.o
 release/start.o
 release/uitest.o
 release/qrc_txtResource.o
+release/moc_buyconfirm.o
+release/moc_buylose.o
 release/moc_connectus.o
 release/moc_loading.o
 release/moc_mainwindow.o
