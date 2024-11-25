@@ -19,7 +19,6 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     player.cpp \
-    ranking.cpp \
     start.cpp
 
 HEADERS += \
@@ -32,13 +31,11 @@ HEADERS += \
     loginwindow.h \
     mainwindow.h \
     player.h \
-    ranking.h \
     start.h
 
 FORMS += \
     loading.ui \
     mainwindow.ui \
-    ranking.ui \
     start.ui
 
 # Default rules for deployment.
