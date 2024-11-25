@@ -99,7 +99,21 @@ void MainWindow::on_pushButton_18_clicked()
 void MainWindow::loadItems() {
 
 }
+/*
+买入要干的事
+点击后
 
+如果钱够买大于一个，此处做余额和价格的整数除法
+跳出一个框，框可以输入或调整数字
+框的内容：您的现金是___人民币，最多可以买__个__
+您想买多少？
+
+否则跳出钱不够的框
+
+
+框点击确认后，根据选中的物品的价格*购买的数量
+
+*/
 void MainWindow::on_buy_clicked()
 {
 
