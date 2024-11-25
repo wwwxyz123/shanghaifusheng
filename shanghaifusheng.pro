@@ -19,7 +19,8 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     player.cpp \
-    start.cpp
+    start.cpp \
+    uitest.cpp
 
 HEADERS += \
     backendmanager.h \
@@ -31,13 +32,15 @@ HEADERS += \
     loading.h \
     mainwindow.h \
     player.h \
-    start.h
+    start.h \
+    uitest.h
 
 FORMS += \
     connectus.ui \
     loading.ui \
     mainwindow.ui \
-    start.ui
+    start.ui \
+    uitest.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
