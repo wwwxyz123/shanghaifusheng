@@ -48,6 +48,16 @@ MainWindow::MainWindow(QWidget *parent)
     // qDebug() << "Connection result:" << result;
     // // connect(buy, &QPushButton::clicked, this, &MainWindow::on_buy_clicked, Qt::UniqueConnection);
 
+//背包列宽设置
+    bagWidget->header()->setSectionResizeMode(QHeaderView::Stretch); // 所有列拉伸
+    bagWidget->header()->resizeSection(0, 3); // 第1列权重为2
+    bagWidget->header()->resizeSection(1, 3); // 第2列权重为3
+    bagWidget->header()->resizeSection(2, 3);
+
+//商品栏列宽设置
+    itemWidget->header()->setSectionResizeMode(QHeaderView::Stretch); // 所有列拉伸
+    itemWidget->header()->resizeSection(0, 5); // 第1列权重为2
+    itemWidget->header()->resizeSection(1, 5); // 第2列权重为3
 
 }
 
@@ -87,70 +97,17 @@ void MainWindow::on_pushButton_18_clicked()
 }
 
 void MainWindow::loadItems() {
-    if (itemmanagerusing.loadItemsFromFile(":/res/items.txt")) {
-        for (const Item &item : itemmanagerusing.getAllItems()) {
-            QListWidgetItem *listItem = new QListWidgetItem(QString::fromStdString(item.getName()), itemWidget);
-            listItem->setData(Qt::UserRole, QVariant::fromValue(const_cast<Item*>(&item))); // 将物品对象存储到 item 中
-        }
-    } else {
-        QMessageBox::warning(this, "加载失败", "无法加载物品数据。");
-    }
+
 }
 
 void MainWindow::on_buy_clicked()
 {
-    QListWidgetItem *selectedItem = itemWidget->currentItem();
-    if (selectedItem) {
-        // 获取选中的物品
-        Item *item = selectedItem->data(Qt::UserRole).value<Item*>();
 
-        if (item) {
-            // 生成随机价格
-            long long price = itemmanagerusing.generateRandomPrice(*item);
-            // 检查玩家是否有足够的钱
-            if (player->getMoney() >= price) { // 使用生成的随机价格
-                // 扣除玩家的钱
-                player->reduceMoney(price);
-
-                // 将物品添加到背包列表中
-                bagWidget->addItem(QString("%1 (Price: %2)").arg(QString::fromStdString(item->getName())).arg(price));
-
-                QMessageBox::information(this, "买入成功", QString("您已买入 %1，花费 %2 金币。").arg(QString::fromStdString(item->getName())).arg(price));
-            } else {
-                QMessageBox::warning(this, "资金不足", "您没有足够的资金购买此物品。");
-            }
-        }
-    } else {
-        QMessageBox::warning(this, "未选择物品", "请先选择一个物品。");
-    }
 }
 
 void MainWindow::on_sell_clicked()
 {
-    QListWidgetItem *selectedItem = bagWidget->currentItem();
-    if (selectedItem) {
-        // 获取选中的物品
-        Item *item = selectedItem->data(Qt::UserRole).value<Item*>();
 
-        if (item) {
-            // 生成随机价格
-            long long price = itemmanagerusing.generateRandomPrice(*item);
-            // 检查玩家是否有足够的钱
-            if (player->getMoney() >= price) { // 使用生成的随机价格
-                // 扣除玩家的钱
-                player->reduceMoney(price);
-
-                // 将物品添加到背包列表中
-                bagWidget->addItem(QString("%1 (Price: %2)").arg(QString::fromStdString(item->getName())).arg(price));
-
-                QMessageBox::information(this, "买入成功", QString("您已买入 %1，花费 %2 金币。").arg(QString::fromStdString(item->getName())).arg(price));
-            } else {
-                QMessageBox::warning(this, "资金不足", "您没有足够的资金购买此物品。");
-            }
-        }
-    } else {
-        QMessageBox::warning(this, "未选择物品", "请先选择一个物品。");
-    }
 }
 
 // void MainWindow::on_itemWidget_itemClicked(QListWidgetItem *item)
