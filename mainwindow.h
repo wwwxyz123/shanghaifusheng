@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include<qlistwidget.h>
+#include<qtreewidget.h>
 #include<qpushbutton.h>
 #include"player.h"
 #include"itemmanager.h"
@@ -32,8 +32,8 @@ private slots:
 private:
     Ui::MainWindow *ui;
     Player *player;
-    QListWidget *itemWidget;
-    QListWidget *bagWidget;
+    QTreeWidget *itemWidget;
+    QTreeWidget *bagWidget;
     QPushButton *buy;
     QPushButton *sell;
     itemmanager itemmanagerusing;
