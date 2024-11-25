@@ -5,6 +5,33 @@
 #include<vector>
 class AdditionalEffect; // 前向声明附加效果类
 
+
+/*
+item类
+用于放物品的基础属性
+    包括编号、名称、价格区间、附加效果（如减少健康等
+提供什么接口？
+    获取名称
+    获取价格区间
+    获取附加效果
+
+itemManager类
+有一个vector<item>用于储存物品
+
+从文件加载物品
+    bool loadItemsFromFile(const QString& filename);
+
+根据物品名称获取物品
+    Item* getItemByName(const std::string& name);
+
+根据价格区间生成随机价格
+    long long generateRandomPrice(const Item& item) const;
+
+获取所有物品
+    const std::vector<Item>& getAllItems() const;
+
+
+*/
 class Item {
 private:
     std::string name;          // 物品名称
