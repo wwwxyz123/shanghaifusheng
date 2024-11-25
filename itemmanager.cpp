@@ -49,6 +49,10 @@ void Item::setPriceRange(long long minPrice, long long maxPrice) {
     this->maxPrice = maxPrice;
 }
 
+void Item::getNowPrice()const
+{
+    // price=
+}
 itemmanager::itemmanager() {}
 
 bool itemmanager::loadItemsFromFile(const QString& filename) {
