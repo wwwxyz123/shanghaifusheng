@@ -56,7 +56,7 @@ SOURCES       = ..\..\backendmanager.cpp \
 		..\..\connectus.cpp \
 		..\..\eventmanager.cpp \
 		..\..\eventwindow.cpp \
-		..\..\game.cpp \
+		..\..\item.cpp \
 		..\..\itemmanager.cpp \
 		..\..\loading.cpp \
 		..\..\main.cpp \
@@ -78,7 +78,7 @@ OBJECTS       = release/backendmanager.o \
 		release/connectus.o \
 		release/eventmanager.o \
 		release/eventwindow.o \
-		release/game.o \
+		release/item.o \
 		release/itemmanager.o \
 		release/loading.o \
 		release/main.o \
@@ -102,7 +102,7 @@ DIST          = items.txt ..\..\backendmanager.h \
 		..\..\connectus.h \
 		..\..\eventmanager.h \
 		..\..\eventwindow.h \
-		..\..\game.h \
+		..\..\item.h \
 		..\..\itemmanager.h \
 		..\..\loading.h \
 		..\..\mainwindow.h \
@@ -114,7 +114,7 @@ DIST          = items.txt ..\..\backendmanager.h \
 		..\..\connectus.cpp \
 		..\..\eventmanager.cpp \
 		..\..\eventwindow.cpp \
-		..\..\game.cpp \
+		..\..\item.cpp \
 		..\..\itemmanager.cpp \
 		..\..\loading.cpp \
 		..\..\main.cpp \
@@ -141,10 +141,10 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) shanghaifusheng.zip $(SOURCES) $(DIST) ..\..\..\..\shanghaifusheng.pro D:\qt\6.5.3\mingw_64\mkspecs\features\spec_pre.prf D:\qt\6.5.3\mingw_64\mkspecs\features\device_config.prf D:\qt\6.5.3\mingw_64\mkspecs\common\sanitize.conf D:\qt\6.5.3\mingw_64\mkspecs\common\gcc-base.conf D:\qt\6.5.3\mingw_64\mkspecs\common\g++-base.conf D:\qt\6.5.3\mingw_64\mkspecs\features\win32\windows_vulkan_sdk.prf D:\qt\6.5.3\mingw_64\mkspecs\common\windows-vulkan.conf D:\qt\6.5.3\mingw_64\mkspecs\common\g++-win32.conf D:\qt\6.5.3\mingw_64\mkspecs\common\windows-desktop.conf D:\qt\6.5.3\mingw_64\mkspecs\qconfig.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_ext_freetype.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_ext_libjpeg.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_ext_libpng.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_concurrent.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_concurrent_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_core.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_core_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_dbus.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_dbus_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_designer.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_designer_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_designercomponents_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_entrypoint_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_example_icons_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_fb_support_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_freetype_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_gui.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_gui_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_harfbuzz_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_help.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_help_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_jpeg_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_labsanimation.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_labsanimation_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_labsfolderlistmodel.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_labsfolderlistmodel_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_labsqmlmodels.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_labsqmlmodels_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_labssettings.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_labssettings_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_labssharedimage.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_labssharedimage_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_labswavefrontmesh.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_labswavefrontmesh_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_linguist.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_linguist_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_network.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_network_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_opengl.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_opengl_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_openglwidgets.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_openglwidgets_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_packetprotocol_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_png_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_printsupport.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_printsupport_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_qml.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_qml_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_qmlcompiler_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_qmlcore.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_qmlcore_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_qmldebug_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_qmldom_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_qmlintegration.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_qmlintegration_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_qmllocalstorage.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_qmllocalstorage_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_qmlmodels.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_qmlmodels_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_qmltest.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_qmltest_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_qmltyperegistrar_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_qmlworkerscript.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_qmlxmllistmodel.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_qmlxmllistmodel_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quick.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quick_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quickcontrols2.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quickcontrols2impl.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quickcontrols2impl_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quickcontrolstestutilsprivate_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quickdialogs2.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quickdialogs2_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quickdialogs2quickimpl.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quickdialogs2quickimpl_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quickdialogs2utils.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quickdialogs2utils_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quickeffects_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quicklayouts.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quicklayouts_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quickparticles_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quickshapes_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quicktemplates2.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quicktestutilsprivate_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quickwidgets.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quickwidgets_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_sql.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_sql_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_svg.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_svg_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_svgwidgets.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_svgwidgets_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_testlib.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_testlib_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_tools_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_uiplugin.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_uitools.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_uitools_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_widgets.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_widgets_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_xml.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_xml_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_zlib_private.pri D:\qt\6.5.3\mingw_64\mkspecs\features\qt_functions.prf D:\qt\6.5.3\mingw_64\mkspecs\features\qt_config.prf D:\qt\6.5.3\mingw_64\mkspecs\win32-g++\qmake.conf D:\qt\6.5.3\mingw_64\mkspecs\features\spec_post.prf .qmake.stash D:\qt\6.5.3\mingw_64\mkspecs\features\exclusive_builds.prf D:\qt\6.5.3\mingw_64\mkspecs\features\toolchain.prf D:\qt\6.5.3\mingw_64\mkspecs\features\default_pre.prf D:\qt\6.5.3\mingw_64\mkspecs\features\win32\default_pre.prf D:\qt\6.5.3\mingw_64\mkspecs\features\resolve_config.prf D:\qt\6.5.3\mingw_64\mkspecs\features\exclusive_builds_post.prf D:\qt\6.5.3\mingw_64\mkspecs\features\default_post.prf D:\qt\6.5.3\mingw_64\mkspecs\features\build_pass.prf D:\qt\6.5.3\mingw_64\mkspecs\features\qml_debug.prf D:\qt\6.5.3\mingw_64\mkspecs\features\entrypoint.prf D:\qt\6.5.3\mingw_64\mkspecs\features\precompile_header.prf D:\qt\6.5.3\mingw_64\mkspecs\features\warn_on.prf D:\qt\6.5.3\mingw_64\mkspecs\features\qt.prf D:\qt\6.5.3\mingw_64\mkspecs\features\resources_functions.prf D:\qt\6.5.3\mingw_64\mkspecs\features\resources.prf D:\qt\6.5.3\mingw_64\mkspecs\features\moc.prf D:\qt\6.5.3\mingw_64\mkspecs\features\win32\opengl.prf D:\qt\6.5.3\mingw_64\mkspecs\features\uic.prf D:\qt\6.5.3\mingw_64\mkspecs\features\qmake_use.prf D:\qt\6.5.3\mingw_64\mkspecs\features\file_copies.prf D:\qt\6.5.3\mingw_64\mkspecs\features\win32\windows.prf D:\qt\6.5.3\mingw_64\mkspecs\features\testcase_targets.prf D:\qt\6.5.3\mingw_64\mkspecs\features\exceptions.prf D:\qt\6.5.3\mingw_64\mkspecs\features\yacc.prf D:\qt\6.5.3\mingw_64\mkspecs\features\lex.prf ..\..\shanghaifusheng.pro ..\..\txtResource.qrc D:\qt\6.5.3\mingw_64\lib\Qt6Widgets.prl D:\qt\6.5.3\mingw_64\lib\Qt6Gui.prl D:\qt\6.5.3\mingw_64\lib\Qt6Core.prl D:\qt\6.5.3\mingw_64\lib\Qt6EntryPoint.prl   ..\..\txtResource.qrc D:\qt\6.5.3\mingw_64\mkspecs\features\data\dummy.cpp ..\..\backendmanager.h ..\..\buyconfirm.h ..\..\buylose.h ..\..\connectus.h ..\..\eventmanager.h ..\..\eventwindow.h ..\..\game.h ..\..\itemmanager.h ..\..\loading.h ..\..\mainwindow.h ..\..\player.h ..\..\start.h ..\..\uitest.h  ..\..\backendmanager.cpp ..\..\buyconfirm.cpp ..\..\buylose.cpp ..\..\connectus.cpp ..\..\eventmanager.cpp ..\..\eventwindow.cpp ..\..\game.cpp ..\..\itemmanager.cpp ..\..\loading.cpp ..\..\main.cpp ..\..\mainwindow.cpp ..\..\player.cpp ..\..\start.cpp ..\..\uitest.cpp ..\..\buyconfirm.ui ..\..\buylose.ui ..\..\connectus.ui ..\..\loading.ui ..\..\mainwindow.ui ..\..\start.ui ..\..\uitest.ui    
+	$(ZIP) shanghaifusheng.zip $(SOURCES) $(DIST) ..\..\..\..\shanghaifusheng.pro D:\qt\6.5.3\mingw_64\mkspecs\features\spec_pre.prf D:\qt\6.5.3\mingw_64\mkspecs\features\device_config.prf D:\qt\6.5.3\mingw_64\mkspecs\common\sanitize.conf D:\qt\6.5.3\mingw_64\mkspecs\common\gcc-base.conf D:\qt\6.5.3\mingw_64\mkspecs\common\g++-base.conf D:\qt\6.5.3\mingw_64\mkspecs\features\win32\windows_vulkan_sdk.prf D:\qt\6.5.3\mingw_64\mkspecs\common\windows-vulkan.conf D:\qt\6.5.3\mingw_64\mkspecs\common\g++-win32.conf D:\qt\6.5.3\mingw_64\mkspecs\common\windows-desktop.conf D:\qt\6.5.3\mingw_64\mkspecs\qconfig.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_ext_freetype.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_ext_libjpeg.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_ext_libpng.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_concurrent.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_concurrent_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_core.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_core_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_dbus.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_dbus_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_designer.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_designer_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_designercomponents_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_entrypoint_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_example_icons_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_fb_support_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_freetype_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_gui.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_gui_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_harfbuzz_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_help.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_help_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_jpeg_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_labsanimation.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_labsanimation_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_labsfolderlistmodel.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_labsfolderlistmodel_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_labsqmlmodels.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_labsqmlmodels_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_labssettings.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_labssettings_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_labssharedimage.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_labssharedimage_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_labswavefrontmesh.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_labswavefrontmesh_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_linguist.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_linguist_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_network.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_network_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_opengl.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_opengl_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_openglwidgets.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_openglwidgets_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_packetprotocol_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_png_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_printsupport.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_printsupport_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_qml.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_qml_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_qmlcompiler_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_qmlcore.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_qmlcore_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_qmldebug_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_qmldom_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_qmlintegration.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_qmlintegration_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_qmllocalstorage.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_qmllocalstorage_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_qmlmodels.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_qmlmodels_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_qmltest.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_qmltest_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_qmltyperegistrar_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_qmlworkerscript.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_qmlxmllistmodel.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_qmlxmllistmodel_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quick.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quick_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quickcontrols2.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quickcontrols2impl.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quickcontrols2impl_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quickcontrolstestutilsprivate_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quickdialogs2.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quickdialogs2_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quickdialogs2quickimpl.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quickdialogs2quickimpl_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quickdialogs2utils.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quickdialogs2utils_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quickeffects_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quicklayouts.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quicklayouts_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quickparticles_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quickshapes_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quicktemplates2.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quicktestutilsprivate_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quickwidgets.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_quickwidgets_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_sql.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_sql_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_svg.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_svg_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_svgwidgets.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_svgwidgets_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_testlib.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_testlib_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_tools_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_uiplugin.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_uitools.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_uitools_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_widgets.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_widgets_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_xml.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_xml_private.pri D:\qt\6.5.3\mingw_64\mkspecs\modules\qt_lib_zlib_private.pri D:\qt\6.5.3\mingw_64\mkspecs\features\qt_functions.prf D:\qt\6.5.3\mingw_64\mkspecs\features\qt_config.prf D:\qt\6.5.3\mingw_64\mkspecs\win32-g++\qmake.conf D:\qt\6.5.3\mingw_64\mkspecs\features\spec_post.prf .qmake.stash D:\qt\6.5.3\mingw_64\mkspecs\features\exclusive_builds.prf D:\qt\6.5.3\mingw_64\mkspecs\features\toolchain.prf D:\qt\6.5.3\mingw_64\mkspecs\features\default_pre.prf D:\qt\6.5.3\mingw_64\mkspecs\features\win32\default_pre.prf D:\qt\6.5.3\mingw_64\mkspecs\features\resolve_config.prf D:\qt\6.5.3\mingw_64\mkspecs\features\exclusive_builds_post.prf D:\qt\6.5.3\mingw_64\mkspecs\features\default_post.prf D:\qt\6.5.3\mingw_64\mkspecs\features\build_pass.prf D:\qt\6.5.3\mingw_64\mkspecs\features\qml_debug.prf D:\qt\6.5.3\mingw_64\mkspecs\features\entrypoint.prf D:\qt\6.5.3\mingw_64\mkspecs\features\precompile_header.prf D:\qt\6.5.3\mingw_64\mkspecs\features\warn_on.prf D:\qt\6.5.3\mingw_64\mkspecs\features\qt.prf D:\qt\6.5.3\mingw_64\mkspecs\features\resources_functions.prf D:\qt\6.5.3\mingw_64\mkspecs\features\resources.prf D:\qt\6.5.3\mingw_64\mkspecs\features\moc.prf D:\qt\6.5.3\mingw_64\mkspecs\features\win32\opengl.prf D:\qt\6.5.3\mingw_64\mkspecs\features\uic.prf D:\qt\6.5.3\mingw_64\mkspecs\features\qmake_use.prf D:\qt\6.5.3\mingw_64\mkspecs\features\file_copies.prf D:\qt\6.5.3\mingw_64\mkspecs\features\win32\windows.prf D:\qt\6.5.3\mingw_64\mkspecs\features\testcase_targets.prf D:\qt\6.5.3\mingw_64\mkspecs\features\exceptions.prf D:\qt\6.5.3\mingw_64\mkspecs\features\yacc.prf D:\qt\6.5.3\mingw_64\mkspecs\features\lex.prf ..\..\shanghaifusheng.pro ..\..\txtResource.qrc D:\qt\6.5.3\mingw_64\lib\Qt6Widgets.prl D:\qt\6.5.3\mingw_64\lib\Qt6Gui.prl D:\qt\6.5.3\mingw_64\lib\Qt6Core.prl D:\qt\6.5.3\mingw_64\lib\Qt6EntryPoint.prl   ..\..\txtResource.qrc D:\qt\6.5.3\mingw_64\mkspecs\features\data\dummy.cpp ..\..\backendmanager.h ..\..\buyconfirm.h ..\..\buylose.h ..\..\connectus.h ..\..\eventmanager.h ..\..\eventwindow.h ..\..\item.h ..\..\itemmanager.h ..\..\loading.h ..\..\mainwindow.h ..\..\player.h ..\..\start.h ..\..\uitest.h  ..\..\backendmanager.cpp ..\..\buyconfirm.cpp ..\..\buylose.cpp ..\..\connectus.cpp ..\..\eventmanager.cpp ..\..\eventwindow.cpp ..\..\item.cpp ..\..\itemmanager.cpp ..\..\loading.cpp ..\..\main.cpp ..\..\mainwindow.cpp ..\..\player.cpp ..\..\start.cpp ..\..\uitest.cpp ..\..\buyconfirm.ui ..\..\buylose.ui ..\..\connectus.ui ..\..\loading.ui ..\..\mainwindow.ui ..\..\start.ui ..\..\uitest.ui    
 
 clean: compiler_clean 
-	-$(DEL_FILE) release\backendmanager.o release\buyconfirm.o release\buylose.o release\connectus.o release\eventmanager.o release\eventwindow.o release\game.o release\itemmanager.o release\loading.o release\main.o release\mainwindow.o release\player.o release\start.o release\uitest.o release\qrc_txtResource.o release\moc_buyconfirm.o release\moc_buylose.o release\moc_connectus.o release\moc_loading.o release\moc_mainwindow.o release\moc_player.o release\moc_start.o release\moc_uitest.o
+	-$(DEL_FILE) release\backendmanager.o release\buyconfirm.o release\buylose.o release\connectus.o release\eventmanager.o release\eventwindow.o release\item.o release\itemmanager.o release\loading.o release\main.o release\mainwindow.o release\player.o release\start.o release\uitest.o release\qrc_txtResource.o release\moc_buyconfirm.o release\moc_buylose.o release\moc_connectus.o release\moc_loading.o release\moc_mainwindow.o release\moc_player.o release\moc_start.o release\moc_uitest.o
 
 distclean: clean 
 	-$(DEL_FILE) .qmake.stash
@@ -850,7 +850,8 @@ release/moc_loading.cpp: ../../loading.h \
 		D:/qt/6.5.3/mingw_64/include/QtWidgets/qabstractbutton.h \
 		../../player.h \
 		../../itemmanager.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/Qstring \
+		../../Item.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/QString \
 		release/moc_predefs.h \
 		D:/qt/6.5.3/mingw_64/bin/moc.exe
 	D:\qt\6.5.3\mingw_64\bin\moc.exe $(DEFINES) --include D:/code/works/shanghaifusheng/build/Desktop_Qt_6_5_3_MinGW_64_bit-Debug/release/moc_predefs.h -ID:/qt/6.5.3/mingw_64/mkspecs/win32-g++ -ID:/code/works/shanghaifusheng -ID:/qt/6.5.3/mingw_64/include -ID:/qt/6.5.3/mingw_64/include/QtWidgets -ID:/qt/6.5.3/mingw_64/include/QtGui -ID:/qt/6.5.3/mingw_64/include/QtCore -I. -ID:/qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -ID:/qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -ID:/qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -ID:/qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -ID:/qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -ID:/qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\..\loading.h -o release\moc_loading.cpp
@@ -1038,7 +1039,8 @@ release/moc_mainwindow.cpp: ../../mainwindow.h \
 		D:/qt/6.5.3/mingw_64/include/QtWidgets/qabstractbutton.h \
 		../../player.h \
 		../../itemmanager.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/Qstring \
+		../../Item.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/QString \
 		release/moc_predefs.h \
 		D:/qt/6.5.3/mingw_64/bin/moc.exe
 	D:\qt\6.5.3\mingw_64\bin\moc.exe $(DEFINES) --include D:/code/works/shanghaifusheng/build/Desktop_Qt_6_5_3_MinGW_64_bit-Debug/release/moc_predefs.h -ID:/qt/6.5.3/mingw_64/mkspecs/win32-g++ -ID:/code/works/shanghaifusheng -ID:/qt/6.5.3/mingw_64/include -ID:/qt/6.5.3/mingw_64/include/QtWidgets -ID:/qt/6.5.3/mingw_64/include/QtGui -ID:/qt/6.5.3/mingw_64/include/QtCore -I. -ID:/qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -ID:/qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -ID:/qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -ID:/qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -ID:/qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -ID:/qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\..\mainwindow.h -o release\moc_mainwindow.cpp
@@ -1325,7 +1327,8 @@ release/moc_start.cpp: ../../start.h \
 		D:/qt/6.5.3/mingw_64/include/QtWidgets/qabstractbutton.h \
 		../../player.h \
 		../../itemmanager.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/Qstring \
+		../../Item.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/QString \
 		../../connectus.h \
 		release/moc_predefs.h \
 		D:/qt/6.5.3/mingw_64/bin/moc.exe
@@ -1701,7 +1704,43 @@ release/buyconfirm.o: ../../buyconfirm.cpp ../../buyconfirm.h \
 		D:/qt/6.5.3/mingw_64/include/QtCore/QSizeF \
 		D:/qt/6.5.3/mingw_64/include/QtGui/QTransform \
 		D:/qt/6.5.3/mingw_64/include/QtCore/qnativeinterface.h \
-		ui_buyconfirm.h
+		ui_buyconfirm.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/QVariant \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/QApplication \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/qapplication.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qcoreapplication.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qeventloop.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qfuture.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qfutureinterface.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qmutex.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qtsan_impl.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qresultstore.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qfuture_impl.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qthreadpool.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qthread.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qdeadlinetimer.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qelapsedtimer.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qrunnable.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qexception.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qpromise.h \
+		D:/qt/6.5.3/mingw_64/include/QtGui/qguiapplication.h \
+		D:/qt/6.5.3/mingw_64/include/QtGui/qinputmethod.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qlocale.h \
+		D:/qt/6.5.3/mingw_64/include/QtGui/qguiapplication_platform.h \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/QLabel \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/qlabel.h \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/qframe.h \
+		D:/qt/6.5.3/mingw_64/include/QtGui/qpicture.h \
+		D:/qt/6.5.3/mingw_64/include/QtGui/qtextdocument.h \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/QPushButton \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/qpushbutton.h \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/qabstractbutton.h \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/QSpinBox \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/qspinbox.h \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		D:/qt/6.5.3/mingw_64/include/QtGui/qvalidator.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qregularexpression.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\buyconfirm.o ..\..\buyconfirm.cpp
 
 release/buylose.o: ../../buylose.cpp ../../buylose.h \
@@ -1862,7 +1901,30 @@ release/buylose.o: ../../buylose.cpp ../../buylose.h \
 		D:/qt/6.5.3/mingw_64/include/QtCore/QSizeF \
 		D:/qt/6.5.3/mingw_64/include/QtGui/QTransform \
 		D:/qt/6.5.3/mingw_64/include/QtCore/qnativeinterface.h \
-		ui_buylose.h
+		ui_buylose.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/QVariant \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/QApplication \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/qapplication.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qcoreapplication.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qeventloop.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qfuture.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qfutureinterface.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qmutex.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qtsan_impl.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qresultstore.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qfuture_impl.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qthreadpool.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qthread.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qdeadlinetimer.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qelapsedtimer.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qrunnable.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qexception.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qpromise.h \
+		D:/qt/6.5.3/mingw_64/include/QtGui/qguiapplication.h \
+		D:/qt/6.5.3/mingw_64/include/QtGui/qinputmethod.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qlocale.h \
+		D:/qt/6.5.3/mingw_64/include/QtGui/qguiapplication_platform.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\buylose.o ..\..\buylose.cpp
 
 release/connectus.o: ../../connectus.cpp ../../connectus.h \
@@ -2225,11 +2287,12 @@ release/eventwindow.o: ../../eventwindow.cpp ../../eventwindow.h \
 		D:/qt/6.5.3/mingw_64/include/QtCore/qnativeinterface.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\eventwindow.o ..\..\eventwindow.cpp
 
-release/game.o: ../../game.cpp ../../game.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\game.o ..\..\game.cpp
+release/item.o: ../../item.cpp ../../Item.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\item.o ..\..\item.cpp
 
-release/itemmanager.o: ../../itemmanager.cpp ../../itemmanager.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/Qstring \
+release/itemmanager.o: ../../itemmanager.cpp ../../ItemManager.h \
+		../../Item.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/QString \
 		D:/qt/6.5.3/mingw_64/include/QtCore/qstring.h \
 		D:/qt/6.5.3/mingw_64/include/QtCore/qchar.h \
 		D:/qt/6.5.3/mingw_64/include/QtCore/qglobal.h \
@@ -2294,39 +2357,7 @@ release/itemmanager.o: ../../itemmanager.cpp ../../itemmanager.h \
 		D:/qt/6.5.3/mingw_64/include/QtCore/qanystringview.h \
 		D:/qt/6.5.3/mingw_64/include/QtCore/qutf8stringview.h \
 		D:/qt/6.5.3/mingw_64/include/QtCore/qstringtokenizer.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/qstringbuilder.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/QFile \
-		D:/qt/6.5.3/mingw_64/include/QtCore/qfile.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/qfiledevice.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/qiodevice.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/qiodevicebase.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/qobject.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/qobjectdefs.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/qobjectdefs_impl.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/qlist.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/qhashfunctions.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/qiterator.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/qbytearraylist.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/qstringlist.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/qalgorithms.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/qstringmatcher.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/qcoreevent.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/qscopedpointer.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/qmetatype.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/qcompare.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/qdatastream.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/qfloat16.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/qmath.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/qiterable.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/qmetacontainer.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/qcontainerinfo.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/qtaggedpointer.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/qscopeguard.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/qobject_impl.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/qbindingstorage.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/QTextStream \
-		D:/qt/6.5.3/mingw_64/include/QtCore/qtextstream.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/qstringconverter_base.h
+		D:/qt/6.5.3/mingw_64/include/QtCore/qstringbuilder.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\itemmanager.o ..\..\itemmanager.cpp
 
 release/loading.o: ../../loading.cpp ../../loading.h \
@@ -2514,7 +2545,8 @@ release/loading.o: ../../loading.cpp ../../loading.h \
 		D:/qt/6.5.3/mingw_64/include/QtWidgets/qabstractbutton.h \
 		../../player.h \
 		../../itemmanager.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/Qstring \
+		../../Item.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/QString \
 		ui_loading.h \
 		D:/qt/6.5.3/mingw_64/include/QtCore/QVariant \
 		D:/qt/6.5.3/mingw_64/include/QtWidgets/QApplication \
@@ -2728,7 +2760,8 @@ release/main.o: ../../main.cpp ../../mainwindow.h \
 		D:/qt/6.5.3/mingw_64/include/QtWidgets/qabstractbutton.h \
 		../../player.h \
 		../../itemmanager.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/Qstring \
+		../../Item.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/QString \
 		../../start.h \
 		D:/qt/6.5.3/mingw_64/include/QtWidgets/QWidget \
 		../../loading.h \
@@ -2940,7 +2973,8 @@ release/mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		D:/qt/6.5.3/mingw_64/include/QtWidgets/qabstractbutton.h \
 		../../player.h \
 		../../itemmanager.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/Qstring \
+		../../Item.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/QString \
 		ui_mainwindow.h \
 		D:/qt/6.5.3/mingw_64/include/QtCore/QVariant \
 		D:/qt/6.5.3/mingw_64/include/QtGui/QAction \
@@ -2973,15 +3007,14 @@ release/mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		D:/qt/6.5.3/mingw_64/include/QtWidgets/QGroupBox \
 		D:/qt/6.5.3/mingw_64/include/QtWidgets/qgroupbox.h \
 		D:/qt/6.5.3/mingw_64/include/QtWidgets/QHBoxLayout \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/QHeaderView \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/qheaderview.h \
 		D:/qt/6.5.3/mingw_64/include/QtWidgets/QLCDNumber \
 		D:/qt/6.5.3/mingw_64/include/QtWidgets/qlcdnumber.h \
 		D:/qt/6.5.3/mingw_64/include/QtWidgets/QLabel \
 		D:/qt/6.5.3/mingw_64/include/QtWidgets/qlabel.h \
 		D:/qt/6.5.3/mingw_64/include/QtGui/qpicture.h \
 		D:/qt/6.5.3/mingw_64/include/QtGui/qtextdocument.h \
-		D:/qt/6.5.3/mingw_64/include/QtWidgets/QListWidget \
-		D:/qt/6.5.3/mingw_64/include/QtWidgets/qlistwidget.h \
-		D:/qt/6.5.3/mingw_64/include/QtWidgets/qlistview.h \
 		D:/qt/6.5.3/mingw_64/include/QtWidgets/QMenu \
 		D:/qt/6.5.3/mingw_64/include/QtWidgets/qmenu.h \
 		D:/qt/6.5.3/mingw_64/include/QtWidgets/QMenuBar \
@@ -2990,8 +3023,11 @@ release/mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		D:/qt/6.5.3/mingw_64/include/QtWidgets/QSpacerItem \
 		D:/qt/6.5.3/mingw_64/include/QtWidgets/QStatusBar \
 		D:/qt/6.5.3/mingw_64/include/QtWidgets/qstatusbar.h \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/QTreeWidget \
 		D:/qt/6.5.3/mingw_64/include/QtWidgets/QWidget \
 		D:/qt/6.5.3/mingw_64/include/QtWidgets/QListWidgetItem \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/qlistwidget.h \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/qlistview.h \
 		D:/qt/6.5.3/mingw_64/include/QtWidgets/QMessageBox \
 		D:/qt/6.5.3/mingw_64/include/QtWidgets/qmessagebox.h \
 		D:/qt/6.5.3/mingw_64/include/QtWidgets/qdialog.h \
@@ -3287,7 +3323,8 @@ release/start.o: ../../start.cpp ../../start.h \
 		D:/qt/6.5.3/mingw_64/include/QtWidgets/qabstractbutton.h \
 		../../player.h \
 		../../itemmanager.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/Qstring \
+		../../Item.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/QString \
 		../../connectus.h \
 		ui_start.h \
 		D:/qt/6.5.3/mingw_64/include/QtCore/QVariant \
@@ -3477,7 +3514,57 @@ release/uitest.o: ../../uitest.cpp ../../uitest.h \
 		D:/qt/6.5.3/mingw_64/include/QtCore/QSizeF \
 		D:/qt/6.5.3/mingw_64/include/QtGui/QTransform \
 		D:/qt/6.5.3/mingw_64/include/QtCore/qnativeinterface.h \
-		ui_uitest.h
+		ui_uitest.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/QVariant \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/QApplication \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/qapplication.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qcoreapplication.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qeventloop.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qfuture.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qfutureinterface.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qmutex.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qtsan_impl.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qresultstore.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qfuture_impl.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qthreadpool.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qthread.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qdeadlinetimer.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qelapsedtimer.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qrunnable.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qexception.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qpromise.h \
+		D:/qt/6.5.3/mingw_64/include/QtGui/qguiapplication.h \
+		D:/qt/6.5.3/mingw_64/include/QtGui/qinputmethod.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qlocale.h \
+		D:/qt/6.5.3/mingw_64/include/QtGui/qguiapplication_platform.h \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/QHeaderView \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/qheaderview.h \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/qabstractitemview.h \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/qframe.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qabstractitemmodel.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qitemselectionmodel.h \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/qstyleoption.h \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		D:/qt/6.5.3/mingw_64/include/QtGui/qvalidator.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qregularexpression.h \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/qslider.h \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/qabstractslider.h \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/qstyle.h \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/qtabbar.h \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/qtabwidget.h \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/qrubberband.h \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/QTreeWidget \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/qtreewidget.h \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/qtreeview.h \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/qtreewidgetitemiterator.h \
+		../../itemmanager.h \
+		../../Item.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/QString \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/QTreeWidgetItem \
+		D:/qt/6.5.3/mingw_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\uitest.o ..\..\uitest.cpp
 
 release/qrc_txtResource.o: release/qrc_txtResource.cpp 

@@ -51,8 +51,8 @@ public:
     {
         uitest->setWindowTitle(QCoreApplication::translate("uitest", "Form", nullptr));
         QTreeWidgetItem *___qtreewidgetitem = treeWidget->headerItem();
-        ___qtreewidgetitem->setText(1, QCoreApplication::translate("uitest", "\346\226\260\345\273\272\345\210\227", nullptr));
-        ___qtreewidgetitem->setText(0, QCoreApplication::translate("uitest", "\346\226\260\345\273\272\345\210\227", nullptr));
+        ___qtreewidgetitem->setText(1, QCoreApplication::translate("uitest", "\344\273\267\346\240\274", nullptr));
+        ___qtreewidgetitem->setText(0, QCoreApplication::translate("uitest", "\345\225\206\345\223\201", nullptr));
 
         const bool __sortingEnabled = treeWidget->isSortingEnabled();
         treeWidget->setSortingEnabled(false);

@@ -4,7 +4,7 @@ release/buylose.o
 release/connectus.o
 release/eventmanager.o
 release/eventwindow.o
-release/game.o
+release/item.o
 release/itemmanager.o
 release/loading.o
 release/main.o

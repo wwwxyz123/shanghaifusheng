@@ -6,9 +6,9 @@ loading::loading(QWidget *parent)
     , mainwindow(nullptr)
 {
     ui->setupUi(this);
-    connect(ui->begin,&QPushButton::clicked,this,&loading::on_begin_clicked);
-    this->setMaximumSize(420,580);
-    this->setMinimumSize(420,580);
+    // connect(ui->begin,&QPushButton::clicked,this,&loading::on_begin_clicked);
+    // this->setMaximumSize(420,580);
+    // this->setMinimumSize(420,580);
     this->setWindowTitle("背景故事");
 
 }

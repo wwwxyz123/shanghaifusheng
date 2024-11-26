@@ -4,7 +4,7 @@ debug/buylose.o
 debug/connectus.o
 debug/eventmanager.o
 debug/eventwindow.o
-debug/game.o
+debug/item.o
 debug/itemmanager.o
 debug/loading.o
 debug/main.o
