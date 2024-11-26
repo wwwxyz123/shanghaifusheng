@@ -15,7 +15,7 @@ SOURCES += \
     connectus.cpp \
     eventmanager.cpp \
     eventwindow.cpp \
-    game.cpp \
+    item.cpp \
     itemmanager.cpp \
     loading.cpp \
     main.cpp \
@@ -31,7 +31,7 @@ HEADERS += \
     connectus.h \
     eventmanager.h \
     eventwindow.h \
-    game.h \
+    item.h \
     itemmanager.h \
     loading.h \
     mainwindow.h \
