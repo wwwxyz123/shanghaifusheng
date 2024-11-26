@@ -29,10 +29,10 @@ public:
     {
         if (start->objectName().isEmpty())
             start->setObjectName("start");
-        start->resize(279, 439);
+        start->resize(280, 428);
         label = new QLabel(start);
         label->setObjectName("label");
-        label->setGeometry(QRect(60, 20, 171, 61));
+        label->setGeometry(QRect(60, 40, 171, 61));
         QFont font;
         font.setFamilies({QString::fromUtf8("\346\245\267\344\275\223")});
         font.setPointSize(24);

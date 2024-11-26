@@ -10,35 +10,51 @@ CONFIG += c++17
 
 SOURCES += \
     backendmanager.cpp \
+    buyconfirm.cpp \
+    buylose.cpp \
+    connectus.cpp \
     eventmanager.cpp \
     eventwindow.cpp \
     game.cpp \
     itemmanager.cpp \
     loading.cpp \
-    loginwindow.cpp \
     main.cpp \
     mainwindow.cpp \
     player.cpp \
-    start.cpp
+    start.cpp \
+    uitest.cpp
 
 HEADERS += \
     backendmanager.h \
+    buyconfirm.h \
+    buylose.h \
+    connectus.h \
     eventmanager.h \
     eventwindow.h \
     game.h \
     itemmanager.h \
     loading.h \
-    loginwindow.h \
     mainwindow.h \
     player.h \
-    start.h
+    start.h \
+    uitest.h
 
 FORMS += \
+    buyconfirm.ui \
+    buylose.ui \
+    connectus.ui \
     loading.ui \
     mainwindow.ui \
-    start.ui
+    start.ui \
+    uitest.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES += \
+    items.txt
+
+RESOURCES += \
+    txtResource.qrc
