@@ -36,7 +36,7 @@ private:
     QTreeWidget *bagWidget;
     QPushButton *buy;
     QPushButton *sell;
-    itemmanager itemmanagerusing;
+    ItemManager itemmanagerusing;
     void loadItems();                  // 加载物品列表到界面
 };
 #endif // MAINWINDOW_H
