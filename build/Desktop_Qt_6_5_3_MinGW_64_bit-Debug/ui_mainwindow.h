@@ -15,15 +15,16 @@
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLCDNumber>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTreeWidget>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -69,11 +70,11 @@ public:
     QLabel *label_4;
     QLabel *label_5;
     QLabel *daylabel;
-    QListWidget *itemWidget;
-    QListWidget *bagWidget;
     QPushButton *buy;
     QGroupBox *groupBox;
     QGroupBox *groupBox_2;
+    QTreeWidget *itemWidget;
+    QTreeWidget *bagWidget;
     QMenuBar *menubar;
     QMenu *menu;
     QMenu *menu_2;
@@ -83,14 +84,14 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(625, 461);
+        MainWindow->resize(631, 461);
         action = new QAction(MainWindow);
         action->setObjectName("action");
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         sell = new QPushButton(centralwidget);
         sell->setObjectName("sell");
-        sell->setGeometry(QRect(270, 130, 81, 24));
+        sell->setGeometry(QRect(270, 120, 81, 24));
         layoutWidget = new QWidget(centralwidget);
         layoutWidget->setObjectName("layoutWidget");
         layoutWidget->setGeometry(QRect(10, 380, 601, 26));
@@ -245,19 +246,9 @@ public:
         daylabel = new QLabel(centralwidget);
         daylabel->setObjectName("daylabel");
         daylabel->setGeometry(QRect(280, 5, 71, 31));
-        itemWidget = new QListWidget(centralwidget);
-        itemWidget->setObjectName("itemWidget");
-        itemWidget->setGeometry(QRect(40, 30, 221, 161));
-        itemWidget->setStyleSheet(QString::fromUtf8("color: rgb(0, 0, 0);\n"
-"font: 650 9pt \"\347\255\211\347\272\277\";"));
-        bagWidget = new QListWidget(centralwidget);
-        bagWidget->setObjectName("bagWidget");
-        bagWidget->setGeometry(QRect(360, 30, 231, 161));
-        bagWidget->setStyleSheet(QString::fromUtf8("color: rgb(0, 0, 0);\n"
-"font: 650 9pt \"\347\255\211\347\272\277\";"));
         buy = new QPushButton(centralwidget);
         buy->setObjectName("buy");
-        buy->setGeometry(QRect(270, 80, 81, 24));
+        buy->setGeometry(QRect(270, 70, 81, 24));
         groupBox = new QGroupBox(centralwidget);
         groupBox->setObjectName("groupBox");
         groupBox->setGeometry(QRect(25, 195, 246, 176));
@@ -268,10 +259,36 @@ public:
         groupBox_2->setStyleSheet(QString::fromUtf8("border-color: rgb(0, 0, 0);"));
         groupBox_2->setFlat(false);
         groupBox_2->setCheckable(false);
+        itemWidget = new QTreeWidget(centralwidget);
+        QTreeWidgetItem *__qtreewidgetitem = new QTreeWidgetItem();
+        __qtreewidgetitem->setTextAlignment(0, Qt::AlignLeading|Qt::AlignVCenter);
+        itemWidget->setHeaderItem(__qtreewidgetitem);
+        new QTreeWidgetItem(itemWidget);
+        new QTreeWidgetItem(itemWidget);
+        new QTreeWidgetItem(itemWidget);
+        new QTreeWidgetItem(itemWidget);
+        itemWidget->setObjectName("itemWidget");
+        itemWidget->setGeometry(QRect(30, 30, 231, 161));
+        itemWidget->setRootIsDecorated(false);
+        itemWidget->header()->setDefaultSectionSize(115);
+        bagWidget = new QTreeWidget(centralwidget);
+        QTreeWidgetItem *__qtreewidgetitem1 = new QTreeWidgetItem();
+        __qtreewidgetitem1->setText(0, QString::fromUtf8("\345\225\206\345\223\201"));
+        bagWidget->setHeaderItem(__qtreewidgetitem1);
+        new QTreeWidgetItem(bagWidget);
+        new QTreeWidgetItem(bagWidget);
+        new QTreeWidgetItem(bagWidget);
+        new QTreeWidgetItem(bagWidget);
+        bagWidget->setObjectName("bagWidget");
+        bagWidget->setGeometry(QRect(360, 30, 241, 161));
+        bagWidget->setRootIsDecorated(false);
+        bagWidget->header()->setMinimumSectionSize(18);
+        bagWidget->header()->setDefaultSectionSize(71);
+        bagWidget->header()->setStretchLastSection(false);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 625, 22));
+        menubar->setGeometry(QRect(0, 0, 631, 18));
         menu = new QMenu(menubar);
         menu->setObjectName("menu");
         menu_2 = new QMenu(menubar);
@@ -318,6 +335,50 @@ public:
         buy->setText(QCoreApplication::translate("MainWindow", "\344\271\260\345\205\245=>", nullptr));
         groupBox->setTitle(QCoreApplication::translate("MainWindow", "\347\216\251\345\256\266\347\212\266\346\200\201", nullptr));
         groupBox_2->setTitle(QCoreApplication::translate("MainWindow", "\344\270\212\346\265\267\345\234\260\351\223\201", nullptr));
+        QTreeWidgetItem *___qtreewidgetitem = itemWidget->headerItem();
+        ___qtreewidgetitem->setText(1, QCoreApplication::translate("MainWindow", "\344\273\267\346\240\274", nullptr));
+        ___qtreewidgetitem->setText(0, QCoreApplication::translate("MainWindow", "\345\225\206\345\223\201", nullptr));
+
+        const bool __sortingEnabled = itemWidget->isSortingEnabled();
+        itemWidget->setSortingEnabled(false);
+        QTreeWidgetItem *___qtreewidgetitem1 = itemWidget->topLevelItem(0);
+        ___qtreewidgetitem1->setText(1, QCoreApplication::translate("MainWindow", "1", nullptr));
+        ___qtreewidgetitem1->setText(0, QCoreApplication::translate("MainWindow", "\346\226\260\345\273\272\351\241\271\347\233\256", nullptr));
+        QTreeWidgetItem *___qtreewidgetitem2 = itemWidget->topLevelItem(1);
+        ___qtreewidgetitem2->setText(1, QCoreApplication::translate("MainWindow", "2", nullptr));
+        ___qtreewidgetitem2->setText(0, QCoreApplication::translate("MainWindow", "\346\226\260\345\273\272\351\241\271\347\233\256", nullptr));
+        QTreeWidgetItem *___qtreewidgetitem3 = itemWidget->topLevelItem(2);
+        ___qtreewidgetitem3->setText(1, QCoreApplication::translate("MainWindow", "3", nullptr));
+        ___qtreewidgetitem3->setText(0, QCoreApplication::translate("MainWindow", "\346\226\260\345\273\272\351\241\271\347\233\256", nullptr));
+        QTreeWidgetItem *___qtreewidgetitem4 = itemWidget->topLevelItem(3);
+        ___qtreewidgetitem4->setText(1, QCoreApplication::translate("MainWindow", "4", nullptr));
+        ___qtreewidgetitem4->setText(0, QCoreApplication::translate("MainWindow", "\346\226\260\345\273\272\351\241\271\347\233\256", nullptr));
+        itemWidget->setSortingEnabled(__sortingEnabled);
+
+        QTreeWidgetItem *___qtreewidgetitem5 = bagWidget->headerItem();
+        ___qtreewidgetitem5->setText(2, QCoreApplication::translate("MainWindow", "\346\225\260\351\207\217", nullptr));
+        ___qtreewidgetitem5->setText(1, QCoreApplication::translate("MainWindow", "\344\271\260\350\277\233\344\273\267\346\240\274", nullptr));
+
+        const bool __sortingEnabled1 = bagWidget->isSortingEnabled();
+        bagWidget->setSortingEnabled(false);
+        QTreeWidgetItem *___qtreewidgetitem6 = bagWidget->topLevelItem(0);
+        ___qtreewidgetitem6->setText(2, QCoreApplication::translate("MainWindow", "6", nullptr));
+        ___qtreewidgetitem6->setText(1, QCoreApplication::translate("MainWindow", "2", nullptr));
+        ___qtreewidgetitem6->setText(0, QCoreApplication::translate("MainWindow", "1", nullptr));
+        QTreeWidgetItem *___qtreewidgetitem7 = bagWidget->topLevelItem(1);
+        ___qtreewidgetitem7->setText(2, QCoreApplication::translate("MainWindow", "7", nullptr));
+        ___qtreewidgetitem7->setText(1, QCoreApplication::translate("MainWindow", "3", nullptr));
+        ___qtreewidgetitem7->setText(0, QCoreApplication::translate("MainWindow", "1", nullptr));
+        QTreeWidgetItem *___qtreewidgetitem8 = bagWidget->topLevelItem(2);
+        ___qtreewidgetitem8->setText(2, QCoreApplication::translate("MainWindow", "8", nullptr));
+        ___qtreewidgetitem8->setText(1, QCoreApplication::translate("MainWindow", "4", nullptr));
+        ___qtreewidgetitem8->setText(0, QCoreApplication::translate("MainWindow", "\346\226\260\345\273\272\351\241\271\347\233\256", nullptr));
+        QTreeWidgetItem *___qtreewidgetitem9 = bagWidget->topLevelItem(3);
+        ___qtreewidgetitem9->setText(2, QCoreApplication::translate("MainWindow", "9", nullptr));
+        ___qtreewidgetitem9->setText(1, QCoreApplication::translate("MainWindow", "5", nullptr));
+        ___qtreewidgetitem9->setText(0, QCoreApplication::translate("MainWindow", "\346\226\260\345\273\272\351\241\271\347\233\256", nullptr));
+        bagWidget->setSortingEnabled(__sortingEnabled1);
+
         menu->setTitle(QCoreApplication::translate("MainWindow", "\350\256\276\347\275\256", nullptr));
         menu_2->setTitle(QCoreApplication::translate("MainWindow", "\345\270\256\345\212\251", nullptr));
     } // retranslateUi

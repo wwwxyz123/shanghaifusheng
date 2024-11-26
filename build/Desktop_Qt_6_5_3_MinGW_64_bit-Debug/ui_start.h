@@ -29,7 +29,7 @@ public:
     {
         if (start->objectName().isEmpty())
             start->setObjectName("start");
-        start->resize(280, 440);
+        start->resize(280, 428);
         label = new QLabel(start);
         label->setObjectName("label");
         label->setGeometry(QRect(60, 40, 171, 61));
