@@ -36,12 +36,12 @@
    </attribute>
    <column>
     <property name="text">
-     <string>新建列</string>
+     <string>商品</string>
     </property>
    </column>
    <column>
     <property name="text">
-     <string>新建列</string>
+     <string>价格</string>
     </property>
    </column>
    <item>
