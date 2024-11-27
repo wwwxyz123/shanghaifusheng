@@ -14,12 +14,13 @@ uitest::uitest(QWidget *parent)
     ItemManager itemManager;
 
     // Step 2: 从资源文件加载物品数据
-    if (!itemManager.loadItemsFromFile("://res/items.txt")) {
+    if (!itemManager.loadItemsFromFile(":/res/items.txt")) {
         qDebug() << "Failed to load items from file. Using default items.";
         // // 如果加载失败，手动添加一些示例物品
-        // itemManager.getAllItems().emplace_back("香烟", 100, 50);
-        // itemManager.getAllItems().emplace_back("汽车", 10000, 2000);
-        // itemManager.getAllItems().emplace_back("玩具", 300, 50);
+
+        Item newItem("新玩具", 500, 50);
+
+        itemManager.addItem(newItem);
     }
 
     // Step 3: 清空 QTreeWidget
@@ -41,6 +42,8 @@ uitest::uitest(QWidget *parent)
         // 添加到 QTreeWidget
         ui->treeWidget->addTopLevelItem(treeItem);
     }
+
+
 }
 
 uitest::~uitest()
