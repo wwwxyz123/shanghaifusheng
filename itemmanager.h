@@ -23,6 +23,9 @@ public:
 
     // 获取所有物品
     const std::vector<Item>& getAllItems() const;
+
+    // 添加物品
+    void addItem(const Item& item);  // 添加物品的方法
 };
 
 #endif // ITEMMANAGER_H

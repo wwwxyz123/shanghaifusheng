@@ -46,3 +46,8 @@ std::vector<long long> ItemManager::generateAllPrices() const {
 const std::vector<Item>& ItemManager::getAllItems() const {
     return items;
 }
+
+// 添加物品的方法
+void ItemManager::addItem(const Item& item) {
+    items.push_back(item);  // 使用 push_back 添加物品到 items 列表
+}
