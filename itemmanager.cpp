@@ -3,28 +3,41 @@
 #include <sstream>
 #include <random>
 #include <iostream>
-
+#include <QFile>
+#include <QTextStream>
+#include <QtGlobal>
 ItemManager::ItemManager() {}
 
+
 bool ItemManager::loadItemsFromFile(const QString& filename) {
-    std::ifstream file(filename.toStdString());
-    if (!file.is_open()) {
-        std::cerr << "Failed to open file: " << filename.toStdString() << std::endl;
+    QFile file(filename);
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        std::cerr << "无法打开文件: " << filename.toStdString() << std::endl;
         return false;
     }
 
-    std::string line;
-    while (std::getline(file, line)) {
-        std::istringstream iss(line);
-        std::string name;
-        long long basePrice, priceFluctuation;
-        if (iss >> name >> basePrice >> priceFluctuation) {
-            items.emplace_back(name, basePrice, priceFluctuation);
+    QTextStream in(&file);
+    while (!in.atEnd()) {
+        QString line = in.readLine();
+        QStringList parts = line.split(" ");
+
+        if (parts.size() < 3) {
+            std::cerr << "文件格式错误: " << line.toStdString() << std::endl;
+            continue;
         }
+
+        QString name = parts[0];
+        qint64 basePrice = parts[1].toLongLong();
+        qint64 priceFluctuation = parts[2].toLongLong();
+
+        items.emplace_back(name.toStdString(), basePrice, priceFluctuation);
     }
+
     file.close();
     return true;
 }
+
+
 
 Item* ItemManager::getItemByName(const std::string& name) {
     for (auto& item : items) {
