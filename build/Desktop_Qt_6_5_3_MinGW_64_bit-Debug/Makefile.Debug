@@ -3899,14 +3899,31 @@ debug/ranking.o: ../../ranking.cpp ../../ranking.h \
 		D:/qt/6.5.3/mingw_64/include/QtGui/QTransform \
 		D:/qt/6.5.3/mingw_64/include/QtCore/qnativeinterface.h \
 		ui_ranking.h \
-		../../start.h \
-		../../loading.h \
-		../../mainwindow.h \
-		D:/qt/6.5.3/mingw_64/include/QtWidgets/QMainWindow \
-		D:/qt/6.5.3/mingw_64/include/QtWidgets/qmainwindow.h \
-		D:/qt/6.5.3/mingw_64/include/QtWidgets/qtabwidget.h \
-		D:/qt/6.5.3/mingw_64/include/QtWidgets/qtreewidget.h \
-		D:/qt/6.5.3/mingw_64/include/QtWidgets/qtreeview.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/QVariant \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/QApplication \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/qapplication.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qcoreapplication.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qeventloop.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qfuture.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qfutureinterface.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qmutex.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qtsan_impl.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qresultstore.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qfuture_impl.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qthreadpool.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qthread.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qdeadlinetimer.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qelapsedtimer.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qrunnable.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qexception.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qpromise.h \
+		D:/qt/6.5.3/mingw_64/include/QtGui/qguiapplication.h \
+		D:/qt/6.5.3/mingw_64/include/QtGui/qinputmethod.h \
+		D:/qt/6.5.3/mingw_64/include/QtCore/qlocale.h \
+		D:/qt/6.5.3/mingw_64/include/QtGui/qguiapplication_platform.h \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/QHeaderView \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/qheaderview.h \
 		D:/qt/6.5.3/mingw_64/include/QtWidgets/qabstractitemview.h \
 		D:/qt/6.5.3/mingw_64/include/QtWidgets/qabstractscrollarea.h \
 		D:/qt/6.5.3/mingw_64/include/QtWidgets/qframe.h \
@@ -3914,7 +3931,6 @@ debug/ranking.o: ../../ranking.cpp ../../ranking.h \
 		D:/qt/6.5.3/mingw_64/include/QtCore/qitemselectionmodel.h \
 		D:/qt/6.5.3/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
 		D:/qt/6.5.3/mingw_64/include/QtWidgets/qstyleoption.h \
-		D:/qt/6.5.3/mingw_64/include/QtCore/qlocale.h \
 		D:/qt/6.5.3/mingw_64/include/QtWidgets/qabstractspinbox.h \
 		D:/qt/6.5.3/mingw_64/include/QtGui/qvalidator.h \
 		D:/qt/6.5.3/mingw_64/include/QtCore/qregularexpression.h \
@@ -3922,10 +3938,22 @@ debug/ranking.o: ../../ranking.cpp ../../ranking.h \
 		D:/qt/6.5.3/mingw_64/include/QtWidgets/qabstractslider.h \
 		D:/qt/6.5.3/mingw_64/include/QtWidgets/qstyle.h \
 		D:/qt/6.5.3/mingw_64/include/QtWidgets/qtabbar.h \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/qtabwidget.h \
 		D:/qt/6.5.3/mingw_64/include/QtWidgets/qrubberband.h \
-		D:/qt/6.5.3/mingw_64/include/QtWidgets/qtreewidgetitemiterator.h \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/QPushButton \
 		D:/qt/6.5.3/mingw_64/include/QtWidgets/qpushbutton.h \
 		D:/qt/6.5.3/mingw_64/include/QtWidgets/qabstractbutton.h \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/QTableWidget \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/qtablewidget.h \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/qtableview.h \
+		../../start.h \
+		../../loading.h \
+		../../mainwindow.h \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/QMainWindow \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/qmainwindow.h \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/qtreewidget.h \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/qtreeview.h \
+		D:/qt/6.5.3/mingw_64/include/QtWidgets/qtreewidgetitemiterator.h \
 		../../player.h \
 		../../itemmanager.h \
 		../../Item.h \
