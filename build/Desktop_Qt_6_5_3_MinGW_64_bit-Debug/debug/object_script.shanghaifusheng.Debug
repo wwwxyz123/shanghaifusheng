@@ -12,6 +12,7 @@ debug/mainwindow.o
 debug/player.o
 debug/start.o
 debug/uitest.o
+debug/ranking.o
 debug/qrc_txtResource.o
 debug/moc_buyconfirm.o
 debug/moc_buylose.o
@@ -21,3 +22,4 @@ debug/moc_mainwindow.o
 debug/moc_player.o
 debug/moc_start.o
 debug/moc_uitest.o
+debug/moc_ranking.o
