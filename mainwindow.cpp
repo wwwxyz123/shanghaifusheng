@@ -69,11 +69,11 @@ MainWindow::~MainWindow()
 
 void MainWindow::updatePlayerUI()
 {
-    ui->playermoney->display(player->getMoney());
-    ui->playerbankmoney->display(player->getBankMoney());
-    ui->playergiveupmoney->display(player->getGiveUpMoney());
-    ui->playerhealth->display(player->getHealth());
-    ui->playerfame->display(player->getFame());
+    ui->playermoney->display(QString::number(player->getMoney()));
+    ui->playerbankmoney->display(QString::number(player->getBankMoney()));
+    ui->playergiveupmoney->display(QString::number(player->getGiveUpMoney()));
+    ui->playerhealth->display(QString::number(player->getHealth()));
+    ui->playerfame->display(QString::number(player->getFame()));
 }
 
 void MainWindow::on_playermoney_overflow()
