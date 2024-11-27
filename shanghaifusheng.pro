@@ -22,7 +22,8 @@ SOURCES += \
     mainwindow.cpp \
     player.cpp \
     start.cpp \
-    uitest.cpp
+    uitest.cpp \
+    ranking.cpp
 
 HEADERS += \
     backendmanager.h \
@@ -37,7 +38,9 @@ HEADERS += \
     mainwindow.h \
     player.h \
     start.h \
-    uitest.h
+    uitest.h \
+    ranking.h
+
 
 FORMS += \
     buyconfirm.ui \
@@ -46,7 +49,8 @@ FORMS += \
     loading.ui \
     mainwindow.ui \
     start.ui \
-    uitest.ui
+    uitest.ui \
+    ranking.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
