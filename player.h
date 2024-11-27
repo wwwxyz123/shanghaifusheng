@@ -3,59 +3,49 @@
 
 #include <QObject>
 
-template<typename T>
-class playertemplate {
-public:
-    playertemplate(T value) : value(value) {}
-
-    T get() const { return value; }
-
-    void add(T num) { value += num; }
-
-    void reduce(T num) { value -= num; }
-
-private:
-    T value;
-};
-
 class Player : public QObject {
     Q_OBJECT
 public:
     Player();
 
-    int getMoney() const;
-    void addMoney(int amount);
-    void reduceMoney(int amount);
+    long long getMoney() const;
+    void addMoney(long long amount);
+    void reduceMoney(long long amount);
 
-    int getBankMoney() const;
-    void addBankMoney(int amount);
-    void reduceBankMoney(int amount);
+    long long getBankMoney() const;
+    void addBankMoney(long long amount);
+    void reduceBankMoney(long long amount);
 
-    int getGiveUpMoney() const;
-    void addGiveUpMoney(int amount);
-    void reduceGiveUpMoney(int amount);
+    long long getGiveUpMoney() const;
+    void addGiveUpMoney(long long amount);
+    void reduceGiveUpMoney(long long amount);
 
-    int getHealth() const;
-    void addHealth(int amount);
-    void reduceHealth(int amount);
+    long long getHealth() const;
+    void addHealth(long long amount);
+    void reduceHealth(long long amount);
 
-    int getFame() const;
-    void addFame(int amount);
-    void reduceFame(int amount);
+    long long getFame() const;
+    void addFame(long long amount);
+    void reduceFame(long long amount);
+
+    long long getBagSize() const;
+    void setBagSize(long long size);
+
 
 signals:
-    void moneyChanged(int newMoney);
-    void bankMoneyChanged(int newBankMoney);
-    void giveUpMoneyChanged(int newGiveUpMoney);
-    void healthChanged(int newHealth);
-    void fameChanged(int newFame);
+    void moneyChanged(long long newMoney);
+    void bankMoneyChanged(long long newBankMoney);
+    void giveUpMoneyChanged(long long newGiveUpMoney);
+    void healthChanged(long long newHealth);
+    void fameChanged(long long newFame);
 
 private:
-    playertemplate<long long> money;
-    playertemplate<long long> bankMoney;
-    playertemplate<long long> giveUpMoney;
-    playertemplate<long long> health;
-    playertemplate<long long> fame;
+    long long money;
+    long long bankMoney;
+    long long giveUpMoney;
+    long long health;
+    long long fame;
+    long long bagsize;
 };
 
 #endif // PLAYER_H

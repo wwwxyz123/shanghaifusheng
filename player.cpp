@@ -2,64 +2,72 @@
 #include <iostream>
 
 Player::Player()
-    : money(114514), bankMoney(0), giveUpMoney(1919), health(100), fame(100) {}
+    : money(10000), bankMoney(0), giveUpMoney(5000), health(100), fame(100) ,bagsize(100){}
 
-int Player::getMoney() const { return money.get(); }
-void Player::addMoney(int num)
+long long Player::getMoney() const { return money; }
+void Player::addMoney(long long num)
 {
-    money.add(num);
-    emit moneyChanged(money.get());
+    money+=(num);
+    emit moneyChanged(money);
 }
-void Player::reduceMoney(int num)
+void Player::reduceMoney(long long num)
 {
-    money.reduce(num);
-    emit moneyChanged(money.get());
-}
-
-int Player::getBankMoney() const { return bankMoney.get(); }
-void Player::addBankMoney(int num)
-{
-    bankMoney.add(num);
-    emit bankMoneyChanged(bankMoney.get());
-}
-void Player::reduceBankMoney(int num)
-{
-    bankMoney.reduce(num);
-    emit bankMoneyChanged(bankMoney.get());
+    money-=(num);
+    emit moneyChanged(money);
 }
 
-int Player::getGiveUpMoney() const { return giveUpMoney.get(); }
-void Player::addGiveUpMoney(int num)
+long long Player::getBankMoney() const { return bankMoney; }
+void Player::addBankMoney(long long num)
 {
-    giveUpMoney.add(num);
-    emit giveUpMoneyChanged(giveUpMoney.get());
+    bankMoney+=(num);
+    emit bankMoneyChanged(bankMoney);
 }
-void Player::reduceGiveUpMoney(int num)
+void Player::reduceBankMoney(long long num)
 {
-    giveUpMoney.reduce(num);
-    emit giveUpMoneyChanged(giveUpMoney.get());
-}
-
-int Player::getHealth() const { return health.get(); }
-void Player::addHealth(int num)
-{
-    health.add(num);
-    emit healthChanged(health.get());
-}
-void Player::reduceHealth(int num)
-{
-    health.reduce(num);
-    emit healthChanged(health.get());
+    bankMoney-=(num);
+    emit bankMoneyChanged(bankMoney);
 }
 
-int Player::getFame() const { return fame.get(); }
-void Player::addFame(int num)
+long long Player::getGiveUpMoney() const { return giveUpMoney; }
+void Player::addGiveUpMoney(long long num)
 {
-    fame.add(num);
-    emit fameChanged(fame.get());
+    giveUpMoney+=(num);
+    emit giveUpMoneyChanged(giveUpMoney);
 }
-void Player::reduceFame(int num)
+void Player::reduceGiveUpMoney(long long num)
 {
-    fame.reduce(num);
-    emit fameChanged(fame.get());
+    giveUpMoney-=(num);
+    emit giveUpMoneyChanged(giveUpMoney);
+}
+
+long long Player::getHealth() const { return health; }
+void Player::addHealth(long long num)
+{
+    health+=(num);
+    emit healthChanged(health);
+}
+void Player::reduceHealth(long long num)
+{
+    health-=(num);
+    emit healthChanged(health);
+}
+
+long long Player::getFame() const { return fame; }
+void Player::addFame(long long num)
+{
+    fame+=(num);
+    emit fameChanged(fame);
+}
+void Player::reduceFame(long long num)
+{
+    fame-=(num);
+    emit fameChanged(fame);
+}
+
+long long Player::getBagSize() const {
+    return bagsize;
+}
+
+void Player::setBagSize(long long size) {
+    bagsize = size;
 }
