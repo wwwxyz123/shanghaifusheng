@@ -2,14 +2,14 @@
 #define ITEM_H
 
 #include <string>
-
+#include <QtGlobal>
 class AdditionalEffect; // 附加效果的前向声明
 
 class Item {
 private:
     std::string name;          // 物品名称
-    long long basePrice;       // 基础价格
-    long long priceFluctuation;// 波动价格范围
+    qint64 basePrice;       // 基础价格
+    qint64 priceFluctuation;// 波动价格范围
     AdditionalEffect* effect;  // 附加效果指针
 
 public:

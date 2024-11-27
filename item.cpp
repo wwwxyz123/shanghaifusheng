@@ -17,8 +17,7 @@ long long Item::getPriceFluctuation() const {
 }
 
 long long Item::generatePrice() const {
-    // 基础价格 ± 随机波动
-    return basePrice + (std::rand() % (2 * priceFluctuation + 1)) - priceFluctuation;
+    return basePrice + (std::rand() % (priceFluctuation + 1));
 }
 
 AdditionalEffect* Item::getEffect() const {
