@@ -74,7 +74,7 @@ public:
         __qtreewidgetitem->setText(0, QString::fromUtf8("\345\225\206\345\223\201"));
         bagWidget->setHeaderItem(__qtreewidgetitem);
         bagWidget->setObjectName("bagWidget");
-        bagWidget->setGeometry(QRect(415, 45, 241, 161));
+        bagWidget->setGeometry(QRect(405, 45, 246, 181));
         bagWidget->setRootIsDecorated(false);
         bagWidget->header()->setMinimumSectionSize(18);
         bagWidget->header()->setDefaultSectionSize(71);

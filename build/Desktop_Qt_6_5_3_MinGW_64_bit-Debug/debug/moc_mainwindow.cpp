@@ -42,22 +42,40 @@ static constexpr auto qt_meta_stringdata_CLASSMainWindowENDCLASS = QtMocHelpers:
     "updatePlayerUI",
     "",
     "on_playermoney_overflow",
-    "on_pushButton_17_clicked",
-    "on_pushButton_18_clicked",
+    "moreneedmoney",
+    "nextday",
     "on_buy_clicked",
-    "on_sell_clicked"
+    "on_sell_clicked",
+    "addItemToBag",
+    "itemName",
+    "nowPrice",
+    "quantity",
+    "refreshItemsInMarket",
+    "count",
+    "on_lujiazuiplace_clicked",
+    "updateBagSpaceDisplay",
+    "updateDate"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {
-    uint offsetsAndSizes[16];
+    uint offsetsAndSizes[34];
     char stringdata0[11];
     char stringdata1[15];
     char stringdata2[1];
     char stringdata3[24];
-    char stringdata4[25];
-    char stringdata5[25];
+    char stringdata4[14];
+    char stringdata5[8];
     char stringdata6[15];
     char stringdata7[16];
+    char stringdata8[13];
+    char stringdata9[9];
+    char stringdata10[9];
+    char stringdata11[9];
+    char stringdata12[21];
+    char stringdata13[6];
+    char stringdata14[25];
+    char stringdata15[22];
+    char stringdata16[11];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSMainWindowENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -67,19 +85,37 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSMainWindowENDCLASS_t qt_meta_st
         QT_MOC_LITERAL(11, 14),  // "updatePlayerUI"
         QT_MOC_LITERAL(26, 0),  // ""
         QT_MOC_LITERAL(27, 23),  // "on_playermoney_overflow"
-        QT_MOC_LITERAL(51, 24),  // "on_pushButton_17_clicked"
-        QT_MOC_LITERAL(76, 24),  // "on_pushButton_18_clicked"
-        QT_MOC_LITERAL(101, 14),  // "on_buy_clicked"
-        QT_MOC_LITERAL(116, 15)   // "on_sell_clicked"
+        QT_MOC_LITERAL(51, 13),  // "moreneedmoney"
+        QT_MOC_LITERAL(65, 7),  // "nextday"
+        QT_MOC_LITERAL(73, 14),  // "on_buy_clicked"
+        QT_MOC_LITERAL(88, 15),  // "on_sell_clicked"
+        QT_MOC_LITERAL(104, 12),  // "addItemToBag"
+        QT_MOC_LITERAL(117, 8),  // "itemName"
+        QT_MOC_LITERAL(126, 8),  // "nowPrice"
+        QT_MOC_LITERAL(135, 8),  // "quantity"
+        QT_MOC_LITERAL(144, 20),  // "refreshItemsInMarket"
+        QT_MOC_LITERAL(165, 5),  // "count"
+        QT_MOC_LITERAL(171, 24),  // "on_lujiazuiplace_clicked"
+        QT_MOC_LITERAL(196, 21),  // "updateBagSpaceDisplay"
+        QT_MOC_LITERAL(218, 10)   // "updateDate"
     },
     "MainWindow",
     "updatePlayerUI",
     "",
     "on_playermoney_overflow",
-    "on_pushButton_17_clicked",
-    "on_pushButton_18_clicked",
+    "moreneedmoney",
+    "nextday",
     "on_buy_clicked",
-    "on_sell_clicked"
+    "on_sell_clicked",
+    "addItemToBag",
+    "itemName",
+    "nowPrice",
+    "quantity",
+    "refreshItemsInMarket",
+    "count",
+    "on_lujiazuiplace_clicked",
+    "updateBagSpaceDisplay",
+    "updateDate"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -91,7 +127,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
       11,       // revision
        0,       // classname
        0,    0, // classinfo
-       6,   14, // methods
+      11,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -99,17 +135,27 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   50,    2, 0x08,    1 /* Private */,
-       3,    0,   51,    2, 0x08,    2 /* Private */,
-       4,    0,   52,    2, 0x08,    3 /* Private */,
-       5,    0,   53,    2, 0x08,    4 /* Private */,
-       6,    0,   54,    2, 0x08,    5 /* Private */,
-       7,    0,   55,    2, 0x08,    6 /* Private */,
+       1,    0,   80,    2, 0x08,    1 /* Private */,
+       3,    0,   81,    2, 0x08,    2 /* Private */,
+       4,    0,   82,    2, 0x08,    3 /* Private */,
+       5,    0,   83,    2, 0x08,    4 /* Private */,
+       6,    0,   84,    2, 0x08,    5 /* Private */,
+       7,    0,   85,    2, 0x08,    6 /* Private */,
+       8,    3,   86,    2, 0x08,    7 /* Private */,
+      12,    1,   93,    2, 0x08,   11 /* Private */,
+      14,    0,   96,    2, 0x08,   13 /* Private */,
+      15,    0,   97,    2, 0x08,   14 /* Private */,
+      16,    0,   98,    2, 0x08,   15 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::QString, QMetaType::LongLong, QMetaType::Int,    9,   10,   11,
+    QMetaType::Void, QMetaType::Int,   13,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -130,13 +176,27 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_playermoney_overflow'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_pushButton_17_clicked'
+        // method 'moreneedmoney'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_pushButton_18_clicked'
+        // method 'nextday'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_buy_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_sell_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'addItemToBag'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<QString, std::false_type>,
+        QtPrivate::TypeAndForceComplete<long long, std::false_type>,
+        QtPrivate::TypeAndForceComplete<int, std::false_type>,
+        // method 'refreshItemsInMarket'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<int, std::false_type>,
+        // method 'on_lujiazuiplace_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'updateBagSpaceDisplay'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'updateDate'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -150,14 +210,18 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         switch (_id) {
         case 0: _t->updatePlayerUI(); break;
         case 1: _t->on_playermoney_overflow(); break;
-        case 2: _t->on_pushButton_17_clicked(); break;
-        case 3: _t->on_pushButton_18_clicked(); break;
+        case 2: _t->moreneedmoney(); break;
+        case 3: _t->nextday(); break;
         case 4: _t->on_buy_clicked(); break;
         case 5: _t->on_sell_clicked(); break;
+        case 6: _t->addItemToBag((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<qlonglong>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<int>>(_a[3]))); break;
+        case 7: _t->refreshItemsInMarket((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 8: _t->on_lujiazuiplace_clicked(); break;
+        case 9: _t->updateBagSpaceDisplay(); break;
+        case 10: _t->updateDate(); break;
         default: ;
         }
     }
-    (void)_a;
 }
 
 const QMetaObject *MainWindow::metaObject() const
@@ -179,13 +243,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 6)
+        if (_id < 11)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 11;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 6)
+        if (_id < 11)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 6;
+        _id -= 11;
     }
     return _id;
 }
