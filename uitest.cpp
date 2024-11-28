@@ -35,6 +35,19 @@ uitest::uitest(QWidget *parent)
         qDebug() << "Failed to load items from file. Using default items.";
     }
 
+
+    //背包列宽设置
+       ui->bagWidget->header()->setSectionResizeMode(QHeaderView::Stretch); // 所有列拉伸
+       ui->bagWidget->header()->resizeSection(0, 3); // 第1列权重为2
+       ui->bagWidget->header()->resizeSection(1, 3); // 第2列权重为3
+       ui->bagWidget->header()->resizeSection(2, 4);
+
+    //商品栏列宽设置
+       ui->testitemWidget->header()->setSectionResizeMode(QHeaderView::Stretch); // 所有列拉伸
+       ui->testitemWidget->header()->resizeSection(0, 5); // 第1列权重为2
+       ui->testitemWidget->header()->resizeSection(1, 5); // 第2列权重为3
+
+    updateBagSpaceDisplay();
     refreshItemsInMarket(6);
 }
 
@@ -94,7 +107,16 @@ void uitest::refreshItemsInMarket(int count)
     }
 }
 
+// 更新背包剩余空间显示的函数
+void uitest::updateBagSpaceDisplay()
+{
+    // 计算背包剩余空间比例
+    int bagSize = player->getBagSize();
+    int maxBagSize = player->getMaxBagSize();  // 假设你有一个函数返回最大背包容量
 
+    // 更新 bagWidget 的第三列标题
+    ui->bagWidget->headerItem()->setText(2, QString("数量:%1/%2").arg(maxBagSize-bagSize).arg(maxBagSize));
+}
 
 void uitest::on_testitemWidget_itemClicked(QTreeWidgetItem *item, int column)
 {
@@ -163,7 +185,7 @@ void uitest::on_buy_clicked()
 
     // 扣除玩家的钱
     player->reduceMoney( nowPrice * quantity);
-
+    updateBagSpaceDisplay();
     ui->playermoney->display(QString::number(player->getMoney()));
     ui->playerbankmoney->display(QString::number(player->getBankMoney()));
     ui->playergiveupmoney->display(QString::number(player->getGiveUpMoney()));
@@ -242,7 +264,7 @@ void uitest::on_sell_clicked()
 
     // 更新玩家的 UI
     ui->playermoney->display(QString::number(player->getMoney()));
-
+    updateBagSpaceDisplay();
     QMessageBox::information(this, "成功",
                              QString("成功卖出 %1 个 %2，获得 %3 金币！").arg(sellQuantity).arg(itemName).arg(sellQuantity * sellPrice));
 }

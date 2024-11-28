@@ -26,7 +26,7 @@ private slots:
 
     void refreshItemsInMarket(int count); // 刷新市场的商品
     void on_lujiazuiplace_clicked();
-
+    void updateBagSpaceDisplay();
     void on_moneyaddplus_clicked();
 
 private:

@@ -48,10 +48,10 @@
   <widget class="QTreeWidget" name="bagWidget">
    <property name="geometry">
     <rect>
-     <x>415</x>
+     <x>405</x>
      <y>45</y>
-     <width>241</width>
-     <height>161</height>
+     <width>246</width>
+     <height>181</height>
     </rect>
    </property>
    <property name="rootIsDecorated">
