@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QTreeWidgetItem>
 #include "player.h"
+#include"itemmanager.h"
 namespace Ui {
 class uitest;
 }
@@ -23,9 +24,15 @@ private slots:
 
     void on_sell_clicked();
 
+    void refreshItemsInMarket(int count); // 刷新市场的商品
+    void on_lujiazuiplace_clicked();
+
+    void on_moneyaddplus_clicked();
+
 private:
     Ui::uitest *ui;
     Player *player=new Player();
+    ItemManager *itemManager=new ItemManager();
 };
 
 #endif // UITEST_H

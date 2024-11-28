@@ -6,6 +6,8 @@
 #include "qmessagebox.h"
 #include"player.h"
 #include<qinputdialog.h>
+#include <algorithm>
+#include <random>
 uitest::uitest(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::uitest)
@@ -19,34 +21,80 @@ uitest::uitest(QWidget *parent)
     ui->playerhealth->display(QString::number(player->getHealth()));
     ui->playerfame->display(QString::number(player->getFame()));
 
-    ItemManager itemManager;
+    ui->playermoney->setDigitCount(13);
+    ui->playerbankmoney->setDigitCount(13);
+    ui->playergiveupmoney->setDigitCount(13);
 
-    if (!itemManager.loadItemsFromFile(":/res/items.txt")) {
+    ui->playermoney->setSegmentStyle(QLCDNumber::Flat);
+    ui->playerbankmoney->setSegmentStyle(QLCDNumber::Flat);
+    ui->playergiveupmoney->setSegmentStyle(QLCDNumber::Flat);
+    ui->playerhealth->setSegmentStyle(QLCDNumber::Flat);
+    ui->playerfame->setSegmentStyle(QLCDNumber::Flat);
+
+    if (!itemManager->loadItemsFromFile(":/res/items.txt")) {
         qDebug() << "Failed to load items from file. Using default items.";
     }
 
-    ui->testitemWidget->clear();
-
-    for (const auto& item : itemManager.getAllItems()) {
-        QString itemName = QString::fromStdString(item.getName());
-        long long nowPrice = item.generatePrice();
-
-        // 创建 QTreeWidgetItem
-        QTreeWidgetItem* treeItem = new QTreeWidgetItem();
-        treeItem->setText(0, itemName);                  // 第一列：商品名
-        treeItem->setText(1, QString::number(nowPrice));// 第二列：价格
-
-        // 添加到 QTreeWidget
-        ui->testitemWidget->addTopLevelItem(treeItem);
-    }
-
-
+    refreshItemsInMarket(6);
 }
 
 uitest::~uitest()
 {
     delete ui;
 }
+
+#include <algorithm> // for std::shuffle
+#include <random>    // for std::random_device
+
+void uitest::refreshItemsInMarket(int count)
+{
+    // 清空当前的物品列表
+    ui->testitemWidget->clear();
+
+    // 获取所有物品
+    ItemManager itemManager;
+
+    if (!itemManager.loadItemsFromFile(":/res/items.txt")) {
+        qDebug() << "Failed to load items from file. Using default items.";
+    }
+
+    // 获取所有物品列表
+    const auto& allItems = itemManager.getAllItems();
+
+    // 计算实际显示数量（确保不超过物品的总数量）
+    int displayCount = std::min(count, static_cast<int>(allItems.size()));
+
+    // 创建一个索引列表，包含所有物品的索引
+    QVector<int> indices;
+    for (int i = 0; i < allItems.size(); ++i) {
+        indices.append(i);
+    }
+
+    // 使用 std::random_device 和 std::mt19937 来打乱索引
+    std::random_device rd; // 获取一个随机数种子
+    std::mt19937 g(rd());  // 使用这个种子初始化随机数生成器
+
+    // 随机打乱索引列表
+    std::shuffle(indices.begin(), indices.end(), g);
+
+    // 随机抽取并添加到 QTreeWidget
+    for (int i = 0; i < displayCount; ++i) {
+        const auto& item = allItems[indices[i]];  // 随机选择一个商品
+
+        QString itemName = QString::fromStdString(item.getName());
+        long long nowPrice = item.generatePrice();
+
+        // 创建 QTreeWidgetItem
+        QTreeWidgetItem* treeItem = new QTreeWidgetItem();
+        treeItem->setText(0, itemName);                  // 第一列：商品名
+        treeItem->setText(1, QString::number(nowPrice)); // 第二列：价格
+
+        // 添加到 QTreeWidget
+        ui->testitemWidget->addTopLevelItem(treeItem);
+    }
+}
+
+
 
 void uitest::on_testitemWidget_itemClicked(QTreeWidgetItem *item, int column)
 {
@@ -197,5 +245,18 @@ void uitest::on_sell_clicked()
 
     QMessageBox::information(this, "成功",
                              QString("成功卖出 %1 个 %2，获得 %3 金币！").arg(sellQuantity).arg(itemName).arg(sellQuantity * sellPrice));
+}
+
+
+void uitest::on_lujiazuiplace_clicked()
+{
+    refreshItemsInMarket(6);
+}
+
+
+void uitest::on_moneyaddplus_clicked()
+{
+    player->addMoney(123456789123);
+    ui->playermoney->display(QString::number(player->getMoney()));
 }
 
