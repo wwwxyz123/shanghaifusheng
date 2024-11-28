@@ -19,24 +19,29 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    int daytime;
 
 private slots:
     void updatePlayerUI();
     void on_playermoney_overflow();
-    void on_pushButton_17_clicked();
-    void on_pushButton_18_clicked();
+
+    void moreneedmoney();
+    void nextday();
     void on_buy_clicked();
     void on_sell_clicked();
-    // void on_itemWidget_itemClicked(QListWidgetItem *item);
+
+    void addItemToBag(QString itemName,long long nowPrice,int quantity);
+    void refreshItemsInMarket(int count);
+    void on_lujiazuiplace_clicked();
+    void updateBagSpaceDisplay();
+    void updateDate();
 
 private:
     Ui::MainWindow *ui;
-    Player *player;
     QTreeWidget *itemWidget;
     QTreeWidget *bagWidget;
-    QPushButton *buy;
-    QPushButton *sell;
-    ItemManager itemmanagerusing;
-    void loadItems();                  // 加载物品列表到界面
+    Player *player=new Player();
+    ItemManager *itemManager=new ItemManager();
+
 };
 #endif // MAINWINDOW_H
