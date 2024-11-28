@@ -10,8 +10,6 @@ CONFIG += c++17
 
 SOURCES += \
     backendmanager.cpp \
-    buyconfirm.cpp \
-    buylose.cpp \
     connectus.cpp \
     eventmanager.cpp \
     eventwindow.cpp \
@@ -27,8 +25,6 @@ SOURCES += \
 
 HEADERS += \
     backendmanager.h \
-    buyconfirm.h \
-    buylose.h \
     connectus.h \
     eventmanager.h \
     eventwindow.h \
@@ -43,8 +39,6 @@ HEADERS += \
 
 
 FORMS += \
-    buyconfirm.ui \
-    buylose.ui \
     connectus.ui \
     loading.ui \
     mainwindow.ui \
