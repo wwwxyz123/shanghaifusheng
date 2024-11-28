@@ -1,6 +1,6 @@
 #include "player.h"
 #include <iostream>
-
+#include<QDebug>
 Player::Player()
     : money(10000), bankMoney(0), giveUpMoney(5000), health(100), fame(100) ,bagsize(100){}
 
@@ -70,4 +70,14 @@ long long Player::getBagSize() const {
 
 void Player::setBagSize(long long size) {
     bagsize = size;
+}
+
+QString Player::getPlayerName() const {
+    return playerName;
+}
+
+void Player::setPlayerName(const QString &name) {
+    playerName = name;
+    qDebug()<<"ok";
+    //emit playerNameChanged(playerName);  // 你可以定义一个 playerNameChanged 信号
 }

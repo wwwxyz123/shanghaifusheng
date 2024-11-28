@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>411</width>
+    <width>638</width>
     <height>578</height>
    </rect>
   </property>
@@ -17,8 +17,8 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>70</y>
-     <width>391</width>
+     <y>50</y>
+     <width>601</width>
      <height>421</height>
     </rect>
    </property>
@@ -37,8 +37,8 @@
   <widget class="QPushButton" name="begin">
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>500</y>
+     <x>470</x>
+     <y>510</y>
      <width>131</width>
      <height>51</height>
     </rect>
@@ -55,8 +55,8 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>10</y>
+     <x>130</x>
+     <y>0</y>
      <width>381</width>
      <height>71</height>
     </rect>
@@ -68,6 +68,34 @@
    </property>
    <property name="text">
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;上海浮生记的故事&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>490</y>
+     <width>151</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>请输入您的大名：</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>192</x>
+     <y>515</y>
+     <width>211</width>
+     <height>41</height>
+    </rect>
    </property>
   </widget>
  </widget>

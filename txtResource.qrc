@@ -2,5 +2,6 @@
     <qresource prefix="/">
         <file>res/items.txt</file>
         <file>res/qrcode.png</file>
+        <file>res/score.txt</file>
     </qresource>
 </RCC>
