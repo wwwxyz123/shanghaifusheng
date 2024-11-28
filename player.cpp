@@ -2,7 +2,7 @@
 #include <iostream>
 
 Player::Player()
-    : money(10000), bankMoney(0), giveUpMoney(5000), health(100), fame(100) ,bagsize(100){}
+    : money(10000), bankMoney(0), giveUpMoney(5000), health(100), fame(100) ,bagsize(100),maxbagsize(100){}
 
 long long Player::getMoney() const { return money; }
 void Player::addMoney(long long num)
@@ -71,3 +71,11 @@ long long Player::getBagSize() const {
 void Player::setBagSize(long long size) {
     bagsize = size;
 }
+long long Player::getMaxBagSize() const {
+    return maxbagsize;
+}
+
+void Player::setMaxBagSize(long long size) {
+    maxbagsize = size;
+}
+

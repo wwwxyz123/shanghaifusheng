@@ -31,6 +31,8 @@ public:
     long long getBagSize() const;
     void setBagSize(long long size);
 
+    long long getMaxBagSize() const;
+    void setMaxBagSize(long long size);
 
 signals:
     void moneyChanged(long long newMoney);
@@ -46,6 +48,7 @@ private:
     long long health;
     long long fame;
     long long bagsize;
+    long long maxbagsize;
 };
 
 #endif // PLAYER_H
