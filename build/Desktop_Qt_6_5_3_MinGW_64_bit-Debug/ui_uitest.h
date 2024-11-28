@@ -33,15 +33,15 @@ public:
     QLCDNumber *playerhealth;
     QWidget *layoutWidget;
     QGridLayout *gridLayout;
-    QPushButton *pushButton_16;
-    QPushButton *pushButton_10;
-    QPushButton *pushButton_12;
-    QPushButton *pushButton_11;
+    QPushButton *lujiazuiplace;
     QPushButton *pushButton_14;
-    QPushButton *pushButton_15;
-    QPushButton *pushButton_8;
+    QPushButton *pushButton_11;
     QPushButton *pushButton_9;
     QPushButton *pushButton_13;
+    QPushButton *pushButton_15;
+    QPushButton *pushButton_10;
+    QPushButton *pushButton_8;
+    QPushButton *pushButton_16;
     QLabel *label_4;
     QPushButton *buy;
     QLCDNumber *playergiveupmoney;
@@ -55,6 +55,7 @@ public:
     QLabel *label_2;
     QLCDNumber *playermoney;
     QLCDNumber *playerbankmoney;
+    QPushButton *moneyaddplus;
 
     void setupUi(QWidget *uitest)
     {
@@ -100,40 +101,20 @@ public:
         gridLayout = new QGridLayout(layoutWidget);
         gridLayout->setObjectName("gridLayout");
         gridLayout->setContentsMargins(0, 0, 0, 0);
-        pushButton_16 = new QPushButton(layoutWidget);
-        pushButton_16->setObjectName("pushButton_16");
+        lujiazuiplace = new QPushButton(layoutWidget);
+        lujiazuiplace->setObjectName("lujiazuiplace");
 
-        gridLayout->addWidget(pushButton_16, 2, 0, 1, 1);
-
-        pushButton_10 = new QPushButton(layoutWidget);
-        pushButton_10->setObjectName("pushButton_10");
-
-        gridLayout->addWidget(pushButton_10, 0, 2, 1, 1);
-
-        pushButton_12 = new QPushButton(layoutWidget);
-        pushButton_12->setObjectName("pushButton_12");
-
-        gridLayout->addWidget(pushButton_12, 1, 1, 1, 1);
-
-        pushButton_11 = new QPushButton(layoutWidget);
-        pushButton_11->setObjectName("pushButton_11");
-
-        gridLayout->addWidget(pushButton_11, 1, 2, 1, 1);
+        gridLayout->addWidget(lujiazuiplace, 1, 1, 1, 1);
 
         pushButton_14 = new QPushButton(layoutWidget);
         pushButton_14->setObjectName("pushButton_14");
 
         gridLayout->addWidget(pushButton_14, 2, 2, 1, 1);
 
-        pushButton_15 = new QPushButton(layoutWidget);
-        pushButton_15->setObjectName("pushButton_15");
+        pushButton_11 = new QPushButton(layoutWidget);
+        pushButton_11->setObjectName("pushButton_11");
 
-        gridLayout->addWidget(pushButton_15, 2, 1, 1, 1);
-
-        pushButton_8 = new QPushButton(layoutWidget);
-        pushButton_8->setObjectName("pushButton_8");
-
-        gridLayout->addWidget(pushButton_8, 0, 0, 1, 1);
+        gridLayout->addWidget(pushButton_11, 1, 2, 1, 1);
 
         pushButton_9 = new QPushButton(layoutWidget);
         pushButton_9->setObjectName("pushButton_9");
@@ -144,6 +125,26 @@ public:
         pushButton_13->setObjectName("pushButton_13");
 
         gridLayout->addWidget(pushButton_13, 1, 0, 1, 1);
+
+        pushButton_15 = new QPushButton(layoutWidget);
+        pushButton_15->setObjectName("pushButton_15");
+
+        gridLayout->addWidget(pushButton_15, 2, 1, 1, 1);
+
+        pushButton_10 = new QPushButton(layoutWidget);
+        pushButton_10->setObjectName("pushButton_10");
+
+        gridLayout->addWidget(pushButton_10, 0, 2, 1, 1);
+
+        pushButton_8 = new QPushButton(layoutWidget);
+        pushButton_8->setObjectName("pushButton_8");
+
+        gridLayout->addWidget(pushButton_8, 0, 0, 1, 1);
+
+        pushButton_16 = new QPushButton(layoutWidget);
+        pushButton_16->setObjectName("pushButton_16");
+
+        gridLayout->addWidget(pushButton_16, 2, 0, 1, 1);
 
         label_4 = new QLabel(uitest);
         label_4->setObjectName("label_4");
@@ -215,6 +216,30 @@ public:
         playerbankmoney->setGeometry(QRect(115, 475, 191, 31));
         playerbankmoney->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0);\n"
 "color: rgb(0, 255, 0);"));
+        moneyaddplus = new QPushButton(uitest);
+        moneyaddplus->setObjectName("moneyaddplus");
+        moneyaddplus->setGeometry(QRect(325, 180, 75, 24));
+        groupBox_2->raise();
+        testitemWidget->raise();
+        bagWidget->raise();
+        playerfame->raise();
+        label_5->raise();
+        label->raise();
+        playerhealth->raise();
+        layoutWidget->raise();
+        label_4->raise();
+        buy->raise();
+        playergiveupmoney->raise();
+        bagWidget_2->raise();
+        groupBox->raise();
+        itemWidget->raise();
+        sell->raise();
+        daylabel->raise();
+        label_3->raise();
+        label_2->raise();
+        playermoney->raise();
+        playerbankmoney->raise();
+        moneyaddplus->raise();
 
         retranslateUi(uitest);
 
@@ -232,15 +257,15 @@ public:
         ___qtreewidgetitem1->setText(1, QCoreApplication::translate("uitest", "\344\271\260\350\277\233\344\273\267\346\240\274", nullptr));
         label_5->setText(QCoreApplication::translate("uitest", "\345\220\215\345\243\260:", nullptr));
         label->setText(QCoreApplication::translate("uitest", "\347\216\260\351\207\221:", nullptr));
-        pushButton_16->setText(QCoreApplication::translate("uitest", "\346\235\276\346\261\237", nullptr));
-        pushButton_10->setText(QCoreApplication::translate("uitest", "\345\256\235\345\261\261", nullptr));
-        pushButton_12->setText(QCoreApplication::translate("uitest", "\351\231\206\345\256\266\345\230\264", nullptr));
-        pushButton_11->setText(QCoreApplication::translate("uitest", "\346\265\246\344\270\234", nullptr));
+        lujiazuiplace->setText(QCoreApplication::translate("uitest", "\351\231\206\345\256\266\345\230\264", nullptr));
         pushButton_14->setText(QCoreApplication::translate("uitest", "\344\270\264\346\270\257", nullptr));
-        pushButton_15->setText(QCoreApplication::translate("uitest", "\351\207\221\345\261\261", nullptr));
-        pushButton_8->setText(QCoreApplication::translate("uitest", "\345\230\211\345\256\232", nullptr));
+        pushButton_11->setText(QCoreApplication::translate("uitest", "\346\265\246\344\270\234", nullptr));
         pushButton_9->setText(QCoreApplication::translate("uitest", "\350\231\271\345\217\243", nullptr));
         pushButton_13->setText(QCoreApplication::translate("uitest", "\351\235\222\346\265\246", nullptr));
+        pushButton_15->setText(QCoreApplication::translate("uitest", "\351\207\221\345\261\261", nullptr));
+        pushButton_10->setText(QCoreApplication::translate("uitest", "\345\256\235\345\261\261", nullptr));
+        pushButton_8->setText(QCoreApplication::translate("uitest", "\345\230\211\345\256\232", nullptr));
+        pushButton_16->setText(QCoreApplication::translate("uitest", "\346\235\276\346\261\237", nullptr));
         label_4->setText(QCoreApplication::translate("uitest", "\345\201\245\345\272\267:", nullptr));
         buy->setText(QCoreApplication::translate("uitest", "\344\271\260\345\205\245=>", nullptr));
         QTreeWidgetItem *___qtreewidgetitem2 = bagWidget_2->headerItem();
@@ -293,6 +318,7 @@ public:
         daylabel->setText(QCoreApplication::translate("uitest", "\345\275\223\345\211\215\346\230\257\347\254\254x\345\244\251", nullptr));
         label_3->setText(QCoreApplication::translate("uitest", "\346\254\240\346\254\276:", nullptr));
         label_2->setText(QCoreApplication::translate("uitest", "\345\255\230\346\254\276:", nullptr));
+        moneyaddplus->setText(QCoreApplication::translate("uitest", "\346\211\223\351\222\261\357\274\201", nullptr));
     } // retranslateUi
 
 };
