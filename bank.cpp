@@ -6,7 +6,7 @@
 #include "player.h"
 
 Bank::Bank(Player *player,QWidget *parent)
-    : QWidget(parent)
+    : QDialog(parent)
     , ui(new Ui::Bank)
     ,myCash(0)
     ,player(player)

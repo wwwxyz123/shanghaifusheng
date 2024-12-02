@@ -37,8 +37,8 @@ private slots:
     void on_lujiazuiplace_clicked();
     void updateBagSpaceDisplay();
     void updateDate();
-    void on_bankButton_clicked();
 
+    void on_bankButton_clicked();
     void on_hospitalButton_clicked();
 
 private:

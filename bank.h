@@ -1,14 +1,14 @@
 #ifndef BANK_H
 #define BANK_H
 
-#include <QWidget>
+#include <QDialog>
 #include "player.h"
 
 namespace Ui {
 class Bank;
 }
 
-class Bank : public QWidget
+class Bank : public QDialog
 {
     Q_OBJECT
 
@@ -19,10 +19,8 @@ public:
     void updateTipLabel();
 
 private slots:
-    void on_cancelButton_clicked();
     void on_saveButton_clicked();
     void on_drawButton_clicked();
-
     void on_leaveButton_clicked();
 
 private:

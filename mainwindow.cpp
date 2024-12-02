@@ -305,17 +305,20 @@ void MainWindow::on_lujiazuiplace_clicked()
 void MainWindow::on_bankButton_clicked()
 {
     bank = new Bank(player);
-    int myCash = player->getMoney();
-    int mySavings = player->getBankMoney();
+    long long myCash = player->getMoney();
+    long long mySavings = player->getBankMoney();
     bank->setCash(myCash,mySavings);
     connect(bank,&Bank::bankMoneyChanged,this,&MainWindow::updatePlayerUI);
-    bank->show();
+    bank->exec();
 }
 
 
 void MainWindow::on_hospitalButton_clicked()
 {
-    hospital = new Hospital();
-    hospital->show();
+    hospital = new Hospital(player);
+    long long health = player->getHealth();
+    hospital->setHealth(health);
+    connect(hospital,&Hospital::healthChanged,this,&MainWindow::updatePlayerUI);
+    hospital->exec();
 }
 
