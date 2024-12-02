@@ -19,6 +19,8 @@ MainWindow::MainWindow(QWidget *parent)
 
 {
     ui->setupUi(this);
+    setWindowTitle("上海浮生记");
+    setWindowIcon(QIcon(":/res/icon.png"));
     ui->playermoney->setDigitCount(13);
     ui->playerbankmoney->setDigitCount(13);
     ui->playergiveupmoney->setDigitCount(13);
