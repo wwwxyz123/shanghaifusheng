@@ -1,7 +1,9 @@
 release/backendmanager.o
+release/bank.o
 release/connectus.o
 release/eventmanager.o
 release/eventwindow.o
+release/hospital.o
 release/item.o
 release/itemmanager.o
 release/loading.o
@@ -12,7 +14,9 @@ release/start.o
 release/uitest.o
 release/ranking.o
 release/qrc_txtResource.o
+release/moc_bank.o
 release/moc_connectus.o
+release/moc_hospital.o
 release/moc_loading.o
 release/moc_mainwindow.o
 release/moc_player.o

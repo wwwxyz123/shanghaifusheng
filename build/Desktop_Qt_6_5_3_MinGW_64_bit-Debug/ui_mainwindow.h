@@ -38,11 +38,11 @@ public:
     QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer_5;
-    QPushButton *pushButton;
+    QPushButton *bankButton;
     QSpacerItem *horizontalSpacer;
-    QPushButton *pushButton_2;
+    QPushButton *hospitalButton;
     QSpacerItem *horizontalSpacer_2;
-    QPushButton *pushButton_3;
+    QPushButton *postButton;
     QSpacerItem *horizontalSpacer_3;
     QPushButton *pushButton_4;
     QSpacerItem *horizontalSpacer_4;
@@ -104,28 +104,28 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer_5);
 
-        pushButton = new QPushButton(layoutWidget);
-        pushButton->setObjectName("pushButton");
+        bankButton = new QPushButton(layoutWidget);
+        bankButton->setObjectName("bankButton");
 
-        horizontalLayout->addWidget(pushButton);
+        horizontalLayout->addWidget(bankButton);
 
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout->addItem(horizontalSpacer);
 
-        pushButton_2 = new QPushButton(layoutWidget);
-        pushButton_2->setObjectName("pushButton_2");
+        hospitalButton = new QPushButton(layoutWidget);
+        hospitalButton->setObjectName("hospitalButton");
 
-        horizontalLayout->addWidget(pushButton_2);
+        horizontalLayout->addWidget(hospitalButton);
 
         horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout->addItem(horizontalSpacer_2);
 
-        pushButton_3 = new QPushButton(layoutWidget);
-        pushButton_3->setObjectName("pushButton_3");
+        postButton = new QPushButton(layoutWidget);
+        postButton->setObjectName("postButton");
 
-        horizontalLayout->addWidget(pushButton_3);
+        horizontalLayout->addWidget(postButton);
 
         horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -299,7 +299,7 @@ public:
         groupBox->raise();
         groupBox_2->raise();
         sell->raise();
-        layoutWidget->raise();
+        layoutWidget1->raise();
         daylabel->raise();
         buy->raise();
         itemWidget->raise();
@@ -308,7 +308,7 @@ public:
         label_7->raise();
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 631, 22));
+        menubar->setGeometry(QRect(0, 0, 631, 18));
         menu = new QMenu(menubar);
         menu->setObjectName("menu");
         menu_2 = new QMenu(menubar);
@@ -332,9 +332,9 @@ public:
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         action->setText(QCoreApplication::translate("MainWindow", "\346\216\222\350\241\214\346\246\234", nullptr));
         sell->setText(QCoreApplication::translate("MainWindow", "<=\345\215\226\345\207\272", nullptr));
-        pushButton->setText(QCoreApplication::translate("MainWindow", "\351\223\266\350\241\214", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("MainWindow", "\345\214\273\351\231\242", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("MainWindow", "\351\202\256\345\261\200", nullptr));
+        bankButton->setText(QCoreApplication::translate("MainWindow", "\351\223\266\350\241\214", nullptr));
+        hospitalButton->setText(QCoreApplication::translate("MainWindow", "\345\214\273\351\231\242", nullptr));
+        postButton->setText(QCoreApplication::translate("MainWindow", "\351\202\256\345\261\200", nullptr));
         pushButton_4->setText(QCoreApplication::translate("MainWindow", "\347\247\237\346\210\277\344\270\255\344\273\213", nullptr));
         pushButton_5->setText(QCoreApplication::translate("MainWindow", "\347\275\221\345\220\247", nullptr));
         daylabel->setText(QCoreApplication::translate("MainWindow", "\345\275\223\345\211\215\346\230\257\347\254\254x\345\244\251", nullptr));

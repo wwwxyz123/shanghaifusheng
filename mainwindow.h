@@ -5,6 +5,8 @@
 #include<qtreewidget.h>
 #include<qpushbutton.h>
 #include"player.h"
+#include "bank.h"
+#include "hospital.h"
 #include"itemmanager.h"
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -36,12 +38,17 @@ private slots:
     void updateBagSpaceDisplay();
     void updateDate();
 
+    void on_bankButton_clicked();
+    void on_hospitalButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     QTreeWidget *itemWidget;
     QTreeWidget *bagWidget;
     Player *player=new Player();
     ItemManager *itemManager=new ItemManager();
+    Bank *bank;
+    Hospital *hospital;
 
 };
 #endif // MAINWINDOW_H

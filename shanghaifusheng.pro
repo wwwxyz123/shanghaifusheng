@@ -10,9 +10,11 @@ CONFIG += c++17
 
 SOURCES += \
     backendmanager.cpp \
+    bank.cpp \
     connectus.cpp \
     eventmanager.cpp \
     eventwindow.cpp \
+    hospital.cpp \
     item.cpp \
     itemmanager.cpp \
     loading.cpp \
@@ -25,9 +27,11 @@ SOURCES += \
 
 HEADERS += \
     backendmanager.h \
+    bank.h \
     connectus.h \
     eventmanager.h \
     eventwindow.h \
+    hospital.h \
     item.h \
     itemmanager.h \
     loading.h \
@@ -39,7 +43,9 @@ HEADERS += \
 
 
 FORMS += \
+    bank.ui \
     connectus.ui \
+    hospital.ui \
     loading.ui \
     mainwindow.ui \
     start.ui \

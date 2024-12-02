@@ -191,7 +191,6 @@ Makefile: ../../shanghaifusheng.pro D:/qt/6.5.3/mingw_64/mkspecs/win32-g++/qmake
 		D:/qt/6.5.3/mingw_64/mkspecs/features/qt_config.prf \
 		D:/qt/6.5.3/mingw_64/mkspecs/win32-g++/qmake.conf \
 		D:/qt/6.5.3/mingw_64/mkspecs/features/spec_post.prf \
-		.qmake.stash \
 		D:/qt/6.5.3/mingw_64/mkspecs/features/exclusive_builds.prf \
 		D:/qt/6.5.3/mingw_64/mkspecs/features/toolchain.prf \
 		D:/qt/6.5.3/mingw_64/mkspecs/features/default_pre.prf \
@@ -221,6 +220,7 @@ Makefile: ../../shanghaifusheng.pro D:/qt/6.5.3/mingw_64/mkspecs/win32-g++/qmake
 		D:/qt/6.5.3/mingw_64/lib/Qt6Gui.prl \
 		D:/qt/6.5.3/mingw_64/lib/Qt6Core.prl \
 		D:/qt/6.5.3/mingw_64/lib/Qt6EntryPoint.prl \
+		.qmake.stash \
 		D:/qt/6.5.3/mingw_64/mkspecs/features/build_pass.prf \
 		../../txtResource.qrc
 	$(QMAKE) -o Makefile ..\..\shanghaifusheng.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
@@ -345,7 +345,6 @@ D:/qt/6.5.3/mingw_64/mkspecs/features/qt_functions.prf:
 D:/qt/6.5.3/mingw_64/mkspecs/features/qt_config.prf:
 D:/qt/6.5.3/mingw_64/mkspecs/win32-g++/qmake.conf:
 D:/qt/6.5.3/mingw_64/mkspecs/features/spec_post.prf:
-.qmake.stash:
 D:/qt/6.5.3/mingw_64/mkspecs/features/exclusive_builds.prf:
 D:/qt/6.5.3/mingw_64/mkspecs/features/toolchain.prf:
 D:/qt/6.5.3/mingw_64/mkspecs/features/default_pre.prf:
@@ -375,6 +374,7 @@ D:/qt/6.5.3/mingw_64/lib/Qt6Widgets.prl:
 D:/qt/6.5.3/mingw_64/lib/Qt6Gui.prl:
 D:/qt/6.5.3/mingw_64/lib/Qt6Core.prl:
 D:/qt/6.5.3/mingw_64/lib/Qt6EntryPoint.prl:
+.qmake.stash:
 D:/qt/6.5.3/mingw_64/mkspecs/features/build_pass.prf:
 ../../txtResource.qrc:
 qmake: FORCE
