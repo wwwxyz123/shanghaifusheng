@@ -14,6 +14,7 @@ SOURCES += \
     connectus.cpp \
     eventmanager.cpp \
     eventwindow.cpp \
+    hospital.cpp \
     item.cpp \
     itemmanager.cpp \
     loading.cpp \
@@ -30,6 +31,7 @@ HEADERS += \
     connectus.h \
     eventmanager.h \
     eventwindow.h \
+    hospital.h \
     item.h \
     itemmanager.h \
     loading.h \
@@ -43,6 +45,7 @@ HEADERS += \
 FORMS += \
     bank.ui \
     connectus.ui \
+    hospital.ui \
     loading.ui \
     mainwindow.ui \
     start.ui \

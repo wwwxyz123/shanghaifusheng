@@ -6,13 +6,15 @@
 #include "player.h"
 
 Bank::Bank(Player *player,QWidget *parent)
-    : QDialog(parent)
+    : QWidget(parent)
     , ui(new Ui::Bank)
     ,myCash(0)
     ,player(player)
 {
     ui->setupUi(this);
     setWindowTitle("银行");
+
+    connect(ui->leaveButton, &QPushButton::clicked, this, &Bank::on_leaveButton_clicked);
 }
 
 Bank::~Bank()
@@ -20,10 +22,6 @@ Bank::~Bank()
     delete ui;
 }
 
-void Bank::on_leaveButton_clicked()
-{
-    this->close();
-}
 
 void Bank::setCash(long long cash,long long savings)
 {
@@ -69,3 +67,9 @@ void Bank::on_drawButton_clicked()
         emit bankMoneyChanged(myCash,mySavings);
     }
 }
+
+void Bank::on_leaveButton_clicked()
+{
+    this->close();
+}
+

@@ -1,14 +1,14 @@
 #ifndef BANK_H
 #define BANK_H
 
-#include <QDialog>
+#include <QWidget>
 #include "player.h"
 
 namespace Ui {
 class Bank;
 }
 
-class Bank : public QDialog
+class Bank : public QWidget
 {
     Q_OBJECT
 

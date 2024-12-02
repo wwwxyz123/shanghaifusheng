@@ -7,6 +7,7 @@
 #include<qinputdialog.h>
 #include"player.h"
 #include "bank.h"
+#include "hospital.h"
 #include <algorithm>
 #include <random>
 
@@ -303,11 +304,18 @@ void MainWindow::on_lujiazuiplace_clicked()
 
 void MainWindow::on_bankButton_clicked()
 {
-    bank = new Bank(player,this);
+    bank = new Bank(player);
     int myCash = player->getMoney();
     int mySavings = player->getBankMoney();
     bank->setCash(myCash,mySavings);
     connect(bank,&Bank::bankMoneyChanged,this,&MainWindow::updatePlayerUI);
-    bank->exec();
+    bank->show();
+}
+
+
+void MainWindow::on_hospitalButton_clicked()
+{
+    hospital = new Hospital();
+    hospital->show();
 }
 
