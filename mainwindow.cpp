@@ -324,3 +324,11 @@ void MainWindow::on_hospitalButton_clicked()
     hospital->exec();
 }
 
+
+void MainWindow::on_postButton_clicked()
+{
+    post = new Post(player);
+    connect(post,&Post::giveUpMoneyChanged,this,&MainWindow::updatePlayerUI);
+    post->exec();
+}
+
