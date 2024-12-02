@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     backendmanager.cpp \
+    bank.cpp \
     connectus.cpp \
     eventmanager.cpp \
     eventwindow.cpp \
@@ -25,6 +26,7 @@ SOURCES += \
 
 HEADERS += \
     backendmanager.h \
+    bank.h \
     connectus.h \
     eventmanager.h \
     eventwindow.h \
@@ -39,6 +41,7 @@ HEADERS += \
 
 
 FORMS += \
+    bank.ui \
     connectus.ui \
     loading.ui \
     mainwindow.ui \

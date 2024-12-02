@@ -5,6 +5,7 @@
 #include<qtreewidget.h>
 #include<qpushbutton.h>
 #include"player.h"
+#include "bank.h"
 #include"itemmanager.h"
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -35,6 +36,7 @@ private slots:
     void on_lujiazuiplace_clicked();
     void updateBagSpaceDisplay();
     void updateDate();
+    void on_bankButton_clicked();
 
 private:
     Ui::MainWindow *ui;
@@ -42,6 +44,7 @@ private:
     QTreeWidget *bagWidget;
     Player *player=new Player();
     ItemManager *itemManager=new ItemManager();
+    Bank *bank;
 
 };
 #endif // MAINWINDOW_H

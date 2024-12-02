@@ -6,6 +6,7 @@
 #include <QDebug>
 #include<qinputdialog.h>
 #include"player.h"
+#include "bank.h"
 #include <algorithm>
 #include <random>
 
@@ -13,6 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
     , daytime(1)
+    ,bank(nullptr)
 
 {
     ui->setupUi(this);
@@ -299,6 +301,13 @@ void MainWindow::on_lujiazuiplace_clicked()
 
 }
 
-
-
+void MainWindow::on_bankButton_clicked()
+{
+    bank = new Bank(player,this);
+    int myCash = player->getMoney();
+    int mySavings = player->getBankMoney();
+    bank->setCash(myCash,mySavings);
+    connect(bank,&Bank::bankMoneyChanged,this,&MainWindow::updatePlayerUI);
+    bank->exec();
+}
 
