@@ -43,6 +43,7 @@ private slots:
     void on_hospitalButton_clicked();
     void on_postButton_clicked();
 
+    void showGameOverMessage();
 private:
     Ui::MainWindow *ui;
     QTreeWidget *itemWidget;

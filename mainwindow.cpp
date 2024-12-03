@@ -10,7 +10,7 @@
 #include "hospital.h"
 #include <algorithm>
 #include <random>
-
+#include "ranking.h"
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -287,21 +287,60 @@ void MainWindow::updateDate()
     if(daytime>40)
     {
         //游戏结束，结算画面
+        /*
+        1.跳出再来一局
+        2.跳出排行榜
+        3.    排行榜：请输入你的大名
+        4.然后展示排行榜的内容
+*/
+        showGameOverMessage();
+        Ranking *rankbox=new Ranking();
+
     }
     else
         ui->daylabel->setText(QString("当前是第%1天").arg(daytime));
+}
+void MainWindow::showGameOverMessage()
+{
+    QMessageBox box;
+    box.setIcon(QMessageBox::Information);
+    box.setWindowTitle("游戏结束");
+    box.setText("游戏结束，选择你的下一步:");
+
+    // 创建“再来一局”按钮
+    QPushButton *replayButton = box.addButton("再来一局", QMessageBox::YesRole);
+    // 创建“离开”按钮
+    QPushButton *exitButton = box.addButton("离开", QMessageBox::NoRole);
+
+    // 显示提示框
+    box.exec();
+
+    // 处理按钮点击事件
+    if (box.clickedButton() == replayButton) {
+        // 处理“再来一局”按钮点击事件
+        this->close();
+        MainWindow *newmainwindow=new MainWindow();
+        newmainwindow->show();
+
+    } else if (box.clickedButton() == exitButton) {
+        // 处理“离开”按钮点击事件
+        this->close();
+    }
 }
 void MainWindow::nextday()
 {
     refreshItemsInMarket(6);
     moreneedmoney();
     daytime++;
+    if(daytime==40)
+    {
+        QMessageBox::information(this,"提示",QString("你明天就要回家啦，记得把背包里的东西清理掉，不然只能分给乡亲们了"));
+    }
     updateDate();
 }
 void MainWindow::on_lujiazuiplace_clicked()
 {
     nextday();
-
 }
 
 void MainWindow::on_bankButton_clicked()
