@@ -23,10 +23,8 @@ loading::~loading()
 
 void loading::on_begin_clicked()
 {
-    QString playerName = ui->lineEdit->text();
 
-    // 调用 Player 对象的 setPlayerName 方法，将获取到的名字设置到 Player 对象中
-    player->setPlayerName(playerName);
+
     if(!mainwindow)
     {
         mainwindow=new MainWindow();

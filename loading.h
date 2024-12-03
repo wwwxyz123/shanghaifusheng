@@ -22,7 +22,7 @@ private slots:
 private:
     Ui::loading *ui;
     MainWindow *mainwindow=nullptr;
-    Player *player=new Player();
+
 };
 
 #endif // LOADING_H

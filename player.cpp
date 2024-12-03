@@ -1,6 +1,8 @@
 #include "player.h"
 #include <iostream>
 #include<QDebug>
+#include <QFile>
+#include <QTextStream>
 Player::Player()
     : money(10000), bankMoney(0), giveUpMoney(5000), health(100), fame(100) ,bagsize(100){}
 
@@ -80,4 +82,15 @@ void Player::setPlayerName(const QString &name) {
     playerName = name;
     qDebug()<<"ok";
     //emit playerNameChanged(playerName);  // 你可以定义一个 playerNameChanged 信号
+}
+
+bool Player::loadScoreFromFile(const QString& filename){
+    QFile file(filename);
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        std::cerr << "无法打开文件: " << filename.toStdString() << std::endl;
+        return false;
+    }
+}
+const std::vector<Player>& Player::getAllElement() const {
+    return players;
 }

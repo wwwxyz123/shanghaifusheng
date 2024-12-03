@@ -2,6 +2,8 @@
 #define RANKING_H
 
 #include <QWidget>
+#include<string.h>
+#include<player.h>
 class start;
 namespace Ui {
 class Ranking;
@@ -16,7 +18,9 @@ public:
     ~Ranking();
 
 private slots:
-    void on_startButton_clicked();
+
+
+    void on_pushButton_clicked();
 
 private:
     Ui::Ranking *ui;

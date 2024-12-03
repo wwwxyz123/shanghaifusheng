@@ -36,7 +36,7 @@ void start::on_rankbutton_clicked()
         rankingwindow=new Ranking();
         rankingwindow->show();
     }
-    this->close();
+
 }
 void start::on_connectusbutton_clicked()
 {
