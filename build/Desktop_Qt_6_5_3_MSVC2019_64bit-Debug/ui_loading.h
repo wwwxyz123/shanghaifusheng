@@ -12,7 +12,6 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
 
@@ -24,40 +23,31 @@ public:
     QLabel *label;
     QPushButton *begin;
     QLabel *label_2;
-    QLabel *label_3;
-    QLineEdit *lineEdit;
 
     void setupUi(QWidget *loading)
     {
         if (loading->objectName().isEmpty())
             loading->setObjectName("loading");
-        loading->resize(638, 578);
+        loading->resize(410, 583);
         label = new QLabel(loading);
         label->setObjectName("label");
-        label->setGeometry(QRect(10, 50, 601, 421));
+        label->setGeometry(QRect(10, 50, 381, 421));
         QFont font;
         font.setPointSize(12);
         label->setFont(font);
         label->setWordWrap(true);
         begin = new QPushButton(loading);
         begin->setObjectName("begin");
-        begin->setGeometry(QRect(470, 510, 131, 51));
+        begin->setGeometry(QRect(120, 500, 131, 51));
         QFont font1;
         font1.setPointSize(14);
         begin->setFont(font1);
         label_2 = new QLabel(loading);
         label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(130, 0, 381, 71));
+        label_2->setGeometry(QRect(0, -10, 381, 71));
         QFont font2;
         font2.setPointSize(18);
         label_2->setFont(font2);
-        label_3 = new QLabel(loading);
-        label_3->setObjectName("label_3");
-        label_3->setGeometry(QRect(20, 490, 151, 71));
-        label_3->setFont(font);
-        lineEdit = new QLineEdit(loading);
-        lineEdit->setObjectName("lineEdit");
-        lineEdit->setGeometry(QRect(192, 515, 211, 41));
 
         retranslateUi(loading);
 
@@ -74,7 +64,6 @@ public:
                         "\242\235\350\264\267\346\254\276\343\200\202\345\207\206\345\244\207\345\245\275\350\277\216\346\216\245\346\214\221\346\210\230\357\274\214\345\274\200\345\210\233\345\261\236\344\272\216\346\202\250\347\232\204\344\270\212\346\265\267\345\245\213\346\226\227\346\225\205\344\272\213\345\220\247\357\274\201</p></body></html>", nullptr));
         begin->setText(QCoreApplication::translate("loading", "\345\207\272\345\217\221", nullptr));
         label_2->setText(QCoreApplication::translate("loading", "<html><head/><body><p align=\"center\"><span style=\" font-weight:700;\">\344\270\212\346\265\267\346\265\256\347\224\237\350\256\260\347\232\204\346\225\205\344\272\213</span></p></body></html>", nullptr));
-        label_3->setText(QCoreApplication::translate("loading", "\350\257\267\350\276\223\345\205\245\346\202\250\347\232\204\345\244\247\345\220\215\357\274\232", nullptr));
     } // retranslateUi
 
 };

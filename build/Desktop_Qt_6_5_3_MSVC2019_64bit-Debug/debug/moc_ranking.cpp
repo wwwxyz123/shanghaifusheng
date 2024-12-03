@@ -39,14 +39,14 @@ namespace {
 struct qt_meta_stringdata_CLASSRankingENDCLASS_t {};
 static constexpr auto qt_meta_stringdata_CLASSRankingENDCLASS = QtMocHelpers::stringData(
     "Ranking",
-    "on_startButton_clicked",
+    "on_pushButton_clicked",
     ""
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSRankingENDCLASS_t {
     uint offsetsAndSizes[6];
     char stringdata0[8];
-    char stringdata1[23];
+    char stringdata1[22];
     char stringdata2[1];
 };
 #define QT_MOC_LITERAL(ofs, len) \
@@ -54,11 +54,11 @@ struct qt_meta_stringdata_CLASSRankingENDCLASS_t {
 Q_CONSTINIT static const qt_meta_stringdata_CLASSRankingENDCLASS_t qt_meta_stringdata_CLASSRankingENDCLASS = {
     {
         QT_MOC_LITERAL(0, 7),  // "Ranking"
-        QT_MOC_LITERAL(8, 22),  // "on_startButton_clicked"
-        QT_MOC_LITERAL(31, 0)   // ""
+        QT_MOC_LITERAL(8, 21),  // "on_pushButton_clicked"
+        QT_MOC_LITERAL(30, 0)   // ""
     },
     "Ranking",
-    "on_startButton_clicked",
+    "on_pushButton_clicked",
     ""
 };
 #undef QT_MOC_LITERAL
@@ -96,7 +96,7 @@ Q_CONSTINIT const QMetaObject Ranking::staticMetaObject = { {
     qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSRankingENDCLASS_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<Ranking, std::true_type>,
-        // method 'on_startButton_clicked'
+        // method 'on_pushButton_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -108,7 +108,7 @@ void Ranking::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
         auto *_t = static_cast<Ranking *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->on_startButton_clicked(); break;
+        case 0: _t->on_pushButton_clicked(); break;
         default: ;
         }
     }
