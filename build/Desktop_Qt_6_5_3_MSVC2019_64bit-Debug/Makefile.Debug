@@ -2275,13 +2275,7 @@ debug\ranking.obj: ..\..\ranking.cpp ..\..\ranking.h \
 		..\..\Item.h \
 		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\QtGlobal \
 		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\QString \
-		..\..\connectus.h \
-		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\QFile \
-		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qfile.h \
-		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qfiledevice.h \
-		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\QTextStream \
-		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\QStringList \
-		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\QDebug
+		..\..\connectus.h
 
 debug\qrc_txtResource.obj: debug\qrc_txtResource.cpp 
 
