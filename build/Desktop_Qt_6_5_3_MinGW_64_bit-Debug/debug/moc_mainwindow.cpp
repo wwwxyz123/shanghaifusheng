@@ -56,11 +56,12 @@ static constexpr auto qt_meta_stringdata_CLASSMainWindowENDCLASS = QtMocHelpers:
     "updateBagSpaceDisplay",
     "updateDate",
     "on_bankButton_clicked",
-    "on_hospitalButton_clicked"
+    "on_hospitalButton_clicked",
+    "on_postButton_clicked"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {
-    uint offsetsAndSizes[38];
+    uint offsetsAndSizes[40];
     char stringdata0[11];
     char stringdata1[15];
     char stringdata2[1];
@@ -80,6 +81,7 @@ struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {
     char stringdata16[11];
     char stringdata17[22];
     char stringdata18[26];
+    char stringdata19[22];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSMainWindowENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -103,7 +105,8 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSMainWindowENDCLASS_t qt_meta_st
         QT_MOC_LITERAL(196, 21),  // "updateBagSpaceDisplay"
         QT_MOC_LITERAL(218, 10),  // "updateDate"
         QT_MOC_LITERAL(229, 21),  // "on_bankButton_clicked"
-        QT_MOC_LITERAL(251, 25)   // "on_hospitalButton_clicked"
+        QT_MOC_LITERAL(251, 25),  // "on_hospitalButton_clicked"
+        QT_MOC_LITERAL(277, 21)   // "on_postButton_clicked"
     },
     "MainWindow",
     "updatePlayerUI",
@@ -123,7 +126,8 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSMainWindowENDCLASS_t qt_meta_st
     "updateBagSpaceDisplay",
     "updateDate",
     "on_bankButton_clicked",
-    "on_hospitalButton_clicked"
+    "on_hospitalButton_clicked",
+    "on_postButton_clicked"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -135,7 +139,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
       11,       // revision
        0,       // classname
        0,    0, // classinfo
-      13,   14, // methods
+      14,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -143,19 +147,20 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   92,    2, 0x08,    1 /* Private */,
-       3,    0,   93,    2, 0x08,    2 /* Private */,
-       4,    0,   94,    2, 0x08,    3 /* Private */,
-       5,    0,   95,    2, 0x08,    4 /* Private */,
-       6,    0,   96,    2, 0x08,    5 /* Private */,
-       7,    0,   97,    2, 0x08,    6 /* Private */,
-       8,    3,   98,    2, 0x08,    7 /* Private */,
-      12,    1,  105,    2, 0x08,   11 /* Private */,
-      14,    0,  108,    2, 0x08,   13 /* Private */,
-      15,    0,  109,    2, 0x08,   14 /* Private */,
-      16,    0,  110,    2, 0x08,   15 /* Private */,
-      17,    0,  111,    2, 0x08,   16 /* Private */,
-      18,    0,  112,    2, 0x08,   17 /* Private */,
+       1,    0,   98,    2, 0x08,    1 /* Private */,
+       3,    0,   99,    2, 0x08,    2 /* Private */,
+       4,    0,  100,    2, 0x08,    3 /* Private */,
+       5,    0,  101,    2, 0x08,    4 /* Private */,
+       6,    0,  102,    2, 0x08,    5 /* Private */,
+       7,    0,  103,    2, 0x08,    6 /* Private */,
+       8,    3,  104,    2, 0x08,    7 /* Private */,
+      12,    1,  111,    2, 0x08,   11 /* Private */,
+      14,    0,  114,    2, 0x08,   13 /* Private */,
+      15,    0,  115,    2, 0x08,   14 /* Private */,
+      16,    0,  116,    2, 0x08,   15 /* Private */,
+      17,    0,  117,    2, 0x08,   16 /* Private */,
+      18,    0,  118,    2, 0x08,   17 /* Private */,
+      19,    0,  119,    2, 0x08,   18 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -166,6 +171,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString, QMetaType::LongLong, QMetaType::Int,    9,   10,   11,
     QMetaType::Void, QMetaType::Int,   13,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -213,6 +219,8 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         // method 'on_bankButton_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_hospitalButton_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_postButton_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -237,6 +245,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 10: _t->updateDate(); break;
         case 11: _t->on_bankButton_clicked(); break;
         case 12: _t->on_hospitalButton_clicked(); break;
+        case 13: _t->on_postButton_clicked(); break;
         default: ;
         }
     }
@@ -261,13 +270,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 13)
+        if (_id < 14)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 13;
+        _id -= 14;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 13)
+        if (_id < 14)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 13;
+        _id -= 14;
     }
     return _id;
 }
