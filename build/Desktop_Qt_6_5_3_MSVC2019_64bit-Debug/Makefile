@@ -201,7 +201,6 @@ Makefile: ..\..\shanghaifusheng.pro D:\qtcreator\6.5.3\msvc2019_64\mkspecs\win32
 		D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\qt_config.prf \
 		D:\qtcreator\6.5.3\msvc2019_64\mkspecs\win32-msvc\qmake.conf \
 		D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\spec_post.prf \
-		.qmake.stash \
 		D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\exclusive_builds.prf \
 		D:\qtcreator\6.5.3\msvc2019_64\mkspecs\common\msvc-version.conf \
 		D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\toolchain.prf \
@@ -232,8 +231,8 @@ Makefile: ..\..\shanghaifusheng.pro D:\qtcreator\6.5.3\msvc2019_64\mkspecs\win32
 		D:\qtcreator\6.5.3\msvc2019_64\lib\Qt6Gui.prl \
 		D:\qtcreator\6.5.3\msvc2019_64\lib\Qt6Core.prl \
 		D:\qtcreator\6.5.3\msvc2019_64\lib\Qt6EntryPoint.prl \
+		.qmake.stash \
 		D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\build_pass.prf \
-		..\..\txtResource.qrc \
 		D:\qtcreator\6.5.3\msvc2019_64\lib\Qt6Widgetsd.prl \
 		D:\qtcreator\6.5.3\msvc2019_64\lib\Qt6Guid.prl \
 		D:\qtcreator\6.5.3\msvc2019_64\lib\Qt6Cored.prl \
@@ -356,7 +355,6 @@ D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\qt_functions.prf:
 D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\qt_config.prf:
 D:\qtcreator\6.5.3\msvc2019_64\mkspecs\win32-msvc\qmake.conf:
 D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\spec_post.prf:
-.qmake.stash:
 D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\exclusive_builds.prf:
 D:\qtcreator\6.5.3\msvc2019_64\mkspecs\common\msvc-version.conf:
 D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\toolchain.prf:
@@ -387,8 +385,8 @@ D:\qtcreator\6.5.3\msvc2019_64\lib\Qt6Widgets.prl:
 D:\qtcreator\6.5.3\msvc2019_64\lib\Qt6Gui.prl:
 D:\qtcreator\6.5.3\msvc2019_64\lib\Qt6Core.prl:
 D:\qtcreator\6.5.3\msvc2019_64\lib\Qt6EntryPoint.prl:
+.qmake.stash:
 D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\build_pass.prf:
-..\..\txtResource.qrc:
 D:\qtcreator\6.5.3\msvc2019_64\lib\Qt6Widgetsd.prl:
 D:\qtcreator\6.5.3\msvc2019_64\lib\Qt6Guid.prl:
 D:\qtcreator\6.5.3\msvc2019_64\lib\Qt6Cored.prl:

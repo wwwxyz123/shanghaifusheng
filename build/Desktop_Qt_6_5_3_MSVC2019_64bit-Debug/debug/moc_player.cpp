@@ -122,11 +122,11 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSPlayerENDCLASS[] = {
       10,    1,   56,    2, 0x06,    9 /* Public */,
 
  // signals: parameters
-    QMetaType::Void, QMetaType::LongLong,    3,
-    QMetaType::Void, QMetaType::LongLong,    5,
-    QMetaType::Void, QMetaType::LongLong,    7,
-    QMetaType::Void, QMetaType::LongLong,    9,
-    QMetaType::Void, QMetaType::LongLong,   11,
+    QMetaType::Void, QMetaType::Int,    3,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Int,    7,
+    QMetaType::Void, QMetaType::Int,    9,
+    QMetaType::Void, QMetaType::Int,   11,
 
        0        // eod
 };
@@ -142,19 +142,19 @@ Q_CONSTINIT const QMetaObject Player::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<Player, std::true_type>,
         // method 'moneyChanged'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<long long, std::false_type>,
+        QtPrivate::TypeAndForceComplete<int, std::false_type>,
         // method 'bankMoneyChanged'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<long long, std::false_type>,
+        QtPrivate::TypeAndForceComplete<int, std::false_type>,
         // method 'giveUpMoneyChanged'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<long long, std::false_type>,
+        QtPrivate::TypeAndForceComplete<int, std::false_type>,
         // method 'healthChanged'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<long long, std::false_type>,
+        QtPrivate::TypeAndForceComplete<int, std::false_type>,
         // method 'fameChanged'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<long long, std::false_type>
+        QtPrivate::TypeAndForceComplete<int, std::false_type>
     >,
     nullptr
 } };
@@ -165,45 +165,45 @@ void Player::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         auto *_t = static_cast<Player *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->moneyChanged((*reinterpret_cast< std::add_pointer_t<qlonglong>>(_a[1]))); break;
-        case 1: _t->bankMoneyChanged((*reinterpret_cast< std::add_pointer_t<qlonglong>>(_a[1]))); break;
-        case 2: _t->giveUpMoneyChanged((*reinterpret_cast< std::add_pointer_t<qlonglong>>(_a[1]))); break;
-        case 3: _t->healthChanged((*reinterpret_cast< std::add_pointer_t<qlonglong>>(_a[1]))); break;
-        case 4: _t->fameChanged((*reinterpret_cast< std::add_pointer_t<qlonglong>>(_a[1]))); break;
+        case 0: _t->moneyChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 1: _t->bankMoneyChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 2: _t->giveUpMoneyChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 3: _t->healthChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 4: _t->fameChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         {
-            using _t = void (Player::*)(long long );
+            using _t = void (Player::*)(int );
             if (_t _q_method = &Player::moneyChanged; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 0;
                 return;
             }
         }
         {
-            using _t = void (Player::*)(long long );
+            using _t = void (Player::*)(int );
             if (_t _q_method = &Player::bankMoneyChanged; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 1;
                 return;
             }
         }
         {
-            using _t = void (Player::*)(long long );
+            using _t = void (Player::*)(int );
             if (_t _q_method = &Player::giveUpMoneyChanged; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 2;
                 return;
             }
         }
         {
-            using _t = void (Player::*)(long long );
+            using _t = void (Player::*)(int );
             if (_t _q_method = &Player::healthChanged; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 3;
                 return;
             }
         }
         {
-            using _t = void (Player::*)(long long );
+            using _t = void (Player::*)(int );
             if (_t _q_method = &Player::fameChanged; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 4;
                 return;
@@ -243,35 +243,35 @@ int Player::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void Player::moneyChanged(long long _t1)
+void Player::moneyChanged(int _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 
 // SIGNAL 1
-void Player::bankMoneyChanged(long long _t1)
+void Player::bankMoneyChanged(int _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 1, _a);
 }
 
 // SIGNAL 2
-void Player::giveUpMoneyChanged(long long _t1)
+void Player::giveUpMoneyChanged(int _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 2, _a);
 }
 
 // SIGNAL 3
-void Player::healthChanged(long long _t1)
+void Player::healthChanged(int _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 3, _a);
 }
 
 // SIGNAL 4
-void Player::fameChanged(long long _t1)
+void Player::fameChanged(int _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 4, _a);

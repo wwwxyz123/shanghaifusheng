@@ -4,6 +4,7 @@ shanghaifusheng.pro.user
 *.user
 *.user
 shanghaifusheng.pro.user
+<<<<<<< HEAD
 *.user
 *.user
 topperson.cpp
@@ -11,3 +12,6 @@ topperson.h
 shanghaifusheng.pro.user
 shanghaifusheng.pro.user
 *.user
+=======
+>>>>>>> parent of dcd2381 (优化)
+/build
