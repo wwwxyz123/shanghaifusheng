@@ -169,7 +169,7 @@ void MainWindow::on_buy_clicked()
     }
 
     // 如果银行里的钱足够购买
-    if (player->getBankMoney() >= nowPrice) {
+    if (player->getBankMoney() >= nowPrice&&player->getMoney()<nowPrice) {
         QMessageBox::information(this, "提示", "银行里的钱足够购买，请去取钱！");
         return;
     }
@@ -332,6 +332,7 @@ void MainWindow::nextday()
     refreshItemsInMarket(6);
     moreneedmoney();
     daytime++;
+    player->addBankMoney(player->getBankMoney()*0.05);
     if(daytime==40)
     {
         QMessageBox::information(this,"提示",QString("你明天就要回家啦，记得把背包里的东西清理掉，不然只能分给乡亲们了"));
