@@ -11,6 +11,7 @@
 #include <algorithm>
 #include <random>
 #include "ranking.h"
+#include"uitest.h"
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -302,30 +303,33 @@ void MainWindow::updateDate()
 }
 void MainWindow::showGameOverMessage()
 {
-    QMessageBox box;
-    box.setIcon(QMessageBox::Information);
-    box.setWindowTitle("游戏结束");
-    box.setText("游戏结束，选择你的下一步:");
+    // QMessageBox box;
+    // box.setIcon(QMessageBox::Information);
+    // box.setWindowTitle("游戏结束");
+    // box.setText("游戏结束，选择你的下一步:");
 
-    // 创建“再来一局”按钮
-    QPushButton *replayButton = box.addButton("再来一局", QMessageBox::YesRole);
-    // 创建“离开”按钮
-    QPushButton *exitButton = box.addButton("离开", QMessageBox::NoRole);
+    // // 创建“再来一局”按钮
+    // QPushButton *replayButton = box.addButton("再来一局", QMessageBox::YesRole);
+    // // 创建“离开”按钮
+    // QPushButton *exitButton = box.addButton("离开", QMessageBox::NoRole);
 
-    // 显示提示框
-    box.exec();
+    // // 显示提示框
+    // box.exec();
 
-    // 处理按钮点击事件
-    if (box.clickedButton() == replayButton) {
-        // 处理“再来一局”按钮点击事件
-        this->close();
-        MainWindow *newmainwindow=new MainWindow();
-        newmainwindow->show();
+    // // 处理按钮点击事件
+    // if (box.clickedButton() == replayButton) {
+    //     // 处理“再来一局”按钮点击事件
+    //     this->close();
+    //     MainWindow *newmainwindow=new MainWindow();
+    //     newmainwindow->show();
 
-    } else if (box.clickedButton() == exitButton) {
-        // 处理“离开”按钮点击事件
-        this->close();
-    }
+    // } else if (box.clickedButton() == exitButton) {
+    //     // 处理“离开”按钮点击事件
+    //     this->close();
+    // }
+
+    uitest *se=new uitest(this);
+    se->show();
 }
 void MainWindow::nextday()
 {
@@ -372,3 +376,7 @@ void MainWindow::on_postButton_clicked()
     post->exec();
 }
 
+Player* MainWindow::getPlayer()
+{
+    return player;
+}
