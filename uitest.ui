@@ -55,7 +55,7 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>130</x>
+     <x>110</x>
      <y>70</y>
      <width>121</width>
      <height>31</height>
@@ -68,7 +68,7 @@
     </font>
    </property>
    <property name="text">
-    <string>您最终收益：</string>
+    <string>您的最终收益：</string>
    </property>
   </widget>
   <widget class="QLabel" name="money_2">
@@ -92,7 +92,7 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>130</x>
+     <x>110</x>
      <y>110</y>
      <width>121</width>
      <height>31</height>
@@ -105,7 +105,7 @@
     </font>
    </property>
    <property name="text">
-    <string>您最终健康：</string>
+    <string>您的最终健康：</string>
    </property>
   </widget>
   <widget class="QLabel" name="money_3">
@@ -129,7 +129,7 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>130</x>
+     <x>110</x>
      <y>150</y>
      <width>121</width>
      <height>31</height>
@@ -142,7 +142,7 @@
     </font>
    </property>
    <property name="text">
-    <string>您最终声望：</string>
+    <string>您的最终声望：</string>
    </property>
   </widget>
   <widget class="QLabel" name="money_4">
@@ -234,19 +234,6 @@
    </property>
    <property name="text">
     <string>离开</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>220</y>
-     <width>56</width>
-     <height>18</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>PushButton</string>
    </property>
   </widget>
  </widget>
