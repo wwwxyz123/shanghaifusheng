@@ -44,9 +44,9 @@ public:
     QSpacerItem *horizontalSpacer_2;
     QPushButton *postButton;
     QSpacerItem *horizontalSpacer_3;
-    QPushButton *pushButton_4;
+    QPushButton *rentButton;
     QSpacerItem *horizontalSpacer_4;
-    QPushButton *pushButton_5;
+    QPushButton *douyinButton;
     QSpacerItem *horizontalSpacer_6;
     QLabel *daylabel;
     QPushButton *buy;
@@ -131,19 +131,19 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer_3);
 
-        pushButton_4 = new QPushButton(layoutWidget);
-        pushButton_4->setObjectName("pushButton_4");
+        rentButton = new QPushButton(layoutWidget);
+        rentButton->setObjectName("rentButton");
 
-        horizontalLayout->addWidget(pushButton_4);
+        horizontalLayout->addWidget(rentButton);
 
         horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
         horizontalLayout->addItem(horizontalSpacer_4);
 
-        pushButton_5 = new QPushButton(layoutWidget);
-        pushButton_5->setObjectName("pushButton_5");
+        douyinButton = new QPushButton(layoutWidget);
+        douyinButton->setObjectName("douyinButton");
 
-        horizontalLayout->addWidget(pushButton_5);
+        horizontalLayout->addWidget(douyinButton);
 
         horizontalSpacer_6 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
@@ -335,8 +335,8 @@ public:
         bankButton->setText(QCoreApplication::translate("MainWindow", "\351\223\266\350\241\214", nullptr));
         hospitalButton->setText(QCoreApplication::translate("MainWindow", "\345\214\273\351\231\242", nullptr));
         postButton->setText(QCoreApplication::translate("MainWindow", "\351\202\256\345\261\200", nullptr));
-        pushButton_4->setText(QCoreApplication::translate("MainWindow", "\347\247\237\346\210\277\344\270\255\344\273\213", nullptr));
-        pushButton_5->setText(QCoreApplication::translate("MainWindow", "\347\275\221\345\220\247", nullptr));
+        rentButton->setText(QCoreApplication::translate("MainWindow", "\347\247\237\346\210\277\344\270\255\344\273\213", nullptr));
+        douyinButton->setText(QCoreApplication::translate("MainWindow", "\346\212\226\351\237\263", nullptr));
         daylabel->setText(QCoreApplication::translate("MainWindow", "\345\275\223\345\211\215\346\230\257\347\254\254x\345\244\251", nullptr));
         buy->setText(QCoreApplication::translate("MainWindow", "\344\271\260\345\205\245=>", nullptr));
         groupBox->setTitle(QCoreApplication::translate("MainWindow", "\347\216\251\345\256\266\347\212\266\346\200\201", nullptr));

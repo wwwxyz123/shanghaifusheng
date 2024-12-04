@@ -11,6 +11,7 @@ debug/main.o
 debug/mainwindow.o
 debug/player.o
 debug/post.o
+debug/rent.o
 debug/start.o
 debug/uitest.o
 debug/ranking.o
@@ -22,6 +23,7 @@ debug/moc_loading.o
 debug/moc_mainwindow.o
 debug/moc_player.o
 debug/moc_post.o
+debug/moc_rent.o
 debug/moc_start.o
 debug/moc_uitest.o
 debug/moc_ranking.o
