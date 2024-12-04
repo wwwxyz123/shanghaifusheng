@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
     start w;
     w.setWindowIcon(QIcon(":/res/icon.png"));
     w.show();
-    uitest w2;
-    w2.show();
+    // uitest w2();
+    // w2.show();
     return a.exec();
 }
