@@ -22,6 +22,7 @@ SOURCES += \
     mainwindow.cpp \
     player.cpp \
     post.cpp \
+    rent.cpp \
     start.cpp \
     uitest.cpp \
     ranking.cpp
@@ -39,6 +40,7 @@ HEADERS += \
     mainwindow.h \
     player.h \
     post.h \
+    rent.h \
     start.h \
     uitest.h \
     ranking.h
@@ -51,6 +53,7 @@ FORMS += \
     loading.ui \
     mainwindow.ui \
     post.ui \
+    rent.ui \
     start.ui \
     uitest.ui \
     ranking.ui
