@@ -23,6 +23,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     int daytime;
+    Player* getPlayer();
 
 private slots:
     void updatePlayerUI();
@@ -42,8 +43,8 @@ private slots:
     void on_bankButton_clicked();
     void on_hospitalButton_clicked();
     void on_postButton_clicked();
-
     void showGameOverMessage();
+
 private:
     Ui::MainWindow *ui;
     QTreeWidget *itemWidget;
