@@ -24,14 +24,17 @@ void Post::on_leaveButton_clicked()
     this->close();
 }
 
-
 void Post::on_payButton_clicked()
 {
     if(player->getMoney() == 0)
     {
         QMessageBox::warning(this,"保安说","取点钱再来吧！");
     }
-    else
+    else if(player->getGiveUpMoney() == 0)
+    {
+        QMessageBox::warning(this,"村长说","侬想做慈善吗？！");
+    }
+
     {
         bool ok;
         int myCash = player->getMoney();
