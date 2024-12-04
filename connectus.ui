@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>280</width>
-    <height>440</height>
+    <width>240</width>
+    <height>368</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,8 @@
   <widget class="QLabel" name="githubtext">
    <property name="geometry">
     <rect>
-     <x>44</x>
-     <y>152</y>
+     <x>22</x>
+     <y>120</y>
      <width>121</width>
      <height>31</height>
     </rect>
@@ -44,8 +44,8 @@
   <widget class="QLabel" name="github">
    <property name="geometry">
     <rect>
-     <x>162</x>
-     <y>152</y>
+     <x>140</x>
+     <y>120</y>
      <width>91</width>
      <height>31</height>
     </rect>
@@ -63,8 +63,8 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>212</y>
+     <x>0</x>
+     <y>200</y>
      <width>231</width>
      <height>41</height>
     </rect>
