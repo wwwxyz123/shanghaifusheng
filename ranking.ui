@@ -16,9 +16,9 @@
   <widget class="QTreeWidget" name="ranktreeWidget">
    <property name="geometry">
     <rect>
-     <x>90</x>
+     <x>10</x>
      <y>60</y>
-     <width>611</width>
+     <width>801</width>
      <height>511</height>
     </rect>
    </property>
@@ -45,6 +45,11 @@
    <column>
     <property name="text">
      <string>健康状况</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>称号</string>
     </property>
    </column>
    <item>

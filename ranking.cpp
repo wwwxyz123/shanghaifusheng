@@ -7,7 +7,8 @@
 #include <QStringList>
 #include <QDebug>
 #include "qmessagebox.h"
-#include"player.h"
+#include"rankitem.h"
+#include"rankitemmanager.h"
 #include<qinputdialog.h>
 Ranking::Ranking(QWidget *parent)
     : QWidget(parent)
@@ -19,37 +20,40 @@ Ranking::Ranking(QWidget *parent)
     ui->ranktreeWidget->setStyleSheet("QTreeWidget::item { height: 40px; }");
 
     this->setWindowTitle("富豪玩家排行榜");
-    Player player;
-    if (!player.loadScoreFromFile(":/res/score.txt")) {
-        qDebug() << "Failed to load items from file. Using default items.";
+    rankItemManager rankItemManager;
+    if (!rankItemManager.loadScoreFromFile(":/res/score.txt")) {
+        qDebug() << "Failed to load scores from file. Using default items.";
     }
 
+    ui->ranktreeWidget->clear();
 
-    int rowCount = ui->ranktreeWidget->topLevelItemCount();  // 获取顶层项目数量
+    std::vector<rankItem> rankItems = rankItemManager.getAllElements();
 
-    for (int row = 0; row < rowCount; ++row) {
-        QTreeWidgetItem* item = ui->ranktreeWidget->topLevelItem(row);  // 获取顶层项
-        int colCount = item->columnCount();  // 获取每个条目的列数
+    // 根据金钱从大到小排序
+    std::sort(rankItems.begin(), rankItems.end(), [](const rankItem& a, const rankItem& b) {
+        return a.getMoney() > b.getMoney();
+    });
 
-        for (int col = 1; col < colCount; ++col) {  // 从第二列开始，保留第一列
-            item->setText(col, "");  // 清空指定列的文本内容
-        }
-    }
+    int rank=1;
+    for (const auto& rankitem : rankItems) {
+        QString rankPerson =  QString::fromStdString(rankitem.getPlayername());
+        long long ownMoney = rankitem.getMoney();
+        long long healthState=rankitem.getHealth() ;
+        long long fameState=rankitem.getFame();
+        QString title =  QString::fromStdString(rankitem.getPlayertitle());
 
-    for (const auto& player : player.getAllElement()) {
-        QString rankPerson = player.getPlayerName();
-        long long ownMoney = player.getMoney()+player.getBankMoney();
-        long long healthState=player.getHealth() ;
-        long long fameState=player.getFame();
         // 创建 QTreeWidgetItem
         QTreeWidgetItem* treeItem = new QTreeWidgetItem();
-        treeItem->setText(1, rankPerson);                  // 第一列：人名
-        treeItem->setText(2, QString::number(ownMoney));// 第二列：金钱
+        treeItem->setText(0,QString::number(rank));
+        treeItem->setText(1, rankPerson);                  // 第二列：人名
+        treeItem->setText(2, QString::number(ownMoney));// 第三列：金钱
         treeItem->setText(3, QString::number(healthState));//健康
         treeItem->setText(4, QString::number(fameState));//名声
+        treeItem->setText(5, title);
 
         // 添加到 QTreeWidget
         ui->ranktreeWidget->addTopLevelItem(treeItem);
+        rank++;
     }
 
 
