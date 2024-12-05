@@ -50,10 +50,6 @@ private slots:
     void douyinButtonClick();
     void showGameOverMessage();
 
-    void on_pushButton_8_clicked();
-
-    void on_pushButton_9_clicked();
-
     void on_hongkouplace_clicked();
 
     void on_baoshanplace_clicked();
@@ -69,6 +65,8 @@ private slots:
     void on_songjiangplace_clicked();
 
     void on_jiadingplace_clicked();
+
+    void on_newgame_triggered();
 
 private:
     Ui::MainWindow *ui;

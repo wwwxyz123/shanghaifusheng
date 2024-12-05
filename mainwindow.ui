@@ -537,6 +537,17 @@ color: rgb(0, 255, 0);</string>
      <string>您的背包</string>
     </property>
    </widget>
+   <widget class="QWidget" name="gameover" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>5</y>
+      <width>626</width>
+      <height>426</height>
+     </rect>
+    </property>
+   </widget>
+   <zorder>gameover</zorder>
    <zorder>groupBox</zorder>
    <zorder>groupBox_2</zorder>
    <zorder>sell</zorder>
@@ -561,7 +572,7 @@ color: rgb(0, 255, 0);</string>
     <property name="title">
      <string>设置</string>
     </property>
-    <addaction name="action"/>
+    <addaction name="newgame"/>
    </widget>
    <widget class="QMenu" name="menu_2">
     <property name="title">
@@ -572,9 +583,9 @@ color: rgb(0, 255, 0);</string>
    <addaction name="menu_2"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="action">
+  <action name="newgame">
    <property name="text">
-    <string>排行榜</string>
+    <string>新游戏</string>
    </property>
   </action>
  </widget>
