@@ -16,6 +16,7 @@
 #include "ranking.h"
 #include"uitest.h"
 #include"settlement.h"
+#include"stdmessagebox.h"
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , daytime(1)
@@ -179,13 +180,13 @@ void MainWindow::on_buy_clicked()
 
     // 如果银行里的钱足够购买
     if (player->getBankMoney() >= nowPrice&&player->getMoney()<nowPrice) {
-        QMessageBox::information(this, "提示", "银行里的钱足够购买，请去取钱！");
+        QMessageBox::warning(this, "提示", "银行里的钱足够购买，请去取钱！");
         return;
     }
 
     if(player->getBagSize()==0)
     {
-        QMessageBox::information(this, "提示", "你没有足够的背包空间");
+        QMessageBox::warning(this, "提示", "你没有足够的背包空间");
         return;
     }
     // 弹出输入框，默认值为最多可购买数量
@@ -212,7 +213,7 @@ void MainWindow::on_buy_clicked()
     ui->playerfame->display(QString::number(player->getFame()));
 
 
-    QMessageBox::information(this, "成功", QString("成功购买 %1 个 %2！").arg(quantity).arg(nowName));
+    // stdmessagebox::information(this, "成功", QString("成功购买 %1 个 %2！").arg(quantity).arg(nowName));
 }
 
 
@@ -261,7 +262,7 @@ void MainWindow::on_sell_clicked()
     }
 
     if (!buyerItem) {
-        QMessageBox::warning(this, "提示", "暂时没有人收购呢！");
+        QMessageBox::information(this, "提示", "暂时没有人收购呢！");
         return;
     }
 
@@ -284,8 +285,8 @@ void MainWindow::on_sell_clicked()
     // 更新玩家的 UI
     ui->playermoney->display(QString::number(player->getMoney()));
     updateBagSpaceDisplay();
-    QMessageBox::information(this, "成功",
-                             QString("成功卖出 %1 个 %2，获得 %3 金币！").arg(sellQuantity).arg(itemName).arg(sellQuantity * sellPrice));
+    // stdmessagebox::information(this, "成功",
+    //                          QString("成功卖出 %1 个 %2，获得 %3 金币！").arg(sellQuantity).arg(itemName).arg(sellQuantity * sellPrice));
 }
 void MainWindow::moreneedmoney()
 {
@@ -299,7 +300,7 @@ void MainWindow::updateDate()
         ui->gameover->raise();
         if(player->getGiveUpMoney()>0)
         {
-            QMessageBox::information(this,"哼！想跑？",QString("你因没有还完钱被暴打一顿，名声也坏了，健康声望减少50%，"));
+            QMessageBox::warning(this,"哼！想跑？",QString("你因没有还完钱被暴打一顿，名声也坏了，健康声望减少50%，"));
             player->reduceHealth(player->getHealth()/2);
             player->reduceFame(player->getFame()/2);
         }
@@ -386,7 +387,7 @@ void MainWindow::on_douyinButton_clicked()
             updateDate();
             break;
         case 2:
-            QMessageBox::warning(this,"村长说","“侬小子不还钱搁这刷抖音？”（找村口的二虎揍了你一顿）");
+            QMessageBox::information(this,"村长说","“侬小子不还钱搁这刷抖音？”（找村口的二虎揍了你一顿）");
             player->reduceHealth(5);
             updatePlayerUI();
             break;
@@ -434,7 +435,7 @@ void MainWindow::douyinButtonClick()
     clickCount++;
     if (clickCount >= 5)
     {
-        QMessageBox::warning(this,"村长说","侬去搞钱啊别刷抖音了！");
+        QMessageBox::information(this,"村长说","侬去搞钱啊别刷抖音了！");
     }
 }
 Player* MainWindow::getPlayer()

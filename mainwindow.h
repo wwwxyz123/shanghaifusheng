@@ -10,7 +10,9 @@
 #include "post.h"
 #include "rent.h"
 #include"itemmanager.h"
+#include<qmessagebox.h>
 QT_BEGIN_NAMESPACE
+
 namespace Ui {
 class MainWindow;
 }
@@ -80,5 +82,6 @@ private:
     Rent *rent;
     int clickCount; //抖音按钮
     int bookbuy;
+    QMessageBox stdmessagebox;
 };
 #endif // MAINWINDOW_H
