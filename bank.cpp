@@ -46,7 +46,7 @@ void Bank::on_saveButton_clicked()
     else
     {
         bool ok;
-        int amount = QInputDialog::getInt(this,"存款","您存多少钱？",myCash,0,myCash,1,&ok);
+        int amount = QInputDialog::getInt(this,"存款","您存多少钱？(利率每天5%)",myCash,0,myCash,1,&ok);
         if (ok)
         {
             mySavings += amount;
