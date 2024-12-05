@@ -4,6 +4,9 @@
 #include <QWidget>
 #include<qlabel.h>
 #include"mainwindow.h"
+#include<qstring.h>
+#include <QInputDialog>
+
 namespace Ui {
 class uitest;
 }
@@ -15,25 +18,22 @@ class uitest : public QWidget
 public:
     explicit uitest(MainWindow *main,QWidget *parent = nullptr);
     ~uitest();
-    void updateValue();
 
-    void setupAnimation(QLabel* label, int& currentValue, int targetValue);
 private slots:
-    void on_pushButton_clicked();
-
     void on_torank_clicked();
-
     void on_newgame_clicked();
-
     void on_leave_clicked();
-
+    void setTitle(Player *player);
+    void inputName();
 private:
+
     Ui::uitest *ui;
     MainWindow *mainwindow;
-
-    long long currentValue;
-    long long targetValue;
-    long long stepValue;
+    long long money;
+    long long health;
+    long long fame;
+    QString title;
+    QString name;
 };
 
 #endif // UITEST_H
