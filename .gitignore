@@ -5,3 +5,4 @@ topperson.cpp
 topperson.h
 /build
 *.idx
+/build
