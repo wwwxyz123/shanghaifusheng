@@ -22,7 +22,7 @@ MainWindow::MainWindow(QWidget *parent)
     ,bank(nullptr)
     ,rent(nullptr)
     ,clickCount(0)
-
+    ,bookbuy(0)
 {
     ui->setupUi(this);
     setWindowTitle("上海浮生记");
@@ -416,12 +416,22 @@ void MainWindow::on_douyinButton_clicked()
             updatePlayerUI();
             break;
         case 3:
-            QMessageBox::information(this,"订单提醒","你在抖音商城下单了面向对象课本");
-            player->reduceMoney(50);
-            addItemToBag("面向对象课本", 50, 1);
-            player->setBagSize(player->getBagSize()-1);
-            updatePlayerUI();
-            updateBagSpaceDisplay();
+            if(!bookbuy)
+            {
+                QMessageBox::information(this,"订单提醒","你在抖音商城下单了面向对象课本");
+                bookbuy=1;
+                player->reduceMoney(50);
+                addItemToBag("面向对象课本", 50, 1);
+                player->setBagSize(player->getBagSize()-1);
+                updatePlayerUI();
+                updateBagSpaceDisplay();
+            }
+            else
+            {
+                QMessageBox::information(this,"完啦","买来的面向对象课本一次都没看过，你感到前途灰暗，睡了一天");
+                daytime++;
+                updateDate();
+            }
             break;
         case 4:
             QMessageBox::information(this,"还有这好事？!","你在抖音极速版刷视频成功提现10元");
@@ -444,3 +454,61 @@ Player* MainWindow::getPlayer()
 {
     return player;
 }
+
+void MainWindow::on_hongkouplace_clicked()
+{
+    nextday();
+}
+
+void MainWindow::on_baoshanplace_clicked()
+{
+    nextday();
+}
+
+void MainWindow::on_qingpuplace_clicked()
+{
+    nextday();
+}
+
+
+void MainWindow::on_pudongplace_clicked()
+{
+    nextday();
+}
+
+
+void MainWindow::on_linggangplace_clicked()
+{
+    nextday();
+}
+
+
+void MainWindow::on_jinshanplace_clicked()
+{
+    nextday();
+}
+
+
+void MainWindow::on_songjiangplace_clicked()
+{
+    nextday();
+}
+
+
+void MainWindow::on_pushButton_8_clicked()
+{
+
+}
+
+
+void MainWindow::on_pushButton_9_clicked()
+{
+
+}
+
+
+void MainWindow::on_jiadingplace_clicked()
+{
+    nextday();
+}
+

@@ -40,7 +40,7 @@
      <item>
       <spacer name="horizontalSpacer_5">
        <property name="orientation">
-        <enum>Qt::Orientation::Horizontal</enum>
+        <enum>Qt::Horizontal</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
@@ -60,7 +60,7 @@
      <item>
       <spacer name="horizontalSpacer">
        <property name="orientation">
-        <enum>Qt::Orientation::Horizontal</enum>
+        <enum>Qt::Horizontal</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
@@ -80,7 +80,7 @@
      <item>
       <spacer name="horizontalSpacer_2">
        <property name="orientation">
-        <enum>Qt::Orientation::Horizontal</enum>
+        <enum>Qt::Horizontal</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
@@ -100,7 +100,7 @@
      <item>
       <spacer name="horizontalSpacer_3">
        <property name="orientation">
-        <enum>Qt::Orientation::Horizontal</enum>
+        <enum>Qt::Horizontal</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
@@ -120,7 +120,7 @@
      <item>
       <spacer name="horizontalSpacer_4">
        <property name="orientation">
-        <enum>Qt::Orientation::Horizontal</enum>
+        <enum>Qt::Horizontal</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
@@ -140,7 +140,7 @@
      <item>
       <spacer name="horizontalSpacer_6">
        <property name="orientation">
-        <enum>Qt::Orientation::Horizontal</enum>
+        <enum>Qt::Horizontal</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
@@ -364,35 +364,35 @@ color: rgb(0, 255, 0);</string>
      </property>
      <layout class="QGridLayout" name="gridLayout">
       <item row="2" column="1">
-       <widget class="QPushButton" name="pushButton_15">
+       <widget class="QPushButton" name="jinshanplace">
         <property name="text">
          <string>金山</string>
         </property>
        </widget>
       </item>
       <item row="2" column="2">
-       <widget class="QPushButton" name="pushButton_14">
+       <widget class="QPushButton" name="linggangplace">
         <property name="text">
          <string>临港</string>
         </property>
        </widget>
       </item>
       <item row="0" column="2">
-       <widget class="QPushButton" name="pushButton_10">
+       <widget class="QPushButton" name="baoshanplace">
         <property name="text">
          <string>宝山</string>
         </property>
        </widget>
       </item>
       <item row="1" column="2">
-       <widget class="QPushButton" name="pushButton_11">
+       <widget class="QPushButton" name="pudongplace">
         <property name="text">
          <string>浦东</string>
         </property>
        </widget>
       </item>
       <item row="2" column="0">
-       <widget class="QPushButton" name="pushButton_16">
+       <widget class="QPushButton" name="songjiangplace">
         <property name="text">
          <string>松江</string>
         </property>
@@ -406,35 +406,35 @@ color: rgb(0, 255, 0);</string>
        </widget>
       </item>
       <item row="0" column="0">
-       <widget class="QPushButton" name="pushButton_8">
+       <widget class="QPushButton" name="jiadingplace">
         <property name="text">
          <string>嘉定</string>
         </property>
        </widget>
       </item>
       <item row="1" column="0">
-       <widget class="QPushButton" name="pushButton_13">
+       <widget class="QPushButton" name="qingpuplace">
         <property name="text">
          <string>青浦</string>
         </property>
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QPushButton" name="pushButton_9">
+       <widget class="QPushButton" name="hongkouplace">
         <property name="text">
          <string>虹口</string>
         </property>
        </widget>
       </item>
      </layout>
-     <zorder>pushButton_16</zorder>
-     <zorder>pushButton_10</zorder>
-     <zorder>pushButton_11</zorder>
-     <zorder>pushButton_14</zorder>
-     <zorder>pushButton_15</zorder>
-     <zorder>pushButton_8</zorder>
-     <zorder>pushButton_9</zorder>
-     <zorder>pushButton_13</zorder>
+     <zorder>songjiangplace</zorder>
+     <zorder>baoshanplace</zorder>
+     <zorder>pudongplace</zorder>
+     <zorder>linggangplace</zorder>
+     <zorder>jinshanplace</zorder>
+     <zorder>jiadingplace</zorder>
+     <zorder>hongkouplace</zorder>
+     <zorder>qingpuplace</zorder>
      <zorder>lujiazuiplace</zorder>
     </widget>
    </widget>
@@ -554,7 +554,7 @@ color: rgb(0, 255, 0);</string>
      <x>0</x>
      <y>0</y>
      <width>631</width>
-     <height>18</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">

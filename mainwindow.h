@@ -50,6 +50,26 @@ private slots:
     void douyinButtonClick();
     void showGameOverMessage();
 
+    void on_pushButton_8_clicked();
+
+    void on_pushButton_9_clicked();
+
+    void on_hongkouplace_clicked();
+
+    void on_baoshanplace_clicked();
+
+    void on_qingpuplace_clicked();
+
+    void on_pudongplace_clicked();
+
+    void on_linggangplace_clicked();
+
+    void on_jinshanplace_clicked();
+
+    void on_songjiangplace_clicked();
+
+    void on_jiadingplace_clicked();
+
 private:
     Ui::MainWindow *ui;
     QTreeWidget *itemWidget;
@@ -61,5 +81,6 @@ private:
     Post *post;
     Rent *rent;
     int clickCount; //抖音按钮
+    int bookbuy;
 };
 #endif // MAINWINDOW_H
