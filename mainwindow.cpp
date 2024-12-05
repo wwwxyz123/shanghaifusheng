@@ -3,20 +3,25 @@
 #include <QMessageBox>
 #include"itemmanager.h"
 #include <QTreeWidgetItem>
+#include <QRandomGenerator>
+#include <QPushButton>
 #include <QDebug>
 #include<qinputdialog.h>
 #include"player.h"
 #include "bank.h"
 #include "hospital.h"
+#include "rent.h"
 #include <algorithm>
 #include <random>
 #include "ranking.h"
 #include"uitest.h"
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
     , daytime(1)
+    , ui(new Ui::MainWindow)
     ,bank(nullptr)
+    ,rent(nullptr)
+    ,clickCount(0)
 
 {
     ui->setupUi(this);
@@ -40,6 +45,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect(player, &Player::giveUpMoneyChanged, this, &MainWindow::updatePlayerUI);
     connect(player, &Player::healthChanged, this, &MainWindow::updatePlayerUI);
     connect(player, &Player::fameChanged, this, &MainWindow::updatePlayerUI);
+    connect(ui->douyinButton, &QPushButton::clicked, this, &MainWindow::douyinButtonClick);
+
 
     if (!itemManager->loadItemsFromFile(":/res/items.txt")) {
         qDebug() << "Failed to load items from file. Using default items.";
@@ -376,6 +383,63 @@ void MainWindow::on_postButton_clicked()
     post->exec();
 }
 
+void MainWindow::on_rentButton_clicked()
+{
+    if(player->getMoney() >= 30000)
+    {
+        rent = new Rent(player);
+        connect(rent, &Rent::bagMaxSizeChanged, this, &MainWindow::updateBagSpaceDisplay);
+        rent->exec();
+    }
+    else
+    {
+        QMessageBox::warning(this,"中介说","连3万块都没有还想租房子？");
+    }
+}
+
+
+void MainWindow::on_douyinButton_clicked()
+{
+    if (clickCount < 5)
+    {
+        int randomNumber = QRandomGenerator::global()->bounded(1, 5);
+        switch(randomNumber)
+        {
+        case 1:
+            QMessageBox::information(this,"OPPS!","你因沉迷抖音荒废了一天！？");
+            daytime++;
+            updateDate();
+            break;
+        case 2:
+            QMessageBox::warning(this,"村长说","“侬小子不还钱搁这刷抖音？”（找村口的二虎揍了你一顿）");
+            player->reduceHealth(5);
+            updatePlayerUI();
+            break;
+        case 3:
+            QMessageBox::information(this,"订单提醒","你在抖音商城下单了面向对象课本");
+            player->reduceMoney(50);
+            addItemToBag("面向对象课本", 50, 1);
+            player->setBagSize(player->getBagSize()-1);
+            updatePlayerUI();
+            updateBagSpaceDisplay();
+            break;
+        case 4:
+            QMessageBox::information(this,"还有这好事？!","你在抖音极速版刷视频成功提现10元");
+            player->addMoney(10);
+            updatePlayerUI();
+            break;
+        }
+    }
+}
+
+void MainWindow::douyinButtonClick()
+{
+    clickCount++;
+    if (clickCount >= 5)
+    {
+        QMessageBox::warning(this,"村长说","侬去搞钱啊别刷抖音了！");
+    }
+}
 Player* MainWindow::getPlayer()
 {
     return player;
