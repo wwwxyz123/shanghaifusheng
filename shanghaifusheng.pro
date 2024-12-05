@@ -21,6 +21,8 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     player.cpp \
+    rankitem.cpp \
+    rankitemmanager.cpp \
     start.cpp \
     uitest.cpp \
     ranking.cpp
@@ -37,6 +39,8 @@ HEADERS += \
     loading.h \
     mainwindow.h \
     player.h \
+    rankitem.h \
+    rankitemmanager.h \
     start.h \
     uitest.h \
     ranking.h
