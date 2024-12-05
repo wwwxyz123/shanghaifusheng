@@ -22,6 +22,7 @@ SOURCES += \
     mainwindow.cpp \
     player.cpp \
     post.cpp \
+    rent.cpp \
     settlement.cpp \
     start.cpp \
     ranking.cpp \
@@ -40,6 +41,7 @@ HEADERS += \
     mainwindow.h \
     player.h \
     post.h \
+    rent.h \
     settlement.h \
     start.h \
     ranking.h \
@@ -53,6 +55,7 @@ FORMS += \
     loading.ui \
     mainwindow.ui \
     post.ui \
+    rent.ui \
     settlement.ui \
     start.ui \
     ranking.ui \

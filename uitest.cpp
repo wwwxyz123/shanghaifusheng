@@ -2,111 +2,45 @@
 #include "ui_uitest.h"
 #include <QTimer>
 
-int targetMoney = 40212;   // 目标值
-int targetBankMoney = 2302;
-int targetHealth = 100;
-int targetFame = 100;
 
-int currentMoney = 0;
-int currentBankMoney = 0;
-int currentHealth = 0;
-int currentFame = 0;
-
-int stepValue = 0;  // 更新的步长
-
-QTimer* timer; // 定时器
-
-// 动画状态
-enum AnimationState {
-    None,
-    Money,
-    BankMoney,
-    Health,
-    Fame
-};
-
-AnimationState currentState = None;
-
-uitest::uitest(QWidget *parent)
+uitest::uitest(MainWindow *main,QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::uitest)
+    ,mainwindow(main)
 {
     ui->setupUi(this);
 
-    // 初始化显示
-    ui->money->setText(QString::number(currentMoney));
-    ui->bankmoney->setText(QString::number(currentBankMoney));
-    ui->health->setText(QString::number(currentHealth));
-    ui->fame->setText(QString::number(currentFame));
+    currentValue = 0;  // 初始化当前值为0
+    Player *p=mainwindow->getPlayer();
+    targetValue = p->getMoney()+p->getBankMoney()-p->getGiveUpMoney();
 
-    // 设置定时器
-    int totalDuration = 2000;  // 总动画时间，单位毫秒
-    int interval = 11;         // 定时器触发间隔，单位毫秒
-    int steps = totalDuration / interval;  // 总步数
+    // 设置数字显示框
+    ui->money->setText(QString::number(currentValue));
 
-    // 计算步长时根据目标值大小动态调整
-    int maxTargetValue = std::max({targetMoney, targetBankMoney, targetHealth, targetFame});
-    stepValue = maxTargetValue / steps;  // 使用最大目标值来决定步长
+    // 计算更新的步长和定时器间隔
+    int totalDuration = 1000; // 3秒
+    int interval = 11; // 定时器触发间隔，单位毫秒
+    int steps = totalDuration / interval; // 计算定时器触发次数
+    int stepValue = targetValue / steps; // 每次增加的值
 
+    // 创建定时器
+    QTimer* timer = new QTimer(this);
 
-
-    // 创建定时器并连接信号
-    timer = new QTimer(this);
+    // 每隔一定时间触发一次
     connect(timer, &QTimer::timeout, this, &uitest::updateValue);
-    timer->start(interval);  // 启动定时器
+    timer->start(interval);
 
-    // 从 money 开始动画
-    currentState = Money;
+    this->stepValue = stepValue;
 }
 
 void uitest::updateValue()
 {
-    switch (currentState) {
-    case Money:
-        if (currentMoney < targetMoney) {
-            currentMoney += stepValue;
-            if (currentMoney > targetMoney) currentMoney = targetMoney;
-            ui->money->setText(QString::number(currentMoney));
-        } else {
-            currentState = BankMoney;  // money 完成后加载 bankmoney
-            currentMoney = targetMoney;  // 确保 currentMoney 完成时不再更新
+    if (currentValue < targetValue) {
+        currentValue += stepValue;  // 每次增加步长
+        if (currentValue > targetValue) {
+            currentValue = targetValue;  // 防止超过目标值
         }
-        break;
-
-    case BankMoney:
-        if (currentBankMoney < targetBankMoney) {
-            currentBankMoney += stepValue;
-            if (currentBankMoney > targetBankMoney) currentBankMoney = targetBankMoney;
-            ui->bankmoney->setText(QString::number(currentBankMoney));
-        } else {
-            currentState = Health;  // bankmoney 完成后加载 health
-            currentBankMoney = targetBankMoney;
-        }
-        break;
-
-    case Health:
-        if (currentHealth < targetHealth) {
-            currentHealth += stepValue;
-            if (currentHealth > targetHealth) currentHealth = targetHealth;
-            ui->health->setText(QString::number(currentHealth));
-        } else {
-            currentState = Fame;  // health 完成后加载 fame
-            currentHealth = targetHealth;
-        }
-        break;
-
-    case Fame:
-        if (currentFame < targetFame) {
-            currentFame += stepValue;
-            if (currentFame > targetFame) currentFame = targetFame;
-            ui->fame->setText(QString::number(currentFame));
-        } else {
-            timer->stop();  // 所有动画完成，停止定时器
-        }
-        break;
-
-    default:
-        break;
+        ui->money->setText(QString::number(long(currentValue)) + "元"); // 更新UI显示
     }
 }
 
@@ -114,3 +48,33 @@ uitest::~uitest()
 {
     delete ui;
 }
+
+
+
+void uitest::on_torank_clicked()
+{
+
+}
+
+
+void uitest::on_newgame_clicked()
+{
+    this->close();
+    mainwindow->close();
+    MainWindow *m=new MainWindow;
+    m->show();
+}
+
+
+void uitest::on_leave_clicked()
+{
+    this->close();
+    mainwindow->close();
+}
+
+
+void uitest::on_pushButton_clicked()
+{
+
+}
+

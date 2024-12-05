@@ -111,7 +111,7 @@
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_4">
+      <widget class="QPushButton" name="rentButton">
        <property name="text">
         <string>租房中介</string>
        </property>
@@ -131,9 +131,9 @@
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_5">
+      <widget class="QPushButton" name="douyinButton">
        <property name="text">
-        <string>网吧</string>
+        <string>抖音</string>
        </property>
       </widget>
      </item>
