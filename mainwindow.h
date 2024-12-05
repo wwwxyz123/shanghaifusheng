@@ -24,6 +24,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     int daytime;
+    Player* getPlayer();
 
 private slots:
     void updatePlayerUI();
@@ -43,9 +44,11 @@ private slots:
     void on_bankButton_clicked();
     void on_hospitalButton_clicked();
     void on_postButton_clicked();
+    
     void on_rentButton_clicked();
     void on_douyinButton_clicked();
     void douyinButtonClick();
+    void showGameOverMessage();
 
 private:
     Ui::MainWindow *ui;
@@ -58,6 +61,5 @@ private:
     Post *post;
     Rent *rent;
     int clickCount; //抖音按钮
-
 };
 #endif // MAINWINDOW_H

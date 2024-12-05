@@ -13,7 +13,8 @@
 #include "rent.h"
 #include <algorithm>
 #include <random>
-
+#include "ranking.h"
+#include"uitest.h"
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , daytime(1)
@@ -24,6 +25,8 @@ MainWindow::MainWindow(QWidget *parent)
 
 {
     ui->setupUi(this);
+    setWindowTitle("上海浮生记");
+    setWindowIcon(QIcon(":/res/icon.png"));
     ui->playermoney->setDigitCount(13);
     ui->playerbankmoney->setDigitCount(13);
     ui->playergiveupmoney->setDigitCount(13);
@@ -174,7 +177,7 @@ void MainWindow::on_buy_clicked()
     }
 
     // 如果银行里的钱足够购买
-    if (player->getBankMoney() >= nowPrice) {
+    if (player->getBankMoney() >= nowPrice&&player->getMoney()<nowPrice) {
         QMessageBox::information(this, "提示", "银行里的钱足够购买，请去取钱！");
         return;
     }
@@ -292,21 +295,64 @@ void MainWindow::updateDate()
     if(daytime>40)
     {
         //游戏结束，结算画面
+        /*
+        1.跳出再来一局
+        2.跳出排行榜
+        3.    排行榜：请输入你的大名
+        4.然后展示排行榜的内容
+*/
+        showGameOverMessage();
+        Ranking *rankbox=new Ranking();
+
     }
     else
         ui->daylabel->setText(QString("当前是第%1天").arg(daytime));
+}
+void MainWindow::showGameOverMessage()
+{
+    // QMessageBox box;
+    // box.setIcon(QMessageBox::Information);
+    // box.setWindowTitle("游戏结束");
+    // box.setText("游戏结束，选择你的下一步:");
+
+    // // 创建“再来一局”按钮
+    // QPushButton *replayButton = box.addButton("再来一局", QMessageBox::YesRole);
+    // // 创建“离开”按钮
+    // QPushButton *exitButton = box.addButton("离开", QMessageBox::NoRole);
+
+    // // 显示提示框
+    // box.exec();
+
+    // // 处理按钮点击事件
+    // if (box.clickedButton() == replayButton) {
+    //     // 处理“再来一局”按钮点击事件
+    //     this->close();
+    //     MainWindow *newmainwindow=new MainWindow();
+    //     newmainwindow->show();
+
+    // } else if (box.clickedButton() == exitButton) {
+    //     // 处理“离开”按钮点击事件
+    //     this->close();
+    // }
+
+    uitest *se=new uitest(this);
+    se->show();
 }
 void MainWindow::nextday()
 {
     refreshItemsInMarket(6);
     moreneedmoney();
     daytime++;
+    player->addBankMoney(player->getBankMoney()*0.05);
+    if(daytime==40)
+    {
+        QMessageBox::information(this,"提示",QString("你明天就要回家啦，记得把背包里的东西清理掉，不然只能分给乡亲们了"));
+    }
     updateDate();
 }
 void MainWindow::on_lujiazuiplace_clicked()
 {
     nextday();
-
 }
 
 void MainWindow::on_bankButton_clicked()
@@ -336,7 +382,6 @@ void MainWindow::on_postButton_clicked()
     connect(post,&Post::giveUpMoneyChanged,this,&MainWindow::updatePlayerUI);
     post->exec();
 }
-
 
 void MainWindow::on_rentButton_clicked()
 {
@@ -394,4 +439,8 @@ void MainWindow::douyinButtonClick()
     {
         QMessageBox::warning(this,"村长说","侬去搞钱啊别刷抖音了！");
     }
+}
+Player* MainWindow::getPlayer()
+{
+    return player;
 }

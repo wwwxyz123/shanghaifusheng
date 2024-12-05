@@ -9,7 +9,7 @@ Ranking::Ranking(QWidget *parent)
     ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     this->setWindowTitle("富豪玩家排行榜");
-
+    setWindowIcon(QIcon(":/res/icon.png"));
 
 }
 

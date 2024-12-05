@@ -23,9 +23,10 @@ SOURCES += \
     player.cpp \
     post.cpp \
     rent.cpp \
+    settlement.cpp \
     start.cpp \
-    uitest.cpp \
-    ranking.cpp
+    ranking.cpp \
+    uitest.cpp
 
 HEADERS += \
     backendmanager.h \
@@ -41,9 +42,10 @@ HEADERS += \
     player.h \
     post.h \
     rent.h \
+    settlement.h \
     start.h \
-    uitest.h \
-    ranking.h
+    ranking.h \
+    uitest.h
 
 
 FORMS += \
@@ -54,9 +56,10 @@ FORMS += \
     mainwindow.ui \
     post.ui \
     rent.ui \
+    settlement.ui \
     start.ui \
-    uitest.ui \
-    ranking.ui
+    ranking.ui \
+    uitest.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
