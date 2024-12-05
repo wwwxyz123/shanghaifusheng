@@ -15,6 +15,7 @@
 #include <random>
 #include "ranking.h"
 #include"uitest.h"
+#include"settlement.h"
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , daytime(1)
@@ -294,48 +295,22 @@ void MainWindow::updateDate()
 {
     if(daytime>40)
     {
-        //游戏结束，结算画面
-        /*
-        1.跳出再来一局
-        2.跳出排行榜
-        3.    排行榜：请输入你的大名
-        4.然后展示排行榜的内容
-*/
+        // daytime=41;
+        ui->gameover->raise();
+        if(player->getGiveUpMoney()>0)
+        {
+            QMessageBox::information(this,"哼！想跑？",QString("你因没有还完钱被暴打一顿，名声也坏了，健康声望减少50%，"));
+            player->reduceHealth(player->getHealth()/2);
+            player->reduceFame(player->getFame()/2);
+        }
         showGameOverMessage();
-        Ranking *rankbox=new Ranking();
-
     }
     else
         ui->daylabel->setText(QString("当前是第%1天").arg(daytime));
 }
 void MainWindow::showGameOverMessage()
 {
-    // QMessageBox box;
-    // box.setIcon(QMessageBox::Information);
-    // box.setWindowTitle("游戏结束");
-    // box.setText("游戏结束，选择你的下一步:");
-
-    // // 创建“再来一局”按钮
-    // QPushButton *replayButton = box.addButton("再来一局", QMessageBox::YesRole);
-    // // 创建“离开”按钮
-    // QPushButton *exitButton = box.addButton("离开", QMessageBox::NoRole);
-
-    // // 显示提示框
-    // box.exec();
-
-    // // 处理按钮点击事件
-    // if (box.clickedButton() == replayButton) {
-    //     // 处理“再来一局”按钮点击事件
-    //     this->close();
-    //     MainWindow *newmainwindow=new MainWindow();
-    //     newmainwindow->show();
-
-    // } else if (box.clickedButton() == exitButton) {
-    //     // 处理“离开”按钮点击事件
-    //     this->close();
-    // }
-
-    uitest *se=new uitest(this);
+    settlement *se=new settlement(this);
     se->show();
 }
 void MainWindow::nextday()
@@ -416,21 +391,33 @@ void MainWindow::on_douyinButton_clicked()
             updatePlayerUI();
             break;
         case 3:
-            if(!bookbuy)
+            if (player->getMoney() >= 50)
             {
-                QMessageBox::information(this,"订单提醒","你在抖音商城下单了面向对象课本");
-                bookbuy=1;
-                player->reduceMoney(50);
-                addItemToBag("面向对象课本", 50, 1);
-                player->setBagSize(player->getBagSize()-1);
-                updatePlayerUI();
-                updateBagSpaceDisplay();
+                if (!bookbuy)
+                {
+                    QMessageBox::information(this, "订单提醒", "你在抖音商城下单了面向对象课本");
+                    bookbuy = 1;
+                    player->reduceMoney(50);
+                    addItemToBag("面向对象课本", 50, 1);
+                    player->setBagSize(player->getBagSize() - 1);
+                    updatePlayerUI();
+                    updateBagSpaceDisplay();
+                }
+                else
+                {
+                    QMessageBox::information(this, "完啦", "买来的面向对象课本一次都没看过，你感到前途灰暗，睡了一天");
+                    daytime++;
+                    updateDate();
+                }
             }
             else
             {
-                QMessageBox::information(this,"完啦","买来的面向对象课本一次都没看过，你感到前途灰暗，睡了一天");
-                daytime++;
-                updateDate();
+                player->addGiveUpMoney(50);
+                addItemToBag("面向对象课本", 50, 1);
+                player->setBagSize(player->getBagSize() - 1);
+                QMessageBox::information(this, "花呗提示", "你使用花呗购买了面向对象课本，欠款增加了50");
+                updatePlayerUI();
+                updateBagSpaceDisplay();
             }
             break;
         case 4:
@@ -494,21 +481,16 @@ void MainWindow::on_songjiangplace_clicked()
     nextday();
 }
 
-
-void MainWindow::on_pushButton_8_clicked()
-{
-
-}
-
-
-void MainWindow::on_pushButton_9_clicked()
-{
-
-}
-
-
 void MainWindow::on_jiadingplace_clicked()
 {
     nextday();
+}
+
+
+void MainWindow::on_newgame_triggered()
+{
+    MainWindow *main=new MainWindow();
+    main->show();
+    this->close();
 }
 
