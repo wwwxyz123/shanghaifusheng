@@ -62,6 +62,8 @@ SOURCES       = ..\..\backendmanager.cpp \
 		..\..\main.cpp \
 		..\..\mainwindow.cpp \
 		..\..\player.cpp \
+		..\..\rankitem.cpp \
+		..\..\rankitemmanager.cpp \
 		..\..\start.cpp \
 		..\..\uitest.cpp \
 		..\..\ranking.cpp debug\qrc_txtResource.cpp \
@@ -86,6 +88,8 @@ OBJECTS       = debug\backendmanager.obj \
 		debug\main.obj \
 		debug\mainwindow.obj \
 		debug\player.obj \
+		debug\rankitem.obj \
+		debug\rankitemmanager.obj \
 		debug\start.obj \
 		debug\uitest.obj \
 		debug\ranking.obj \
@@ -111,6 +115,8 @@ DIST          = items.txt ..\..\backendmanager.h \
 		..\..\loading.h \
 		..\..\mainwindow.h \
 		..\..\player.h \
+		..\..\rankitem.h \
+		..\..\rankitemmanager.h \
 		..\..\start.h \
 		..\..\uitest.h \
 		..\..\ranking.h ..\..\backendmanager.cpp \
@@ -125,6 +131,8 @@ DIST          = items.txt ..\..\backendmanager.h \
 		..\..\main.cpp \
 		..\..\mainwindow.cpp \
 		..\..\player.cpp \
+		..\..\rankitem.cpp \
+		..\..\rankitemmanager.cpp \
 		..\..\start.cpp \
 		..\..\uitest.cpp \
 		..\..\ranking.cpp
@@ -204,7 +212,7 @@ all: Makefile.Debug  debug\shanghaifusheng.exe
 
 debug\shanghaifusheng.exe: D:\qtcreator\6.5.3\msvc2019_64\lib\Qt6Widgetsd.lib D:\qtcreator\6.5.3\msvc2019_64\lib\Qt6Guid.lib D:\qtcreator\6.5.3\msvc2019_64\lib\Qt6Cored.lib D:\qtcreator\6.5.3\msvc2019_64\lib\Qt6EntryPointd.lib ui_buyconfirm.h ui_buylose.h ui_connectus.h ui_loading.h ui_mainwindow.h ui_start.h ui_uitest.h ui_ranking.h $(OBJECTS) 
 	$(LINKER) $(LFLAGS) /MANIFEST:embed /OUT:$(DESTDIR_TARGET) @<<
-debug\backendmanager.obj debug\buyconfirm.obj debug\buylose.obj debug\connectus.obj debug\eventmanager.obj debug\eventwindow.obj debug\item.obj debug\itemmanager.obj debug\loading.obj debug\main.obj debug\mainwindow.obj debug\player.obj debug\start.obj debug\uitest.obj debug\ranking.obj debug\qrc_txtResource.obj debug\moc_buyconfirm.obj debug\moc_buylose.obj debug\moc_connectus.obj debug\moc_loading.obj debug\moc_mainwindow.obj debug\moc_player.obj debug\moc_start.obj debug\moc_uitest.obj debug\moc_ranking.obj
+debug\backendmanager.obj debug\buyconfirm.obj debug\buylose.obj debug\connectus.obj debug\eventmanager.obj debug\eventwindow.obj debug\item.obj debug\itemmanager.obj debug\loading.obj debug\main.obj debug\mainwindow.obj debug\player.obj debug\rankitem.obj debug\rankitemmanager.obj debug\start.obj debug\uitest.obj debug\ranking.obj debug\qrc_txtResource.obj debug\moc_buyconfirm.obj debug\moc_buylose.obj debug\moc_connectus.obj debug\moc_loading.obj debug\moc_mainwindow.obj debug\moc_player.obj debug\moc_start.obj debug\moc_uitest.obj debug\moc_ranking.obj
 $(LIBS)
 <<
 
@@ -214,10 +222,10 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) shanghaifusheng.zip $(SOURCES) $(DIST) ..\..\..\..\shanghaifusheng.pro D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\spec_pre.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\common\windows-desktop.conf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\win32\windows_vulkan_sdk.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\common\windows-vulkan.conf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\common\msvc-desktop.conf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\qconfig.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_ext_freetype.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_ext_libjpeg.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_ext_libpng.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_concurrent.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_concurrent_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_core.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_core_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_dbus.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_dbus_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_designer.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_designer_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_designercomponents_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_entrypoint_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_example_icons_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_fb_support_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_freetype_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_gui.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_gui_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_harfbuzz_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_help.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_help_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_jpeg_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_labsanimation.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_labsanimation_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_labsfolderlistmodel.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_labsfolderlistmodel_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_labsqmlmodels.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_labsqmlmodels_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_labssettings.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_labssettings_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_labssharedimage.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_labssharedimage_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_labswavefrontmesh.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_labswavefrontmesh_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_linguist.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_linguist_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_network.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_network_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_opengl.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_opengl_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_openglwidgets.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_openglwidgets_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_packetprotocol_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_png_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_printsupport.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_printsupport_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_qml.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_qml_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_qmlcompiler_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_qmlcore.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_qmlcore_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_qmldebug_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_qmldom_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_qmlintegration.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_qmlintegration_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_qmllocalstorage.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_qmllocalstorage_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_qmlmodels.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_qmlmodels_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_qmltest.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_qmltest_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_qmltyperegistrar_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_qmlworkerscript.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_qmlxmllistmodel.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_qmlxmllistmodel_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quick.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quick_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quickcontrols2.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quickcontrols2impl.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quickcontrols2impl_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quickcontrolstestutilsprivate_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quickdialogs2.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quickdialogs2_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quickdialogs2quickimpl.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quickdialogs2quickimpl_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quickdialogs2utils.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quickdialogs2utils_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quickeffects_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quicklayouts.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quicklayouts_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quickparticles_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quickshapes_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quicktemplates2.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quicktestutilsprivate_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quickwidgets.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quickwidgets_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_sql.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_sql_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_svg.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_svg_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_svgwidgets.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_svgwidgets_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_testlib.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_testlib_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_tools_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_uiplugin.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_uitools.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_uitools_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_widgets.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_widgets_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_xml.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_xml_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_zlib_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\qt_functions.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\qt_config.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\win32-msvc\qmake.conf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\spec_post.prf .qmake.stash D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\exclusive_builds.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\common\msvc-version.conf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\toolchain.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\default_pre.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\win32\default_pre.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\resolve_config.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\exclusive_builds_post.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\default_post.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\build_pass.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\qml_debug.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\entrypoint.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\precompile_header.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\warn_on.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\qt.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\resources_functions.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\resources.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\moc.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\win32\opengl.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\uic.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\qmake_use.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\file_copies.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\win32\windows.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\testcase_targets.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\exceptions.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\yacc.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\lex.prf ..\..\shanghaifusheng.pro ..\..\txtResource.qrc D:\qtcreator\6.5.3\msvc2019_64\lib\Qt6Widgetsd.prl D:\qtcreator\6.5.3\msvc2019_64\lib\Qt6Guid.prl D:\qtcreator\6.5.3\msvc2019_64\lib\Qt6Cored.prl D:\qtcreator\6.5.3\msvc2019_64\lib\Qt6EntryPointd.prl   ..\..\txtResource.qrc D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\data\dummy.cpp ..\..\backendmanager.h ..\..\buyconfirm.h ..\..\buylose.h ..\..\connectus.h ..\..\eventmanager.h ..\..\eventwindow.h ..\..\item.h ..\..\itemmanager.h ..\..\loading.h ..\..\mainwindow.h ..\..\player.h ..\..\start.h ..\..\uitest.h ..\..\ranking.h  ..\..\backendmanager.cpp ..\..\buyconfirm.cpp ..\..\buylose.cpp ..\..\connectus.cpp ..\..\eventmanager.cpp ..\..\eventwindow.cpp ..\..\item.cpp ..\..\itemmanager.cpp ..\..\loading.cpp ..\..\main.cpp ..\..\mainwindow.cpp ..\..\player.cpp ..\..\start.cpp ..\..\uitest.cpp ..\..\ranking.cpp ..\..\buyconfirm.ui ..\..\buylose.ui ..\..\connectus.ui ..\..\loading.ui ..\..\mainwindow.ui ..\..\start.ui ..\..\uitest.ui ..\..\ranking.ui    
+	$(ZIP) shanghaifusheng.zip $(SOURCES) $(DIST) ..\..\..\..\shanghaifusheng.pro D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\spec_pre.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\common\windows-desktop.conf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\win32\windows_vulkan_sdk.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\common\windows-vulkan.conf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\common\msvc-desktop.conf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\qconfig.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_ext_freetype.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_ext_libjpeg.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_ext_libpng.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_concurrent.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_concurrent_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_core.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_core_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_dbus.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_dbus_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_designer.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_designer_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_designercomponents_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_entrypoint_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_example_icons_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_fb_support_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_freetype_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_gui.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_gui_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_harfbuzz_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_help.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_help_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_jpeg_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_labsanimation.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_labsanimation_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_labsfolderlistmodel.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_labsfolderlistmodel_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_labsqmlmodels.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_labsqmlmodels_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_labssettings.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_labssettings_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_labssharedimage.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_labssharedimage_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_labswavefrontmesh.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_labswavefrontmesh_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_linguist.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_linguist_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_network.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_network_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_opengl.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_opengl_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_openglwidgets.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_openglwidgets_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_packetprotocol_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_png_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_printsupport.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_printsupport_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_qml.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_qml_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_qmlcompiler_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_qmlcore.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_qmlcore_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_qmldebug_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_qmldom_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_qmlintegration.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_qmlintegration_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_qmllocalstorage.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_qmllocalstorage_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_qmlmodels.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_qmlmodels_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_qmltest.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_qmltest_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_qmltyperegistrar_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_qmlworkerscript.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_qmlxmllistmodel.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_qmlxmllistmodel_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quick.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quick_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quickcontrols2.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quickcontrols2impl.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quickcontrols2impl_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quickcontrolstestutilsprivate_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quickdialogs2.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quickdialogs2_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quickdialogs2quickimpl.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quickdialogs2quickimpl_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quickdialogs2utils.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quickdialogs2utils_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quickeffects_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quicklayouts.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quicklayouts_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quickparticles_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quickshapes_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quicktemplates2.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quicktestutilsprivate_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quickwidgets.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_quickwidgets_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_sql.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_sql_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_svg.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_svg_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_svgwidgets.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_svgwidgets_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_testlib.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_testlib_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_tools_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_uiplugin.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_uitools.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_uitools_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_widgets.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_widgets_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_xml.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_xml_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\modules\qt_lib_zlib_private.pri D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\qt_functions.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\qt_config.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\win32-msvc\qmake.conf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\spec_post.prf .qmake.stash D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\exclusive_builds.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\common\msvc-version.conf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\toolchain.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\default_pre.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\win32\default_pre.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\resolve_config.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\exclusive_builds_post.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\default_post.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\build_pass.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\qml_debug.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\entrypoint.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\precompile_header.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\warn_on.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\qt.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\resources_functions.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\resources.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\moc.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\win32\opengl.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\uic.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\qmake_use.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\file_copies.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\win32\windows.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\testcase_targets.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\exceptions.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\yacc.prf D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\lex.prf ..\..\shanghaifusheng.pro ..\..\txtResource.qrc D:\qtcreator\6.5.3\msvc2019_64\lib\Qt6Widgetsd.prl D:\qtcreator\6.5.3\msvc2019_64\lib\Qt6Guid.prl D:\qtcreator\6.5.3\msvc2019_64\lib\Qt6Cored.prl D:\qtcreator\6.5.3\msvc2019_64\lib\Qt6EntryPointd.prl   ..\..\txtResource.qrc D:\qtcreator\6.5.3\msvc2019_64\mkspecs\features\data\dummy.cpp ..\..\backendmanager.h ..\..\buyconfirm.h ..\..\buylose.h ..\..\connectus.h ..\..\eventmanager.h ..\..\eventwindow.h ..\..\item.h ..\..\itemmanager.h ..\..\loading.h ..\..\mainwindow.h ..\..\player.h ..\..\rankitem.h ..\..\rankitemmanager.h ..\..\start.h ..\..\uitest.h ..\..\ranking.h  ..\..\backendmanager.cpp ..\..\buyconfirm.cpp ..\..\buylose.cpp ..\..\connectus.cpp ..\..\eventmanager.cpp ..\..\eventwindow.cpp ..\..\item.cpp ..\..\itemmanager.cpp ..\..\loading.cpp ..\..\main.cpp ..\..\mainwindow.cpp ..\..\player.cpp ..\..\rankitem.cpp ..\..\rankitemmanager.cpp ..\..\start.cpp ..\..\uitest.cpp ..\..\ranking.cpp ..\..\buyconfirm.ui ..\..\buylose.ui ..\..\connectus.ui ..\..\loading.ui ..\..\mainwindow.ui ..\..\start.ui ..\..\uitest.ui ..\..\ranking.ui    
 
 clean: compiler_clean 
-	-$(DEL_FILE) debug\backendmanager.obj debug\buyconfirm.obj debug\buylose.obj debug\connectus.obj debug\eventmanager.obj debug\eventwindow.obj debug\item.obj debug\itemmanager.obj debug\loading.obj debug\main.obj debug\mainwindow.obj debug\player.obj debug\start.obj debug\uitest.obj debug\ranking.obj debug\qrc_txtResource.obj debug\moc_buyconfirm.obj debug\moc_buylose.obj debug\moc_connectus.obj debug\moc_loading.obj debug\moc_mainwindow.obj debug\moc_player.obj debug\moc_start.obj debug\moc_uitest.obj debug\moc_ranking.obj
+	-$(DEL_FILE) debug\backendmanager.obj debug\buyconfirm.obj debug\buylose.obj debug\connectus.obj debug\eventmanager.obj debug\eventwindow.obj debug\item.obj debug\itemmanager.obj debug\loading.obj debug\main.obj debug\mainwindow.obj debug\player.obj debug\rankitem.obj debug\rankitemmanager.obj debug\start.obj debug\uitest.obj debug\ranking.obj debug\qrc_txtResource.obj debug\moc_buyconfirm.obj debug\moc_buylose.obj debug\moc_connectus.obj debug\moc_loading.obj debug\moc_mainwindow.obj debug\moc_player.obj debug\moc_start.obj debug\moc_uitest.obj debug\moc_ranking.obj
 	-$(DEL_FILE) debug\shanghaifusheng.vc.pdb debug\shanghaifusheng.ilk debug\shanghaifusheng.idb
 
 distclean: clean 
@@ -1754,6 +1762,7 @@ debug\moc_ranking.cpp: ..\..\ranking.h \
 		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\QSizeF \
 		D:\qtcreator\6.5.3\msvc2019_64\include\QtGui\QTransform \
 		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qnativeinterface.h \
+		..\..\player.h \
 		debug\moc_predefs.h \
 		D:\qtcreator\6.5.3\msvc2019_64\bin\moc.exe
 	D:\qtcreator\6.5.3\msvc2019_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include C:/Users/wwb20/Documents/GitHub/shanghaifusheng/build/Desktop_Qt_6_5_3_MSVC2019_64bit-Debug/debug/moc_predefs.h -ID:/qtcreator/6.5.3/msvc2019_64/mkspecs/win32-msvc -IC:/Users/wwb20/Documents/GitHub/shanghaifusheng -ID:/qtcreator/6.5.3/msvc2019_64/include -ID:/qtcreator/6.5.3/msvc2019_64/include/QtWidgets -ID:/qtcreator/6.5.3/msvc2019_64/include/QtGui -ID:/qtcreator/6.5.3/msvc2019_64/include/QtCore -I. -I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\ATLMFC\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\VS\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\um" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\shared" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\winrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\cppwinrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" ..\..\ranking.h -o debug\moc_ranking.cpp
@@ -2909,12 +2918,6 @@ debug\loading.obj: ..\..\loading.cpp ..\..\loading.h \
 		D:\qtcreator\6.5.3\msvc2019_64\include\QtWidgets\qlabel.h \
 		D:\qtcreator\6.5.3\msvc2019_64\include\QtGui\qpicture.h \
 		D:\qtcreator\6.5.3\msvc2019_64\include\QtGui\qtextdocument.h \
-		D:\qtcreator\6.5.3\msvc2019_64\include\QtWidgets\QLineEdit \
-		D:\qtcreator\6.5.3\msvc2019_64\include\QtWidgets\qlineedit.h \
-		D:\qtcreator\6.5.3\msvc2019_64\include\QtGui\qtextcursor.h \
-		D:\qtcreator\6.5.3\msvc2019_64\include\QtGui\qtextformat.h \
-		D:\qtcreator\6.5.3\msvc2019_64\include\QtGui\qpen.h \
-		D:\qtcreator\6.5.3\msvc2019_64\include\QtGui\qtextoption.h \
 		D:\qtcreator\6.5.3\msvc2019_64\include\QtWidgets\QPushButton
 
 debug\main.obj: ..\..\main.cpp ..\..\mainwindow.h \
@@ -3489,7 +3492,161 @@ debug\player.obj: ..\..\player.cpp ..\..\player.h \
 		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qset.h \
 		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qhash.h \
 		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qvarlengtharray.h \
-		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\q20memory.h
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\q20memory.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\QFile \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qfile.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qfiledevice.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qiodevice.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\QTextStream \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\QString \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\QStringList
+
+debug\rankitem.obj: ..\..\rankitem.cpp ..\..\rankitem.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\QtGlobal \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qglobal.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qtversionchecks.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qconfig.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qtcore-config.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qtconfigmacros.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qtcoreexports.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qtpreprocessorsupport.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qtnoop.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qsystemdetection.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qprocessordetection.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qcompilerdetection.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qassert.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qtypes.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qtclasshelpermacros.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qtversion.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qtypeinfo.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qcontainerfwd.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qsysinfo.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qlogging.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qflags.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qcompare_impl.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qatomic.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qbasicatomic.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qatomic_cxx11.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qgenericatomic.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qconstructormacros.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qdarwinhelpers.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qexceptionhandling.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qforeach.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qtdeprecationmarkers.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qttypetraits.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qfunctionpointer.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qglobalstatic.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qmalloc.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qminmax.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qnumeric.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qoverload.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qswap.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qtenvironmentvariables.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qtresource.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qttranslation.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qversiontagging.h
+
+debug\rankitemmanager.obj: ..\..\rankitemmanager.cpp ..\..\rankitemmanager.h \
+		..\..\rankitem.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\QtGlobal \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qglobal.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qtversionchecks.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qconfig.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qtcore-config.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qtconfigmacros.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qtcoreexports.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qtpreprocessorsupport.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qtnoop.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qsystemdetection.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qprocessordetection.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qcompilerdetection.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qassert.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qtypes.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qtclasshelpermacros.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qtversion.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qtypeinfo.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qcontainerfwd.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qsysinfo.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qlogging.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qflags.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qcompare_impl.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qatomic.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qbasicatomic.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qatomic_cxx11.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qgenericatomic.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qconstructormacros.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qdarwinhelpers.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qexceptionhandling.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qforeach.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qtdeprecationmarkers.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qttypetraits.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qfunctionpointer.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qglobalstatic.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qmalloc.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qminmax.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qnumeric.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qoverload.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qswap.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qtenvironmentvariables.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qtresource.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qttranslation.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qversiontagging.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\QString \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qstring.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qchar.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qstringview.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qbytearray.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qrefcount.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qnamespace.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qtmetamacros.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qarraydata.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qpair.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qarraydatapointer.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qarraydataops.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qcontainertools_impl.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qxptype_traits.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qbytearrayalgorithms.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qbytearrayview.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qstringfwd.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\q20type_traits.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qstringliteral.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qstringalgorithms.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qanystringview.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qutf8stringview.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qstringtokenizer.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qstringbuilder.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\QFile \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qfile.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qfiledevice.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qiodevice.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qiodevicebase.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qobject.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qobjectdefs.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qobjectdefs_impl.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qlist.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qhashfunctions.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qiterator.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qbytearraylist.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qstringlist.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qalgorithms.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qstringmatcher.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qcoreevent.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qscopedpointer.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qmetatype.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qcompare.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qdatastream.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qfloat16.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qmath.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qiterable.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qmetacontainer.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qcontainerinfo.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qtaggedpointer.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qscopeguard.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qobject_impl.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qbindingstorage.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\QTextStream \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qtextstream.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qstringconverter_base.h
 
 debug\start.obj: ..\..\start.cpp ..\..\start.h \
 		D:\qtcreator\6.5.3\msvc2019_64\include\QtWidgets\QWidget \
@@ -4105,6 +4262,7 @@ debug\ranking.obj: ..\..\ranking.cpp ..\..\ranking.h \
 		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\QSizeF \
 		D:\qtcreator\6.5.3\msvc2019_64\include\QtGui\QTransform \
 		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qnativeinterface.h \
+		..\..\player.h \
 		ui_ranking.h \
 		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\QVariant \
 		D:\qtcreator\6.5.3\msvc2019_64\include\QtWidgets\QApplication \
@@ -4159,18 +4317,26 @@ debug\ranking.obj: ..\..\ranking.cpp ..\..\ranking.h \
 		..\..\mainwindow.h \
 		D:\qtcreator\6.5.3\msvc2019_64\include\QtWidgets\QMainWindow \
 		D:\qtcreator\6.5.3\msvc2019_64\include\QtWidgets\qmainwindow.h \
-		..\..\player.h \
 		..\..\itemmanager.h \
 		..\..\Item.h \
 		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\QtGlobal \
 		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\QString \
 		..\..\connectus.h \
-		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\QFile \
-		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qfile.h \
-		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\qfiledevice.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtWidgets\QTreeWidgetItem \
 		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\QTextStream \
 		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\QStringList \
-		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\QDebug
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtCore\QDebug \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtWidgets\qmessagebox.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtWidgets\qdialog.h \
+		..\..\rankitemmanager.h \
+		..\..\rankitem.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtWidgets\qinputdialog.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtWidgets\qlineedit.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtGui\qtextcursor.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtGui\qtextdocument.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtGui\qtextformat.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtGui\qpen.h \
+		D:\qtcreator\6.5.3\msvc2019_64\include\QtGui\qtextoption.h
 
 debug\qrc_txtResource.obj: debug\qrc_txtResource.cpp 
 

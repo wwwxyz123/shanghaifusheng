@@ -16,8 +16,8 @@
   <widget class="QTreeWidget" name="testitemWidget">
    <property name="geometry">
     <rect>
-     <x>75</x>
-     <y>35</y>
+     <x>60</x>
+     <y>30</y>
      <width>226</width>
      <height>192</height>
     </rect>
@@ -141,7 +141,7 @@ color: rgb(0, 255, 0);</string>
     <rect>
      <x>405</x>
      <y>405</y>
-     <width>241</width>
+     <width>295</width>
      <height>211</height>
     </rect>
    </property>

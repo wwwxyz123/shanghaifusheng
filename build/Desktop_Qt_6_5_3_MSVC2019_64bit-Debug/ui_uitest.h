@@ -63,7 +63,7 @@ public:
         uitest->resize(689, 652);
         testitemWidget = new QTreeWidget(uitest);
         testitemWidget->setObjectName("testitemWidget");
-        testitemWidget->setGeometry(QRect(75, 35, 226, 192));
+        testitemWidget->setGeometry(QRect(60, 30, 226, 192));
         testitemWidget->setRootIsDecorated(false);
         testitemWidget->header()->setDefaultSectionSize(100);
         testitemWidget->header()->setProperty("showSortIndicator", QVariant(false));
@@ -96,7 +96,7 @@ public:
 "color: rgb(0, 255, 0);"));
         layoutWidget = new QWidget(uitest);
         layoutWidget->setObjectName("layoutWidget");
-        layoutWidget->setGeometry(QRect(405, 405, 241, 211));
+        layoutWidget->setGeometry(QRect(405, 405, 295, 211));
         gridLayout = new QGridLayout(layoutWidget);
         gridLayout->setObjectName("gridLayout");
         gridLayout->setContentsMargins(0, 0, 0, 0);

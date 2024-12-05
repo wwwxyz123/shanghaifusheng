@@ -46,7 +46,7 @@ public:
         new QTreeWidgetItem(ranktreeWidget);
         new QTreeWidgetItem(ranktreeWidget);
         ranktreeWidget->setObjectName("ranktreeWidget");
-        ranktreeWidget->setGeometry(QRect(90, 60, 611, 511));
+        ranktreeWidget->setGeometry(QRect(10, 60, 801, 511));
         pushButton = new QPushButton(Ranking);
         pushButton->setObjectName("pushButton");
         pushButton->setGeometry(QRect(310, 610, 161, 51));
@@ -63,6 +63,7 @@ public:
     {
         Ranking->setWindowTitle(QCoreApplication::translate("Ranking", "Form", nullptr));
         QTreeWidgetItem *___qtreewidgetitem = ranktreeWidget->headerItem();
+        ___qtreewidgetitem->setText(5, QCoreApplication::translate("Ranking", "\347\247\260\345\217\267", nullptr));
         ___qtreewidgetitem->setText(4, QCoreApplication::translate("Ranking", "\345\201\245\345\272\267\347\212\266\345\206\265", nullptr));
         ___qtreewidgetitem->setText(3, QCoreApplication::translate("Ranking", "\345\220\215\345\243\260", nullptr));
         ___qtreewidgetitem->setText(2, QCoreApplication::translate("Ranking", "\351\207\221\351\222\261", nullptr));
