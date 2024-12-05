@@ -35,6 +35,7 @@ void Post::on_payButton_clicked()
         QMessageBox::warning(this,"村长说","侬想做慈善吗？！");
     }
 
+    else
     {
         bool ok;
         int myCash = player->getMoney();
