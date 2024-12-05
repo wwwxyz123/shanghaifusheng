@@ -11,3 +11,6 @@ topperson.h
 shanghaifusheng.pro.user
 shanghaifusheng.pro.user
 *.user
+/build
+/build
+*.idx
