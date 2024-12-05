@@ -57,10 +57,14 @@ MainWindow::MainWindow(QWidget *parent)
     updatePlayerUI();
 
 //背包列宽设置
-    bagWidget->header()->setSectionResizeMode(QHeaderView::Stretch); // 所有列拉伸
-    bagWidget->header()->resizeSection(0, 3); // 第1列权重为2
-    bagWidget->header()->resizeSection(1, 3); // 第2列权重为3
-    bagWidget->header()->resizeSection(2, 3);
+    bagWidget->header()->setSectionResizeMode(0, QHeaderView::Fixed);
+    bagWidget->setColumnWidth(0, 105);
+
+    bagWidget->header()->setSectionResizeMode(1, QHeaderView::Fixed);
+    bagWidget->setColumnWidth(1, 60);
+
+    bagWidget->header()->setSectionResizeMode(2, QHeaderView::Stretch);
+
 
 //商品栏列宽设置
     itemWidget->header()->setSectionResizeMode(QHeaderView::Stretch); // 所有列拉伸
@@ -111,7 +115,7 @@ void MainWindow::refreshItemsInMarket(int count)
 
     // 创建一个索引列表，包含所有物品的索引
     QVector<int> indices;
-    for (int i = 0; i < allItems.size(); ++i) {
+    for (long long unsigned int i = 0; i < allItems.size(); ++i) {
         indices.append(i);
     }
 
@@ -494,4 +498,9 @@ void MainWindow::on_newgame_triggered()
     main->show();
     this->close();
 }
+
+// void MainWindow::on_addmoney_clicked()
+// {
+//         player->addMoney(1000000);
+// }
 

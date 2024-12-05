@@ -70,6 +70,8 @@ private slots:
 
     void on_newgame_triggered();
 
+    // void on_addmoney_clicked();
+
 private:
     Ui::MainWindow *ui;
     QTreeWidget *itemWidget;

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>631</width>
+    <width>637</width>
     <height>461</height>
    </rect>
   </property>
@@ -30,7 +30,7 @@
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>15</x>
       <y>380</y>
       <width>601</width>
       <height>26</height>
@@ -477,10 +477,10 @@ color: rgb(0, 255, 0);</string>
      <bool>false</bool>
     </property>
     <attribute name="headerMinimumSectionSize">
-     <number>18</number>
+     <number>50</number>
     </attribute>
     <attribute name="headerDefaultSectionSize">
-     <number>71</number>
+     <number>75</number>
     </attribute>
     <attribute name="headerStretchLastSection">
      <bool>false</bool>
@@ -564,7 +564,7 @@ color: rgb(0, 255, 0);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>631</width>
+     <width>637</width>
      <height>22</height>
     </rect>
    </property>
