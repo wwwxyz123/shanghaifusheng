@@ -11,8 +11,9 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     start w;
+    w.setWindowIcon(QIcon(":/res/icon.png"));
     w.show();
-    uitest w2;
-    w2.show();
+    // uitest w2();
+    // w2.show();
     return a.exec();
 }

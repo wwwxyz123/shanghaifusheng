@@ -31,9 +31,12 @@ public:
     long long getBagSize() const;
     void setBagSize(long long size);
 
-    QString getPlayerName() const;  // 获取玩家名字
-    void setPlayerName(const QString &name);  // 设置玩家名字
 
+    QString getPlayerName() const;  // 获取玩家名字
+    void setPlayerName(const QString &name);
+  
+    long long getMaxBagSize() const;
+    void setMaxBagSize(long long size);
 
 
 signals:
@@ -51,7 +54,7 @@ private:
     long long health;
     long long fame;
     long long bagsize;
-
+    long long maxbagsize;
 };
 
 #endif // PLAYER_H

@@ -10,11 +10,11 @@ CONFIG += c++17
 
 SOURCES += \
     backendmanager.cpp \
-    buyconfirm.cpp \
-    buylose.cpp \
+    bank.cpp \
     connectus.cpp \
     eventmanager.cpp \
     eventwindow.cpp \
+    hospital.cpp \
     item.cpp \
     itemmanager.cpp \
     loading.cpp \
@@ -23,17 +23,21 @@ SOURCES += \
     player.cpp \
     rankitem.cpp \
     rankitemmanager.cpp \
+    post.cpp \
+    rent.cpp \
+    settlement.cpp \
     start.cpp \
-    uitest.cpp \
-    ranking.cpp
+    ranking.cpp \
+    stdmessagebox.cpp \
+    uitest.cpp
 
 HEADERS += \
     backendmanager.h \
-    buyconfirm.h \
-    buylose.h \
+    bank.h \
     connectus.h \
     eventmanager.h \
     eventwindow.h \
+    hospital.h \
     item.h \
     itemmanager.h \
     loading.h \
@@ -41,20 +45,27 @@ HEADERS += \
     player.h \
     rankitem.h \
     rankitemmanager.h \
+    post.h \
+    rent.h \
+    settlement.h \
     start.h \
-    uitest.h \
-    ranking.h
+    ranking.h \
+    stdmessagebox.h \
+    uitest.h
 
 
 FORMS += \
-    buyconfirm.ui \
-    buylose.ui \
+    bank.ui \
     connectus.ui \
+    hospital.ui \
     loading.ui \
     mainwindow.ui \
+    post.ui \
+    rent.ui \
+    settlement.ui \
     start.ui \
-    uitest.ui \
-    ranking.ui
+    ranking.ui \
+    uitest.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

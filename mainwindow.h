@@ -5,8 +5,14 @@
 #include<qtreewidget.h>
 #include<qpushbutton.h>
 #include"player.h"
+#include "bank.h"
+#include "hospital.h"
+#include "post.h"
+#include "rent.h"
 #include"itemmanager.h"
+#include<qmessagebox.h>
 QT_BEGIN_NAMESPACE
+
 namespace Ui {
 class MainWindow;
 }
@@ -19,24 +25,65 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    int daytime;
+    Player* getPlayer();
 
 private slots:
     void updatePlayerUI();
     void on_playermoney_overflow();
-    void on_pushButton_17_clicked();
-    void on_pushButton_18_clicked();
+
+    void moreneedmoney();
+    void nextday();
     void on_buy_clicked();
     void on_sell_clicked();
-    // void on_itemWidget_itemClicked(QListWidgetItem *item);
+
+    void addItemToBag(QString itemName,long long nowPrice,int quantity);
+    void refreshItemsInMarket(int count);
+    void on_lujiazuiplace_clicked();
+    void updateBagSpaceDisplay();
+    void updateDate();
+
+    void on_bankButton_clicked();
+    void on_hospitalButton_clicked();
+    void on_postButton_clicked();
+    
+    void on_rentButton_clicked();
+    void on_douyinButton_clicked();
+    void douyinButtonClick();
+    void showGameOverMessage();
+
+    void on_hongkouplace_clicked();
+
+    void on_baoshanplace_clicked();
+
+    void on_qingpuplace_clicked();
+
+    void on_pudongplace_clicked();
+
+    void on_linggangplace_clicked();
+
+    void on_jinshanplace_clicked();
+
+    void on_songjiangplace_clicked();
+
+    void on_jiadingplace_clicked();
+
+    void on_newgame_triggered();
+
+    // void on_addmoney_clicked();
 
 private:
     Ui::MainWindow *ui;
-    Player *player;
     QTreeWidget *itemWidget;
     QTreeWidget *bagWidget;
-    QPushButton *buy;
-    QPushButton *sell;
-    ItemManager itemmanagerusing;
-    void loadItems();                  // 加载物品列表到界面
+    Player *player=new Player();
+    ItemManager *itemManager=new ItemManager();
+    Bank *bank;
+    Hospital *hospital;
+    Post *post;
+    Rent *rent;
+    int clickCount; //抖音按钮
+    int bookbuy;
+    QMessageBox stdmessagebox;
 };
 #endif // MAINWINDOW_H

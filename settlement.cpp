@@ -1,11 +1,9 @@
-#include "uitest.h"
-#include "ui_uitest.h"
-#include <QTimer>
+#include "settlement.h"
+#include "ui_settlement.h"
 
-
-uitest::uitest(MainWindow *main,QWidget *parent)
+settlement::settlement(MainWindow *main,QWidget *parent)
     : QWidget(parent)
-    , ui(new Ui::uitest)
+    , ui(new Ui::settlement)
     ,mainwindow(main)
 {
     ui->setupUi(this);
@@ -24,12 +22,12 @@ uitest::uitest(MainWindow *main,QWidget *parent)
     setTitle(p);
 }
 
-uitest::~uitest()
+settlement::~settlement()
 {
     delete ui;
 }
 
-void uitest::inputName()
+void settlement::inputName()
 {
     bool ok;
     name = QInputDialog::getText(this, "人口普查", "请输入你的大名:", QLineEdit::Normal, "佚名", &ok);
@@ -41,13 +39,13 @@ void uitest::inputName()
     }
 }
 
-void uitest::on_torank_clicked()
+void settlement::on_torank_clicked()
 {
 
 }
 
 
-void uitest::on_newgame_clicked()
+void settlement::on_newgame_clicked()
 {
     this->close();
     mainwindow->close();
@@ -56,13 +54,13 @@ void uitest::on_newgame_clicked()
 }
 
 
-void uitest::on_leave_clicked()
+void settlement::on_leave_clicked()
 {
     this->close();
     mainwindow->close();
 }
 
-void uitest::setTitle(Player *player)
+void settlement::setTitle(Player *player)
 {
     long long money = player->getMoney();
     int health = player->getHealth();

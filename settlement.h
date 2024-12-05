@@ -1,5 +1,5 @@
-#ifndef UITEST_H
-#define UITEST_H
+#ifndef SETTLEMENT_H
+#define SETTLEMENT_H
 
 #include <QWidget>
 #include<qlabel.h>
@@ -8,16 +8,16 @@
 #include <QInputDialog>
 
 namespace Ui {
-class uitest;
+class settlement;
 }
 
-class uitest : public QWidget
+class settlement : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit uitest(MainWindow *main,QWidget *parent = nullptr);
-    ~uitest();
+    explicit settlement(MainWindow *main,QWidget *parent = nullptr);
+    ~settlement();
 
 private slots:
     void on_torank_clicked();
@@ -26,8 +26,7 @@ private slots:
     void setTitle(Player *player);
     void inputName();
 private:
-
-    Ui::uitest *ui;
+    Ui::settlement *ui;
     MainWindow *mainwindow;
     long long money;
     long long health;
@@ -36,4 +35,4 @@ private:
     QString name;
 };
 
-#endif // UITEST_H
+#endif // SETTLEMENT_H

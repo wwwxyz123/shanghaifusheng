@@ -3,6 +3,7 @@ shanghaifusheng.pro.user
 *.user
 topperson.cpp
 topperson.h
-/build
 *.idx
 /build
+
+

@@ -13,7 +13,7 @@ loading::loading(QWidget *parent)
     // this->setMaximumSize(420,580);
     // this->setMinimumSize(420,580);
     this->setWindowTitle("背景故事");
-    //Player *player = new Player();
+    setWindowIcon(QIcon(":/res/icon.png"));
 }
 
 loading::~loading()

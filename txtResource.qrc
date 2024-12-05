@@ -3,5 +3,6 @@
         <file>res/items.txt</file>
         <file>res/qrcode.png</file>
         <file>res/score.txt</file>
+        <file>res/icon.png</file>
     </qresource>
 </RCC>

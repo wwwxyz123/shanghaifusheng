@@ -20,6 +20,7 @@ Ranking::Ranking(QWidget *parent)
     ui->ranktreeWidget->setStyleSheet("QTreeWidget::item { height: 40px; }");
 
     this->setWindowTitle("富豪玩家排行榜");
+      
     rankItemManager rankItemManager;
     if (!rankItemManager.loadScoreFromFile(":/res/score.txt")) {
         qDebug() << "Failed to load scores from file. Using default items.";
@@ -56,6 +57,7 @@ Ranking::Ranking(QWidget *parent)
         rank++;
     }
 
+    setWindowIcon(QIcon(":/res/icon.png"));
 
 }
 
