@@ -19,13 +19,13 @@ QTimer* timer; // 定时器
 // 动画状态
 enum AnimationState {
     None,
-    Health,
-    Fame,
+    Money,
     BankMoney,
-    Money
+    Health,
+    Fame
 };
 
-AnimationState currentState = Health;
+AnimationState currentState = None;
 
 uitest::uitest(QWidget *parent)
     : QWidget(parent)
@@ -62,6 +62,28 @@ uitest::uitest(QWidget *parent)
 void uitest::updateValue()
 {
     switch (currentState) {
+    case Money:
+        if (currentMoney < targetMoney) {
+            currentMoney += stepValue;
+            if (currentMoney > targetMoney) currentMoney = targetMoney;
+            ui->money->setText(QString::number(currentMoney));
+        } else {
+            currentState = BankMoney;  // money 完成后加载 bankmoney
+            currentMoney = targetMoney;  // 确保 currentMoney 完成时不再更新
+        }
+        break;
+
+    case BankMoney:
+        if (currentBankMoney < targetBankMoney) {
+            currentBankMoney += stepValue;
+            if (currentBankMoney > targetBankMoney) currentBankMoney = targetBankMoney;
+            ui->bankmoney->setText(QString::number(currentBankMoney));
+        } else {
+            currentState = Health;  // bankmoney 完成后加载 health
+            currentBankMoney = targetBankMoney;
+        }
+        break;
+
     case Health:
         if (currentHealth < targetHealth) {
             currentHealth += stepValue;
@@ -78,28 +100,6 @@ void uitest::updateValue()
             currentFame += stepValue;
             if (currentFame > targetFame) currentFame = targetFame;
             ui->fame->setText(QString::number(currentFame));
-        } else {
-            currentState = BankMoney;  // fame 完成后加载 bankmoney
-            currentFame = targetFame;
-        }
-        break;
-
-    case BankMoney:
-        if (currentBankMoney < targetBankMoney) {
-            currentBankMoney += stepValue;
-            if (currentBankMoney > targetBankMoney) currentBankMoney = targetBankMoney;
-            ui->bankmoney->setText(QString::number(currentBankMoney));
-        } else {
-            currentState = Money;  // bankmoney 完成后加载 money
-            currentBankMoney = targetBankMoney;
-        }
-        break;
-
-    case Money:
-        if (currentMoney < targetMoney) {
-            currentMoney += stepValue;
-            if (currentMoney > targetMoney) currentMoney = targetMoney;
-            ui->money->setText(QString::number(currentMoney));
         } else {
             timer->stop();  // 所有动画完成，停止定时器
         }
