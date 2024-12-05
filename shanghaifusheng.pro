@@ -26,6 +26,7 @@ SOURCES += \
     settlement.cpp \
     start.cpp \
     ranking.cpp \
+    stdmessagebox.cpp \
     uitest.cpp
 
 HEADERS += \
@@ -45,6 +46,7 @@ HEADERS += \
     settlement.h \
     start.h \
     ranking.h \
+    stdmessagebox.h \
     uitest.h
 
 
