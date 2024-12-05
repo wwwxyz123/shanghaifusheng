@@ -34,9 +34,7 @@ public:
     QString getPlayerName() const;  // 获取玩家名字
     void setPlayerName(const QString &name);  // 设置玩家名字
 
-    bool loadScoreFromFile(const QString& filename);
-    // 获取所有物品
-    const std::vector<Player>& getAllElement() const;
+
 
 signals:
     void moneyChanged(long long newMoney);
@@ -46,7 +44,7 @@ signals:
     void fameChanged(long long newFame);
 
 private:
-    std::vector<Player> players;
+
     long long money;
     long long bankMoney;
     long long giveUpMoney;
@@ -54,7 +52,6 @@ private:
     long long fame;
     long long bagsize;
 
-    QString playerName;
 };
 
 #endif // PLAYER_H
